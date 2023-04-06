@@ -1,4 +1,4 @@
-// Java nested switch statement.,
+    // Java nested switch statement.,
 
 import java.util.Scanner;
 public class Seven{
