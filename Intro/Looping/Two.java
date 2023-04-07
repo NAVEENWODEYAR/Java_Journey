@@ -5,7 +5,7 @@ public class Two {
         
         System.out.println("For-each Loop");
 
-        int arr[] = {1,2,3,4,5};             // Creatina an array of int type.,
+        int arr[] = {1,2,3,4,5};             // Creating an array of int type.,
 
         System.out.println(arr);
         System.out.println(arr[4]);
