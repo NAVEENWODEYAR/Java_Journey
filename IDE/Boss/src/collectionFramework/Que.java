@@ -11,7 +11,7 @@ public class Que {
 				pq.add(i);
 			}
 		System.out.println(pq);
-			System.out.println(pq.size());			// returns the size of the queue
+			System.out.println(pq.size());
 			System.out.println(pq.peek());
 				pq.remove();
 			System.out.println(pq.poll());
