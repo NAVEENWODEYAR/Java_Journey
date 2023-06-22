@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="IDE/Boss/src"/>
+	<classpathentry kind="src" path="IDE/Eclipse/src"/>
+	<classpathentry kind="src" path="Intro/Basics/Array"/>
+	<classpathentry kind="src" path="Intro/Basics/Control"/>
+	<classpathentry kind="src" path="Intro/Basics/KeyWords"/>
+	<classpathentry kind="src" path="Intro/Basics/Looping"/>
+	<classpathentry kind="src" path="Intro/Basics/Operators"/>
+	<classpathentry kind="src" path="Intro/Basics/Threads"/>
+	<classpathentry kind="src" path="Intro/Basics/Variables"/>
+	<classpathentry kind="src" path="Intro/CF"/>
+	<classpathentry kind="src" path="Intro/E-Handling"/>
+	<classpathentry kind="src" path="Intro/OOP"/>
+	<classpathentry kind="src" path="Intro/Programs Practice"/>
+	<classpathentry kind="src" path="Intro/Revise"/>
+	<classpathentry kind="src" path="Programs"/>
+	<classpathentry kind="output" path="IDE/Boss/bin"/>
+</classpath>
