@@ -13,4 +13,11 @@ public class Runner
 		System.out.println("inside the index page..,");
 		return new ModelAndView("index");
 	}
+	
+	@GetMapping("/a")
+	public ModelAndView getAbout()
+	{
+		System.out.println("inside the about page..,");
+		return new ModelAndView("about");
+	}
 }
