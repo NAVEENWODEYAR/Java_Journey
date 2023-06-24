@@ -7,9 +7,11 @@
         </head>
         <body>
             <form action="addPanda">
+                              
                 <input type="text" placeholder="Panda ID"><br>
                 <input type="text" placeholder="Panda Name"><br>
                 <input type="submit" value="Submit">
+
             </form>
         </body>
     </html>
