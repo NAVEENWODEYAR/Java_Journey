@@ -30,7 +30,7 @@ public class BookController
 	}
 	
 	// 2. get for selecting the data.,
-	@GetMapping("/getCarData")
+	@GetMapping("/getBookData")
 	public List<Book> getCarData()
 	{
 		return bookService.getBookData();
