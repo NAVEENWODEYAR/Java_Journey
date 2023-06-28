@@ -1,13 +1,9 @@
 package com.dataJpa;
 
-import java.util.List;
-
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-
-import com.dataJpa.madal.Student;
-import com.dataJpa.repo.StudentRepo;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
 public class DataJpaApplication 
@@ -15,8 +11,14 @@ public class DataJpaApplication
 
 	public static void main(String[] args) 
 	{
-		System.out.println("Spring started.,");
 		SpringApplication.run(DataJpaApplication.class,args);
+		System.out.println("Spring started.,");
+
+			
+		// to disable the banner..,
+//			new SpringApplicationBuilder(DataJpaApplication.class)
+//			.bannerMode(Banner.Mode.OFF)
+//			.run(args);
 //		
 //		ApplicationContext context= SpringApplication.run(DataJpaApplication.class, args);
 //		StudentRepo sp = context.getBean(StudentRepo.class);
