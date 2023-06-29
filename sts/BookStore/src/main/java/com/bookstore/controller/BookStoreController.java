@@ -25,7 +25,7 @@ public class BookStoreController
 
 		// 1. generating the API.,
 			@PostMapping("/insertBookStoreData")
-			public ResponseEntity<String> insertBooStoreData(@RequestBody BookStore bk)
+			public ResponseEntity<String> insertBookStoreData(@RequestBody BookStore bk)
 			{
 				String status = bsService.upsertBookStore(bk);
 						return new ResponseEntity<>(status, HttpStatus.CREATED);
