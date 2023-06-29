@@ -12,51 +12,45 @@ import com.bookstore.repo.BookStoreRepo;
 @Service
 public class BookStoreService implements BookStoreInterface
 {
-
 	@Autowired
-	BookStoreRepo bsRepo;
+	private BookStoreRepo bRespo;
 	
-		// 1. save the record,
+			// upsert operation is an polymorphic method, performs update if PK is present else inserts the data., 
 			@Override
-			public String upsertBookStore(BookStore bs) 
-			{
-				bsRepo.save(bs);		// insert / update based on the PK
-				return "Success.,";
-			}
-		
-		// 2. select the single record,
-			@Override
-			public BookStore getBookStoreById(Integer b_Id) 
-			{
-			    Optional<BookStore> obs = bsRepo.findById(b_Id);
-
-			    	if(obs.isPresent())
-			    	{
-			    		return obs.get();
-			    	}
-			    	return null;
-			}
-		
-		// 3. get all the records.,
-			@Override
-			public List<BookStore> getBookStore()
-			{
-				return bsRepo.findAll();
-				
-			}
-		
-		// 4. delete the data
-			@Override
-			public String deleteBookStore(Integer b_Id) 
-			{
-				if(bsRepo.existsById(b_Id))
+				public String upsertBookStoreData(BookStore bs)
 				{
-					bsRepo.deleteById(b_Id);
-					return "Data deleted sucessfully";
-				}else
-				{
-					return "No such record in the database.,";
+					bRespo.save(bs);
+					return "Data inserted succussfully.,";
 				}
-			}
+	
+			//  select query on the basis of ID
+			@Override
+				public BookStore getBookStoreById(Integer b_Id)
+				{
+					Optional<BookStore> findById = bRespo.findById(b_Id);
+						if(findById.isPresent())
+						{
+							return findById.get();
+						}
+						return null;
+				}
+			// select * 
+			@Override
+				public List<BookStore> getBookStoreData() 
+				{
+					return bRespo.findAll();
+				}
+			
+			// delete by the Id
+			@Override
+				public String deleteBookStoreById(Integer b_Id)
+				{
+					if(bRespo.existsById(b_Id))
+					{
+						bRespo.deleteById(b_Id);
+						return "deleted successfully.,";
+					}
+					return "No such records.,";
+				}
 
 }

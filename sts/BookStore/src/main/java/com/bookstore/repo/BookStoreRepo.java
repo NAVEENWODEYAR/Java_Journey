@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.bookstore.modal.BookStore;
 
 @Repository 
-public interface BookStoreRepo extends JpaRepository<BookStore, Serializable> 
+public interface BookStoreRepo extends JpaRepository<BookStore, Integer> 
 {
-	// Serializable is generic
+	
 }

@@ -21,13 +21,13 @@ import com.bookstore.service.BookStoreService;
 public class BookStoreController 
 {
 	@Autowired
-	BookStoreService bsService;
+	private BookStoreService bsService;
 
 		// 1. generating the API.,
 			@PostMapping("/insertBookStoreData")
 			public ResponseEntity<String> insertBookStoreData(@RequestBody BookStore bk)
 			{
-				String status = bsService.upsertBookStore(bk);
+				String status = bsService.upsertBookStoreData(bk);
 						return new ResponseEntity<>(status, HttpStatus.CREATED);
 			}
 		
@@ -43,15 +43,15 @@ public class BookStoreController
 			@GetMapping("/getBookStoreData")
 			public ResponseEntity<List<BookStore>> getBookStoreData()
 			{
-				 List<BookStore> lt = bsService.getBookStore();
-				 return new ResponseEntity<List<BookStore>>(lt, HttpStatus.OK);
+				 List<BookStore> lt = bsService.getBookStoreData();
+				 return new ResponseEntity<>(lt, HttpStatus.OK);
 			}	
 		
 		// 4. updating the data
 			@PutMapping("/updateBookStoreData")
 			public ResponseEntity<String> updateBookStore(@RequestBody BookStore bs)
 			{
-				String status = bsService.upsertBookStore(bs);
+				String status = bsService.upsertBookStoreData(bs);
 						return new ResponseEntity<>(status, HttpStatus.OK);
 			}
 		
@@ -59,7 +59,7 @@ public class BookStoreController
 			@DeleteMapping("/deleteBookStoreData/{b_Id}")
 			public ResponseEntity<String> deleteBookStore(@PathVariable Integer b_Id)
 			{
-				String status = bsService.deleteBookStore(b_Id);
+				String status = bsService.deleteBookStoreById(b_Id);
 						return new ResponseEntity<String>(status, HttpStatus.OK);
 			}
 }
