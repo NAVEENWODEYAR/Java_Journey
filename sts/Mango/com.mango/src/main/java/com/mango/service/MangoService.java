@@ -41,7 +41,7 @@ public class MangoService
             return m1;
     }
 
-    // 5. upate the data,
+    // 5. update the data.,
     public Mango updateMagoData(Integer m_Id, Mango mg)
     {
         Mango m1 = mRepo.findById(String.valueOf(m_Id)).get();
