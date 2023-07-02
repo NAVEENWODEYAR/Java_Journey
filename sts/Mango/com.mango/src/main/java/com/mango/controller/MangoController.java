@@ -3,9 +3,7 @@ package com.mango.controller;
 import com.mango.modal.Mango;
 import com.mango.service.MangoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,11 +15,33 @@ public class MangoController
     MangoService mService;
 
     // Rest API Generation.,
-    // post for inserting the data.,
+    // 1.post for inserting the data.,
     @PostMapping("/insertMangoData")
     public List<Mango> insertMangoData(@RequestBody List<Mango> mg)
     {
-        List<Mango> m1 = mService.getMangoData(mg);
+        List<Mango> m1 = mService.insertMangoData(mg);
                     return m1;
     }
+
+    // 2. insertOne
+    @PostMapping("/insertData")
+    public Mango insertMango(Mango mg)
+    {
+        return mService.insertMango(mg);
+    }
+
+    // 3. get for receiving the data.,
+    @GetMapping("/getMangoData")
+    public  List<Mango>getMangoData(List<Mango> mg)
+    {
+        return mService.getMangoData(mg);
+    }
+
+    // 4. select the single record
+    @GetMapping("/getMangoData/{}")
+     public Mango getData(@PathVariable Integer m_Id)
+    {
+        return mService.getMango(m_Id);
+    }
+
 }

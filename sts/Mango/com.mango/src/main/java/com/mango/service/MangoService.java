@@ -35,10 +35,9 @@ public class MangoService
     }
 
     // 4. select single record..,
-    public Mango getMango(String id)
+    public Mango getMango(Integer id)
     {
-        Mango m1 = mRepo.findById(id).get();
-            return m1;
+       return mRepo.findById(String.valueOf(id)).get();
     }
 
     // 5. update the data.,
