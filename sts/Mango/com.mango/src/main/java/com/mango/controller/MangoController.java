@@ -18,7 +18,7 @@ public class MangoController
 
     // Rest API Generation.,
     // post for inserting the data.,
-    @PostMapping("/mango/insertData")
+    @PostMapping("/insertMangoData")
     public List<Mango> insertMangoData(@RequestBody List<Mango> mg)
     {
         List<Mango> m1 = mService.getMangoData(mg);
