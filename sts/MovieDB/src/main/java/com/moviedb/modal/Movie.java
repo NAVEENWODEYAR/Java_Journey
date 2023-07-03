@@ -20,10 +20,10 @@ public class Movie
 	private String m_Type;
 	private double m_Budjet;
 	
-	public Movie(String mid, int m_ID, String m_Name, String m_Type, double m_Budjet) 
+	public Movie( int m_ID, String m_Name, String m_Type, double m_Budjet) 
 	{
 		super();
-		this.mid = mid;
+//		this.mid = mid;
 		this.m_ID = m_ID;
 		this.m_Name = m_Name;
 		this.m_Type = m_Type;
