@@ -20,7 +20,7 @@ public class BookStoreService implements BookStoreInterface
 				public String upsertBookStoreData(BookStore bs)
 				{
 					bRespo.save(bs);
-					return "Data inserted succussfully.,";
+					return "Data inserted successfully.,";
 				}
 	
 			//  select query on the basis of ID
