@@ -6,18 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bookstore.modal.BookStore;
 import com.bookstore.service.BookStoreService;
 
 @RestController
+@CrossOrigin
 public class BookStoreController 
 {
 	@Autowired
@@ -25,42 +28,31 @@ public class BookStoreController
 
 		// 1. generating the API.,
 			@PostMapping("/insertBookStoreData")
-			public ResponseEntity<String> insertBookStoreData(@RequestBody BookStore bk)
+			@ResponseStatus(HttpStatus.CREATED)
+			public BookStore insertBook(@RequestBody BookStore bs)
 			{
-				String status = bsService.upsertBookStoreData(bk);
-						return new ResponseEntity<>(status, HttpStatus.CREATED);
+				return bsService.insertBook(bs);
+			}
+			
+		// 2. getMapping for receiving the data.,
+			@GetMapping("/getBooks")
+			public List<BookStore> getBooks()
+			{
+				return bsService.getBooks();
+			}
+			
+		// 3. get the single record.,
+			public BookStore getBook(@PathVariable String id)
+			{
+				return bsService.getBook(id);
+			}
+			
+		// 4. delete the data.,
+			public String deleteBook(@PathVariable String id)
+			{
+				bsService.dleteBook(id);
+				return " Successfully deleted the record,";
 			}
 		
-		// 2. getMapping for selecting data
-			@GetMapping("/getBookStoreData/{b_Id}")
-			public ResponseEntity<BookStore> getBookStoreData(@PathVariable Integer b_Id)
-			{
-				BookStore bs1 = bsService.getBookStoreById(b_Id);
-					return new ResponseEntity<>(bs1, HttpStatus.OK);
-			}
-		
-		// 3. getMapping for selecting all the records
-			@GetMapping("/getBookStoreData")
-			public ResponseEntity<List<BookStore>> getBookStoreData()
-			{
-				 List<BookStore> lt = bsService.getBookStoreData();
-				 return new ResponseEntity<>(lt, HttpStatus.OK);
-			}	
-		
-		// 4. updating the data
-			@PutMapping("/updateBookStoreData")
-			public ResponseEntity<String> updateBookStore(@RequestBody BookStore bs)
-			{
-				String status = bsService.upsertBookStoreData(bs);
-						return new ResponseEntity<>(status, HttpStatus.OK);
-			}
-		
-		// 5. delete the data
-			@DeleteMapping("/deleteBookStoreData/{b_Id}")
-			public ResponseEntity<String> deleteBookStore(@PathVariable Integer b_Id)
-			{
-				String status = bsService.deleteBookStoreById(b_Id);
-						return new ResponseEntity<String>(status, HttpStatus.OK);
-			}
 }
 
