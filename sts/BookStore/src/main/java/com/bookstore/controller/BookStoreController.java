@@ -36,18 +36,23 @@ public class BookStoreController
 			
 		// 2. getMapping for receiving the data.,
 			@GetMapping("/getBooks")
+			@ResponseStatus(HttpStatus.FOUND)
 			public List<BookStore> getBooks()
 			{
 				return bsService.getBooks();
 			}
 			
 		// 3. get the single record.,
+			@GetMapping("/getBook/{id}")
+			@ResponseStatus(HttpStatus.FOUND)
 			public BookStore getBook(@PathVariable String id)
 			{
 				return bsService.getBook(id);
 			}
 			
 		// 4. delete the data.,
+			@DeleteMapping("/deleteBook/{id}")
+			@ResponseStatus(HttpStatus.GONE)
 			public String deleteBook(@PathVariable String id)
 			{
 				bsService.dleteBook(id);
