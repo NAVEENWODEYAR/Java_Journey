@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bookstore.dto.ResponseDTO;
 import com.bookstore.modal.BookStore;
 import com.bookstore.service.BookStoreService;
 
@@ -29,34 +30,45 @@ public class BookStoreController
 		// 1. generating the API.,
 			@PostMapping("/insertBookStoreData")
 			@ResponseStatus(HttpStatus.CREATED)
-			public BookStore insertBook(@RequestBody BookStore bs)
+//			public BookStore insertBook(@RequestBody BookStore bs)
+			public ResponseEntity<ResponseDTO> insertBook(@RequestBody BookStore bs)
 			{
-				return bsService.insertBook(bs);
+				BookStore bs1 = bsService.insertBook(bs);
+				ResponseDTO bDTO = new ResponseDTO("Record inserted successfully.,",bs1);
+				return new ResponseEntity<ResponseDTO>(bDTO,HttpStatus.CREATED);
 			}
 			
 		// 2. getMapping for receiving the data.,
 			@GetMapping("/getBooks")
 			@ResponseStatus(HttpStatus.FOUND)
-			public List<BookStore> getBooks()
+//			public List<BookStore> getBooks()
+			public ResponseEntity<ResponseDTO>getBooks()
 			{
-				return bsService.getBooks();
+				List<BookStore> lt = bsService.getBooks();
+				ResponseDTO bDTO = new ResponseDTO("Record is present.,", lt);
+				return new ResponseEntity<ResponseDTO>(bDTO, HttpStatus.FOUND);
 			}
 			
 		// 3. get the single record.,
 			@GetMapping("/getBook/{id}")
 			@ResponseStatus(HttpStatus.FOUND)
-			public BookStore getBook(@PathVariable String id)
+//			public BookStore getBook(@PathVariable String id)
+			public ResponseEntity<ResponseDTO>getBook(@PathVariable String id)
 			{
-				return bsService.getBook(id);
+				BookStore bs = bsService.getBook(id);
+				ResponseDTO bDTO = new ResponseDTO("Table has the data.,", bs);
+				return new ResponseEntity<ResponseDTO>(bDTO, HttpStatus.FOUND);
 			}
 			
 		// 4. delete the data.,
 			@DeleteMapping("/deleteBook/{id}")
 			@ResponseStatus(HttpStatus.GONE)
-			public String deleteBook(@PathVariable String id)
+//			public String deleteBook(@PathVariable String id)//
+			public ResponseEntity<ResponseDTO> deleteBook(@PathVariable String id)
 			{
-				bsService.dleteBook(id);
-				return " Successfully deleted the record,";
+				String st = bsService.dleteBook(id);
+				ResponseDTO bDTO = new ResponseDTO("Sucessfully deleted the record.,", st);
+				return new ResponseEntity<ResponseDTO>(bDTO, HttpStatus.GONE);
 			}
 		
 }

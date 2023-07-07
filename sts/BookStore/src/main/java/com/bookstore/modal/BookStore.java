@@ -32,7 +32,7 @@ public class BookStore
 	private String b_Name;
 
 	
-		// constructor.,,
+		// parameterized constructor.,,
 		public BookStore(double b_Price, String b_Author, String b_Name) 
 		{
 			super();

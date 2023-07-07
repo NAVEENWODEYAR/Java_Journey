@@ -8,7 +8,7 @@ import com.bookstore.modal.BookStore;
 import com.bookstore.service.BookStoreService;
 
 
-@Component
+//@Component
 public class BookStoreRunner implements CommandLineRunner 
 {
 
