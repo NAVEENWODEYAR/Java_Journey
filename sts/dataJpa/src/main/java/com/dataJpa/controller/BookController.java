@@ -19,7 +19,8 @@ import com.dataJpa.service.BookService;
 import  com.dataJpa.exception.*;
 
 @RestController
-@CrossOrigin()
+//@CrossOrigin()
+@CrossOrigin(origins="*", allowedHeaders = "*")
 public class BookController
 {
 	@Autowired
@@ -33,8 +34,7 @@ public class BookController
 	@PostMapping("/insertBookData")
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
 	{
-		System.out.println("");
-		System.out.println(bk);
+//		System.out.println(bk);
 		List<Book> lt = bookService.insertBooKData(bk);
 					return lt;
 	}
@@ -54,6 +54,22 @@ public class BookController
 	}
 	
 	// 2.a selecting the record
+//	@GetMapping("/getBook/{bId}")
+//	public Book getBook(@PathVariable int bId)
+//	{
+//		return bookService.getBook(bId)
+//				.orElseThrow(()-> new UserNotFoundException(bId));
+//				
+//	}
+	
+	// 2.a selecting the record.,
+		@GetMapping("/getBook/{bId}")
+		public Book getBook(@PathVariable int bId)
+		{
+			return bRepo.findById(bId)
+					.orElseThrow(()-> new UserNotFoundException(bId));
+		}
+
 	
 	// 3. put for updating the data.,
 	@PutMapping("/updateBookData/{bId}")
@@ -62,19 +78,38 @@ public class BookController
 		return bookService.updateBookData(bId, bk);
 	}
 	
-	// 3.a updating the data including the exception.,
-	@PostMapping("/updateBook/{bId}")
-	public Book updateBook(@PathVariable int bId)
+	// 3. update the book
+	@PutMapping("/updateBook/{bId}")
+	public Book updateBook(@PathVariable int bId, @RequestBody Book bk)
 	{
 		return bRepo.findById(bId)
-				.orElseThrow(()-> new UserNotFoundException(bId));
+				.map(book -> {
+					book.setbName(bk.getbName());
+					book.setbAuthor(bk.getbAuthor());
+					book.setbPrice(bk.getbPrice());
+					
+					return bRepo.save(book);
+					
+				}).orElseThrow(()-> new UserNotFoundException(bId));
 	}
-	
+		
 	// 4. delete for deleting the data.,
 	@DeleteMapping("/deleteBookData/{bId}")
 	public String deleteBookData(@PathVariable int bId)
 	{
 		bookService.deleteBookData(bId);
 		return "Successfully deleted the book records,,";
+	}
+	
+	// 4.a delete the record..,
+	@DeleteMapping("/deleteBook/{bId}")
+	public String deleteBook(@PathVariable int bId)
+	{
+		if(!bRepo.existsById(bId))
+		{
+			throw new UserNotFoundException(bId);
+		}
+		bRepo.deleteById(bId);
+		return "Book with the id "+bId+ " deleted from the database.,";
 	}
 }

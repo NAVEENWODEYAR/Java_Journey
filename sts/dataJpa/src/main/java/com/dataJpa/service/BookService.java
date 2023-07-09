@@ -34,6 +34,12 @@ public class BookService
 		return bRepo.findAll();
 	}
 	
+	// 2.a get the record
+	public Book getBook(int bId)
+	{
+		return bRepo.findById(bId).get();
+	}
+	
 	// 3. update the data,
 	public Book updateBookData(int bId, Book bk)
 	{
