@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dataJpa.exception.UserNotFoundException;
 import com.dataJpa.madal.Book;
+import com.dataJpa.repo.BookRepo;
 import com.dataJpa.service.BookService;
+import  com.dataJpa.exception.*;
 
 @RestController
 @CrossOrigin()
@@ -21,14 +24,26 @@ public class BookController
 {
 	@Autowired
 	BookService bookService;
+	
+	@Autowired
+	BookRepo bRepo;
 
 	// generating the API.,
 	// 1. post for inserting the data.,
 	@PostMapping("/insertBookData")
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
 	{
+		System.out.println("");
+		System.out.println(bk);
 		List<Book> lt = bookService.insertBooKData(bk);
 					return lt;
+	}
+	
+	// 1.a insert the record.,
+	@PostMapping("/insertBook")
+	public Book insertBook(@RequestBody Book bk)
+	{
+		return bookService.insertBook(bk);
 	}
 	
 	// 2. get for selecting the data.,
@@ -38,11 +53,21 @@ public class BookController
 		return bookService.getBookData();
 	}
 	
+	// 2.a selecting the record
+	
 	// 3. put for updating the data.,
 	@PutMapping("/updateBookData/{bId}")
 	public Book updateCarData(@PathVariable int bId, @RequestBody Book bk)
 	{
 		return bookService.updateBookData(bId, bk);
+	}
+	
+	// 3.a updating the data including the exception.,
+	@PostMapping("/updateBook/{bId}")
+	public Book updateBook(@PathVariable int bId)
+	{
+		return bRepo.findById(bId)
+				.orElseThrow(()-> new UserNotFoundException(bId));
 	}
 	
 	// 4. delete for deleting the data.,

@@ -22,6 +22,12 @@ public class BookService
 					return lt;
 	}
 	
+	// 1.a insert the record..,
+	public Book insertBook (Book bk)
+	{
+		return bRepo.save(bk);
+	}
+	
 	// 2. get the data,
 	public List<Book> getBookData()
 	{
