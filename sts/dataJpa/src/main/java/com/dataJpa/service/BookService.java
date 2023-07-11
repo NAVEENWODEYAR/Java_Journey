@@ -7,12 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.dataJpa.madal.Book;
 import com.dataJpa.repo.BookRepo;
+import com.dataJpa.util.EmailSenderService;
 
 @Service
 public class BookService
 {
 	@Autowired
 	BookRepo bRepo;
+	
+	// mailService object.,
+	@Autowired
+	EmailSenderService eService;
 
 	// CRUD operations
 	// 1. insert the data,
@@ -25,7 +30,10 @@ public class BookService
 	// 1.a insert the record..,
 	public Book insertBook (Book bk)
 	{
-		return bRepo.save(bk);
+		Book b1 = bRepo.save(bk);
+				eService.sendEmail(bk.getaMail(), "Book added to the collection successfully..,", "Adding the new book");
+				
+				return b1;
 	}
 	
 	// 2. get the data,
@@ -47,6 +55,7 @@ public class BookService
 			bk1.setbAuthor(bk.getbAuthor());;
 			bk1.setbName(bk.getbName());
 			bk1.setbPrice(bk.getbPrice());
+			bk1.setaMail(bk.getaMail());
 			
 			return bRepo.save(bk1);
 	}

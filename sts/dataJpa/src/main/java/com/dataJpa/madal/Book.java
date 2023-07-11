@@ -1,6 +1,8 @@
 package com.dataJpa.madal;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,10 +13,12 @@ public class Book
 
 	// table columns
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int bId;
 	private String bName;
 	private int bPrice;
 	private String bAuthor;
+	private String aMail;
 	
 	// constructors
 		public  Book()
@@ -22,16 +26,24 @@ public class Book
 			// default constructor.,
 		}
 	// parameterized constructor
-		public Book(int bId, String bName, int bPrice, String bAuthor)
+		public Book(String bName, int bPrice, String bAuthor, String aMail)
 		{
 			super();
-			this.bId = bId;
 			this.bName = bName;
 			this.bPrice = bPrice;
 			this.bAuthor = bAuthor;
+			this.aMail = aMail;	
 		}
 	
-	// setters & getters
+		public String getaMail() 
+		{
+			return aMail;
+		}
+		public void setaMail(String aMail) 
+		{
+			this.aMail = aMail;
+		}
+		// setters & getters
 		public int getbId()
 		{
 			return bId;

@@ -87,6 +87,7 @@ public class BookController
 					book.setbName(bk.getbName());
 					book.setbAuthor(bk.getbAuthor());
 					book.setbPrice(bk.getbPrice());
+					book.setaMail(bk.getaMail());
 					
 					return bRepo.save(book);
 					
