@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.dataJpa.madal.Book;
 import com.dataJpa.repo.BookRepo;
 import com.dataJpa.util.EmailSenderService;
+import com.dataJpa.util.TokenUtil;
 
 @Service
 public class BookService
@@ -18,7 +19,11 @@ public class BookService
 	// mailService object.,
 	@Autowired
 	EmailSenderService eService;
-
+	
+	// dependancy injection for tokenutil class
+	@Autowired
+	TokenUtil tokenUtil;
+ 
 	// CRUD operations
 	// 1. insert the data,
 	public List<Book> insertBooKData (List<Book> bk)
@@ -60,7 +65,7 @@ public class BookService
 			return bRepo.save(bk1);
 	}
 	
-	// 4. delete the data.,
+	// 4. delete the data., 
 	public String deleteBookData(int bId)
 	{
 		bRepo.deleteById(bId);
