@@ -8,7 +8,7 @@ import com.bookstore.modal.BookStore;
 import com.bookstore.service.BookStoreService;
 
 
-//@Component
+@Component
 public class BookStoreRunner implements CommandLineRunner 
 {
 
@@ -21,6 +21,7 @@ public class BookStoreRunner implements CommandLineRunner
 		{
 			// 1. create the table.,
 			bService.insertBook(new BookStore(159.00, "James Gosling", "Java"));
+			bService.insertBook(new BookStore(154.00, "Guido Van Russom", "Python"));
 			
 			// 2. select the data.,
 			bService.getBooks().forEach(b->System.out.println(b));
