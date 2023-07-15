@@ -8,5 +8,5 @@ import com.dataJpa.madal.Book;
 @Repository
 public interface BookRepo extends JpaRepository<Book,Integer> 
 {
-	public void findByName(String bName);
+	public void findBybName(String bName);
 }
