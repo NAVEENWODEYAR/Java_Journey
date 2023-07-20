@@ -11,14 +11,4 @@ public class ResponseDTO
 {
 	private String msg;
 	private Object ob;
-	
-	// constructor.,
-	public ResponseDTO(String msg, Object ob)
-	{
-		super();
-		this.msg = msg;
-		this.ob = ob;
-	}
-
-	
 }
