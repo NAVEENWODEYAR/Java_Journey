@@ -29,7 +29,7 @@ public class HashMp {
 	// Concurrent hashmap, threadSafe
 		ConcurrentHashMap<String, String> ch = new ConcurrentHashMap<>();
 											ch.put("An", "Karn");
-											ch.put("Name", "Arjun");
+											ch.put("Name", "karn");
 										System.out.println(ch);
 																
 	}
