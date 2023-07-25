@@ -84,7 +84,7 @@ public class EmpCRUD
 								System.out.println(mp.getKey()+":"+mp.getValue());
 							}
 							
-	// Get the details of youngest male employee in the product development department?
+	// 8. Get the details of youngest male employee in the product development department?
 							Optional<Employee> youngestEmp = eList.stream()
 																.filter(emp -> emp.getEDepartment() == "HR" && emp.getEGender() =="Male")
 																	.min(Comparator.comparing(Employee::getEAge));
@@ -92,7 +92,7 @@ public class EmpCRUD
 							System.out.println(yEmp.getEName());
 							
 							
-	// Who has the most working experience in the organization?
+	// 9. Who has the most working experience in the organization?
 							Employee seniorEmp = eList.stream()
 														.sorted(Comparator.comparing(Employee::getYearOfJoining))
 															.findFirst().get();
@@ -101,7 +101,7 @@ public class EmpCRUD
 							System.out.println(seniorEmp.getEAge());
 							
 	
-	// How many male and female employees are there in the sales and marketing team?
+	// 10. How many male and female employees are there in the sales and marketing team?
 							Map<String, Long> empHR = eList.stream()
 								.filter(emp -> emp.getEDepartment().equals("HR"))
 									.collect(Collectors.groupingBy(Employee::getEGender,Collectors.counting()));
@@ -112,7 +112,7 @@ public class EmpCRUD
 							}
 							
 													
-	// What is the average salary of male and female employees?
+	// 11. What is the average salary of male and female employees?
 					Map<String, Double> avgSal = eList.stream()
 													.collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getESalary)));
 													
@@ -124,7 +124,7 @@ public class EmpCRUD
 						
 						
 						
-	// List down the names of all employees in each department?
+	// 12. List down the names of all employees in each department?
 						Map<String, List<Employee>> eNames = eList.stream()
 													.collect(Collectors.groupingBy(Employee::getEDepartment));
 							
@@ -142,17 +142,30 @@ public class EmpCRUD
 							}	
 						}
 						
-						*/
 						
-	// What is the average salary and total salary of the whole organization?
+						
+	// 13. What is the average salary and total salary of the whole organization?
 							DoubleSummaryStatistics ds = eList.stream().collect(Collectors.summarizingDouble(Employee::getESalary));
 	
 							System.out.println("Average salary of the organization: " +ds.getAverage());
 							System.out.println("Total salary of the organization: " +ds.getSum());
 							System.out.println("Employee count of the organization: " +ds.getCount());
 
-
+						
 	
+	// 14. Separate the employees who are younger or equal to 25 years from those employees who are older than 25 years.
+							 Map<Boolean, List<Employee>> empList = eList.stream()
+									 									.collect(Collectors.partitioningBy(emp -> emp.getEAge() > 25));
+							
+							 for(Entry<Boolean,List<Employee>> employee : empList.entrySet())
+							 {
+								 System.out.println(employee);
+							 }
+							 
+							 */
+	// Who is the oldest employee in the organization? What is his age and which department he belongs to?
+							Employee oldestEmp = eList.stream().max(Comparator.comparing(Employee::getEAge)).get();
+							System.out.println("Seniormost employee of the organization:" +oldestEmp.getEName());
 	}
 
 }
