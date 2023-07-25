@@ -31,6 +31,7 @@ public class BookController
 
 	// generating the API.,
 	// 1. post for inserting the data.,
+	// localhost:9090/insertBookData
 	@PostMapping("/insertBookData")
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
 	{
@@ -47,6 +48,7 @@ public class BookController
 	}
 	
 	// 2. get for selecting the data.,
+	//localhost:9090/getBookData
 	@GetMapping("/getBookData")
 	public List<Book> getCarData()
 	{
