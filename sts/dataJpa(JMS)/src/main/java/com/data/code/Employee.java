@@ -1,4 +1,4 @@
-package com.dataJpa.code;
+package com.data.code;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
