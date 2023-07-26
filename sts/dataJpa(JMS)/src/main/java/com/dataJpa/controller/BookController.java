@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dataJpa.exception.UserNotFoundException;
 import com.dataJpa.madal.Book;
 import com.dataJpa.repo.BookRepo;
 import com.dataJpa.service.BookService;
-import  com.dataJpa.exception.*;
 
 @RestController
 //@CrossOrigin()
@@ -69,7 +67,7 @@ public class BookController
 		public Book getBook(@PathVariable int bId)
 		{
 			return bRepo.findById(bId)
-					.orElseThrow(()-> new UserNotFoundException(bId));
+					.orElseThrow(()-> new com.data.exception.UserNotFoundException(bId));
 		}
 
 	
@@ -93,7 +91,7 @@ public class BookController
 					
 					return bRepo.save(book);
 					
-				}).orElseThrow(()-> new UserNotFoundException(bId));
+				}).orElseThrow(()-> new com.data.exception.UserNotFoundException(bId));
 	}
 		
 	// 4. delete for deleting the data.,
@@ -110,7 +108,7 @@ public class BookController
 	{
 		if(!bRepo.existsById(bId))
 		{
-			throw new UserNotFoundException(bId);
+			throw new com.data.exception.UserNotFoundException(bId);
 		}
 		bRepo.deleteById(bId);
 		return "Book with the id "+bId+ " deleted from the database.,";

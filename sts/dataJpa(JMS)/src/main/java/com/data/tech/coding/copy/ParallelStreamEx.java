@@ -1,4 +1,4 @@
-package com.data.tech.coding.sorting.copy;
+package com.data.tech.coding.copy;
 
 import java.util.*;
 

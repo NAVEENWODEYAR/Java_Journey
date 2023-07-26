@@ -1,4 +1,4 @@
-package com.dataJpa.exception;
+package com.data.exception;
 
 import java.util.HashMap;
 import java.util.Map;

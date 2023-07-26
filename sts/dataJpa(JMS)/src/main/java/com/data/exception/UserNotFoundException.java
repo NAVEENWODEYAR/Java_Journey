@@ -1,4 +1,4 @@
-package com.dataJpa.exception;
+package com.data.exception;
 
 @SuppressWarnings("serial")
 public class UserNotFoundException extends RuntimeException
