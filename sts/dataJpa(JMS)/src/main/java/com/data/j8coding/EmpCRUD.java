@@ -45,10 +45,11 @@ public class EmpCRUD {
 					*/
 	
 	// 5. Employee with highest salary.,
-					Optional<Employee> maxSal = eList.stream().max(Comparator.comparing(Employee::geteAge));
-					Employee mxSal = maxSal.get();
-					System.out.println(mxSal.geteName());
-					System.out.println(mxSal.geteAge());
+//					Optional<Employee> maxSal = eList.stream().max(Comparator.comparing(Employee::geteAge));
+					Employee maxSal = eList.stream().max(Comparator.comparing(Employee::geteAge)).get(); 
+//					Employee mxSal = maxSal.get();
+					System.out.println(maxSal.geteName());
+					System.out.println(maxSal.geteAge());
 
 	}
 
