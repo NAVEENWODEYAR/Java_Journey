@@ -74,11 +74,11 @@ public class BookController
 
 	
 	// 3. put for updating the data.,
-	@PutMapping("/updateBookData/{bId}")
-	public Book updateCarData(@PathVariable int bId, @RequestBody Book bk)
-	{
-		return bookService.updateBookData(bId, bk);
-	}
+//	@PutMapping("/updateBookData/{bId}")
+//	public Book updateCarData(@PathVariable int bId, @RequestBody Book bk)
+//	{
+//		return bookService.updateBookData(bId, bk);
+//	}
 	
 	// 3. update the book
 	@PutMapping("/updateBook/{bId}")
