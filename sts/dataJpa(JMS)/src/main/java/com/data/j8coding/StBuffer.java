@@ -14,7 +14,7 @@ public class StBuffer {
 		StringBuilder sbl = new StringBuilder();
 					sbl.append(sbl);
 					sbl.append("StringBuilder");
-					sbl.append("StringBuilder");
+					sbl.append("StringBuild");
 					System.out.println(sbl);
 		
 	}
