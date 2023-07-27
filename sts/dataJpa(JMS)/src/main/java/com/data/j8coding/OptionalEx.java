@@ -7,7 +7,7 @@ public class OptionalEx {
 	public static void main(String[] args) 
 	{
 		Optional<String> st = Optional.of("Value");
-					if(st.isEmpty())
+					if(st.isPresent())
 					{
 						System.out.println(st.get());
 					}
