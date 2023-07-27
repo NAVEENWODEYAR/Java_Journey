@@ -15,7 +15,7 @@ public class SecurityConfig
 	    public WebSecurityCustomizer webSecurityCustomizer()
 	 	{
 	        return (web) -> web.ignoring()
-	        					.requestMatchers("/getBookData","/getBook/{bId}","insertBookData");
+	        					.requestMatchers("/getBookData","/getBook/{bId}","/insertBookData");
 	    }
 	
 }

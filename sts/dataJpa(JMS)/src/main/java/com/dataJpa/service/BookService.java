@@ -36,7 +36,8 @@ public class BookService
 	public Book insertBook (Book bk)
 	{
 		Book b1 = bRepo.save(bk);
-				eService.sendEmail(bk.getaMail(), "Book added to the collection successfully..,", "Adding the new book");
+				String token = tokenUtil.createToken(bk.getbId());
+				eService.sendEmail(bk.getaMail(), "Book added to the collection successfully..,"+token+"", "Adding the new book");
 				
 				return b1;
 	}

@@ -14,7 +14,7 @@ public class TokenUtil
 {
 	private static final String TOKEN_SECRET = "Books";
 	
-	public String createToken(Long id)
+	public String createToken(int id)
 	{
 		try
 		{
@@ -35,9 +35,9 @@ public class TokenUtil
 	
 	
 	// method to decode the string.,
-	public Long decodeToken(String token)
+	public int decodeToken(String token)
 	{
-		Long userid;
+		int userid;
 		
 		// to verify the algoritham,
 		Verification verification = null;
@@ -56,7 +56,7 @@ public class TokenUtil
 		DecodedJWT decodedJWT = jwtVerifier.verify(token);
 		
 		Claim claim = decodedJWT.getClaim("user_id");
-		userid = claim.asLong();
+		userid = claim.asInt();
 		return userid;
 	}
 	
