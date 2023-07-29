@@ -1,7 +1,24 @@
+server:
+  port: 5050
+
 #To disable the banner
 spring:
   main:
-    banner-mode: off
-    
-server:
-  port: 0
+    banner-mode: console
+  datasource:
+    url: jdbc:mysql://localhost:3306/jasondb?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: boss
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+       
+# Spring security configurations.,
+  security:
+    user:
+      name: boss
+      password: boss
+
+  
