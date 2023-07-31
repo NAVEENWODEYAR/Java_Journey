@@ -9,14 +9,13 @@ public class HashSetEx {
 		// HashSet stores unique values.,
 		HashSet<Integer> hs = new HashSet();
 						hs.add(6);
+						hs.add(5);
 						hs.add(6);
-						hs.add(6);
-						hs.add(6);
+						hs.add(7);
 						hs.add(6);
 						hs.add(6);
 						System.out.println(hs);
 						System.out.println(hs.size());
-						System.out.println(hs.remove(5));
 	}
 
 }
