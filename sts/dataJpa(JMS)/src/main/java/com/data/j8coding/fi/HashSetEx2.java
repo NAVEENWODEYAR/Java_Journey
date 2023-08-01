@@ -27,6 +27,9 @@ public class HashSetEx2 {
 						lt.add(1);
 						lt.add(4);
 						System.out.println(lt);
+						
+						
+			
 	}
 
 }
