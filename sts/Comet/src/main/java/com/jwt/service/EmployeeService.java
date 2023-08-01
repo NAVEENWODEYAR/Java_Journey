@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.jwt.modal.Employee;
 import com.jwt.repo.EmployeeRepo;
+import com.jwt.utility.MailSender;
 
 @Service
 public class EmployeeService 
@@ -15,11 +16,17 @@ public class EmployeeService
 	@Autowired
 	private EmployeeRepo empRepo;
 	
+	@Autowired
+	MailSender mailSender;
+	
 	// CRUD operations.,
 	// 1.insert the data.,
 	public Employee insertEmployee(Employee emp)
 	{
-		return empRepo.save(emp);
+		Employee e1 = empRepo.save(emp);
+				mailSender.sendMail("Regarding the User Registration.,", "Demo mail", emp.getEmpMail());
+					
+		return e1;
 	}
 	
 	// 2. select the data.,
@@ -28,7 +35,7 @@ public class EmployeeService
 		return empRepo.findAll();
 	}
 	
-	// 3. updatae the record
+	// 3. Update the record
 	public Employee updateEmployee(Employee emp, Integer empId)
 	{
 		Employee e = empRepo.findById(empId).get();

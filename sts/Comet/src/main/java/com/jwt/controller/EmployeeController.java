@@ -24,32 +24,20 @@ public class EmployeeController
 	@Autowired
 	private EmployeeService empService;
 	
-	// REST API generation
-	// 1. Post for sending the data.,
-//	@PostMapping("/insertEmployee")
-//	public Employee insertEmployee(@RequestBody Employee emp)
-//	{
-//		return empService.insertEmployee(emp);
-//	}
+	/** REST API generation
+	 1. Post for sending the data., */
 	@PostMapping("/insertEmployee")
-	public String insertEmployee()
+	public Employee insertEmployee(@RequestBody Employee emp)
 	{
-		return "Can't be accessed.,";
+		return empService.insertEmployee(emp);
 	}
 	
-//	// 2. Get for receiving the data.,
-//	@GetMapping("/getEmployes")  // http://localhost:5050/getEmployes
-//	public List<Employee> getEmployee()
-//	{
-//		return empService.getEmployees();
-//	}
-	
 	// 2. Get for receiving the data.,
-		@GetMapping("/getEmployes")  // http://localhost:5050/getEmployes
-		public String getEmployee()
-		{
-			return "Welcome to the Emp CLUB.,";
-		}
+	@GetMapping("/getEmployes")  // http://localhost:5050/getEmployes
+	public List<Employee> getEmployee()
+	{
+		return empService.getEmployees();
+	}
 	
 	// 3. Put for updating the record.,
 	@PutMapping("/updateEmployee/{empId}")
