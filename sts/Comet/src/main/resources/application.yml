@@ -20,5 +20,15 @@ spring:
     user:
       name: boss
       password: boss
+      
+# Java Mail Service Configurations.,
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: naveenkrishnawodeyar@gmail.com
+    password: tzjccfyolwkcznbd
+    protocol: TLSv1.2
+    test-connection: true
+    
 
   

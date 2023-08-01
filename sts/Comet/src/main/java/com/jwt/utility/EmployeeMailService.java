@@ -1,0 +1,28 @@
+package com.jwt.utility;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EmployeeMailService 
+{
+
+	// DI
+	@Autowired
+	JavaMailSender javaMailSender;
+	
+	public void sendMail(String toMail, String subject, String body)
+	{
+		SimpleMailMessage sm = new SimpleMailMessage();
+							sm.setFrom("naveenkrishnawodeyar@gmail.com");
+							sm.setTo(toMail);
+							sm.setText(body);
+							sm.setSubject(subject);
+							
+							javaMailSender.send(sm);
+							System.out.println("Mail sent to the user.,");
+							
+	}
+}

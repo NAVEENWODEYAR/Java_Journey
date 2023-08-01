@@ -4,10 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.jwt.modal.Employee;
 import com.jwt.repo.EmployeeRepo;
-import com.jwt.utility.MailSender;
+import com.jwt.utility.EmployeeMailService;
 
 @Service
 public class EmployeeService 
@@ -17,14 +16,14 @@ public class EmployeeService
 	private EmployeeRepo empRepo;
 	
 	@Autowired
-	MailSender mailSender;
+	EmployeeMailService employeeMailService;
 	
 	// CRUD operations.,
 	// 1.insert the data.,
 	public Employee insertEmployee(Employee emp)
 	{
 		Employee e1 = empRepo.save(emp);
-				mailSender.sendMail("Regarding the User Registration.,", "Demo mail", emp.getEmpMail());
+				employeeMailService.sendMail("Regarding the User Registration.,", "Demo mail", emp.getEmpMail());
 					
 		return e1;
 	}
