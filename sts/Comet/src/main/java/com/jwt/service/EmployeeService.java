@@ -23,7 +23,7 @@ public class EmployeeService
 	public Employee insertEmployee(Employee emp)
 	{
 		Employee e1 = empRepo.save(emp);
-				employeeMailService.sendMail("Regarding the User Registration.,", "Demo mail", emp.getEmpMail());
+				employeeMailService.sendMail(emp.getEmpMail(), "Ragarding the new user registration,", "Dear "+emp.getEmpName()+" you are successfully registered with our services, Thank you & Welcome to our family.,");
 					
 		return e1;
 	}

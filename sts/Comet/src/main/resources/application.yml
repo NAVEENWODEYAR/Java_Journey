@@ -12,7 +12,7 @@ spring:
     password: boss
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
        
 # Spring security configurations.,
@@ -27,8 +27,12 @@ spring:
     port: 587
     username: naveenkrishnawodeyar@gmail.com
     password: tzjccfyolwkcznbd
-    protocol: TLSv1.2
-    test-connection: true
+    protocol: smtp
+    test-connection: false
+
     
+spring.mail.properties.mail.smtp.starttls.enable : true
+spring.mail.properties.mail.smtp.starttls.required : true
+spring.mail.properties.mail.smtp.auth : true
 
   
