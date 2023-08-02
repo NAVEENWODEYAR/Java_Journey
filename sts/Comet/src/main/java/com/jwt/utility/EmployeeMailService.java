@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class EmployeeMailService 
 {
 
-	// DI
+	// DI, object of the class.,
 	@Autowired
 	JavaMailSender javaMailSender;
 	
