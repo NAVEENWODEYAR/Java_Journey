@@ -25,4 +25,15 @@ public class EmployeeMailService
 							System.out.println("Mail sent to the user.,");
 							
 	}
+	
+//	public void sendMails(String toMail[],String subject,String body)
+//	{
+//		SimpleMailMessage sml = new SimpleMailMessage();
+//							sml.setFrom("NAVEENKRISHNAWODEYAR@GMAIL.COM");
+//							sml.setTo(toMail[]);
+//							sml.setSubject(subject);
+//							sml.setText(body);
+//							
+//							javaMailSender.send(sml);
+//	}
 }

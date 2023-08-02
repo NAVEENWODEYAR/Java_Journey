@@ -29,10 +29,15 @@ spring:
     password: tzjccfyolwkcznbd
     protocol: smtp
     test-connection: false
-
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
     
-spring.mail.properties.mail.smtp.starttls.enable : true
-spring.mail.properties.mail.smtp.starttls.required : true
-spring.mail.properties.mail.smtp.auth : true
+#spring.mail.properties.mail.smtp.starttls.enable : true
+#spring.mail.properties.mail.smtp.starttls.required : true
+#spring.mail.properties.mail.smtp.auth : true
 
   

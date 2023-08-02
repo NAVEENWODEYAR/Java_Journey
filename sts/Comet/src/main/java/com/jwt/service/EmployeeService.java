@@ -3,6 +3,7 @@ package com.jwt.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.jwt.modal.Employee;
 import com.jwt.repo.EmployeeRepo;
@@ -19,7 +20,7 @@ public class EmployeeService
 	EmployeeMailService employeeMailService;
 	
 	// CRUD operations.,
-	// 1.insert the data.,
+	// 1.insert the record.,
 	public Employee insertEmployee(Employee emp)
 	{
 		Employee e1 = empRepo.save(emp);
@@ -28,10 +29,23 @@ public class EmployeeService
 		return e1;
 	}
 	
+	// 1.a insert data.,
+	public List<Employee> insertEmployees(List<Employee> emp)
+	{
+		List<Employee> e1 = empRepo.saveAll(emp);
+		return e1;
+	}
+	
 	// 2. select the data.,
 	public List<Employee> getEmployees()
 	{
 		return empRepo.findAll();
+	}
+	
+	// 2. select the record.,
+	public Employee getEmployee(Integer empId)
+	{
+		return empRepo.findById(empId).get();
 	}
 	
 	// 3. Update the record
@@ -50,4 +64,6 @@ public class EmployeeService
 		empRepo.deleteById(empId);
 		return "";
 	}
+
+	
 }

@@ -24,33 +24,48 @@ public class EmployeeController
 	@Autowired
 	private EmployeeService empService;
 	
-	/** REST API generation
-	 1. Post for sending the data., */
-	@PostMapping("/insertEmployee")
-	public Employee insertEmployee(@RequestBody Employee emp)
-	{
-		return empService.insertEmployee(emp);
-	}
-	
-	// 2. Get for receiving the data.,
-	@GetMapping("/getEmployes")  // http://localhost:5050/getEmployes
-	public List<Employee> getEmployee()
-	{
-		return empService.getEmployees();
-	}
-	
-	// 3. Put for updating the record.,
-	@PutMapping("/updateEmployee/{empId}")
-	public Employee updateEmployee(@RequestBody Employee emp, @PathVariable Integer empId)
-	{
-		return empService.updateEmployee(emp, empId);
-	}
-	
-	// 4.Delete for deleting the data.,
-	@DeleteMapping("/deleteEmployee/{empId}")
-	public String deleteEmployee(@PathVariable Integer empId)
-	{
-		 empService.deleteEmployee(empId);
-		return "Employee with, "+empId+" deleted successfully";
-	}
+			/** REST API generation
+			 1. Post for sending the data., */
+			@PostMapping("/insertEmployee")
+			public Employee insertEmployee(@RequestBody Employee emp)
+			{
+				return empService.insertEmployee(emp);
+			}
+			
+			// 1.a sending the list object.,
+			@PostMapping("/insertEmployees")
+			public List<Employee> insertEmployees(@RequestBody List<Employee> emp)
+			{
+				List<Employee> e1 = empService.insertEmployees(emp);
+				return e1;
+			}
+			
+			// 2. Get for receiving the data.,
+			@GetMapping("/getEmployes")  // http://localhost:5050/getEmployes
+			public List<Employee> getEmployee()
+			{
+				return empService.getEmployees();
+			}
+			
+			// 2.a get the record
+			@GetMapping("/getEmployee/{empId}")
+			public Employee getEmployee(@PathVariable Integer empId)
+			{
+				return empService.getEmployee(empId);
+			}
+			
+			// 3. Put for updating the record.,
+			@PutMapping("/updateEmployee/{empId}")
+			public Employee updateEmployee(@RequestBody Employee emp, @PathVariable Integer empId)
+			{
+				return empService.updateEmployee(emp, empId);
+			}
+			
+			// 4.Delete for deleting the data.,
+			@DeleteMapping("/deleteEmployee/{empId}")
+			public String deleteEmployee(@PathVariable Integer empId)
+			{
+				 empService.deleteEmployee(empId);
+				return "Employee with, "+empId+" deleted successfully";
+			}
 }
