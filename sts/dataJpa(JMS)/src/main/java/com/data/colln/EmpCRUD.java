@@ -18,6 +18,7 @@ public class EmpCRUD
 												new Employee(6,27,"Riya","Female","Tech",2020,14567.00),
 												new Employee(9,29,"Emma","Female","Testing",2010,84567.00),
 												new Employee(19,39,"Emanuel","Male","HR",2018,64567.00),
+												new Employee(29,49,"Watson","Male","HR",1999,754567.00),
 												new Employee(3,49,"Roney","Male","Tech",2018,24567.00),
 												new Employee(6,36,"Monali","Female","Operations",2010,84567.00));
 		
@@ -202,14 +203,17 @@ public class EmpCRUD
 		
 	//  Get the details of youngest male employee in the product development department?
 											eList.stream().collect(Collectors.minBy(Comparator.comparing(Employee::getEAge))).ifPresent(e-> System.out.println(e.getEName()+","+e.getEAge()));
-	*/
+	
 	// Who has the most working experience in the organization?
 											Employee e = eList.stream().sorted(Comparator.comparing(Employee::getYearOfJoining)).findFirst().get();
 											System.out.println(e.getEName()+","+e.getYearOfJoining());
-
-											
-											
-											
+		 
+	// How many male and female employees are there in the sales and marketing team?	
+												eList.stream().filter(emp -> emp.getEDepartment().equals("HR")).collect(Collectors.groupingBy(Employee::getEGender,Collectors.counting())).entrySet().forEach(System.out::println);
+		*/									
+	// What is the average salary of male and female employees?
+												eList.stream().collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getESalary))).entrySet().forEach(System.out::println);
+												
 	}
 }
 	
