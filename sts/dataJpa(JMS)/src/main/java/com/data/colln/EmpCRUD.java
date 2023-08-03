@@ -180,10 +180,25 @@ public class EmpCRUD
 	//  What is the average age of male and female employees?
 								Map<String, Double> avgAge = eList.stream().collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getEAge)));
 								System.out.println(avgAge);
-								*/
+								
 	// Get the details of highest paid employee in the organization?
 								Employee maxSal = eList.stream().collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getESalary))).get();
 								System.out.println("Highest paid Employee in the organisation: "+maxSal.getEName());
+								
+		
+	// Get the names of all employees who have joined after 2015?
+								eList.stream().filter(emp -> emp.getYearOfJoining() > 2015).forEach(emp ->System.out.println(emp.getEName()));
+								eList.stream().filter(emp -> emp.getYearOfJoining() > 2015).map(Employee::getEName).forEach(System.out::println);
+								
+	
+	// Count the number of employees in each department?
+								 Map<String, Long> empCount = eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment,Collectors.counting()));
+								 System.out.println(empCount);
+								 							eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment,Collectors.counting())).entrySet().forEach(System.out::println);
+								 	*/
+	
+	//  What is the average salary of each department?
+											eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment,Collectors.averagingDouble(Employee::getESalary))).entrySet().forEach(System.out::println);
 	
 	
 	}
