@@ -167,13 +167,16 @@ public class EmployeeCRUD {
 			{
 				System.out.println(e.getEName());
 			}
-		}*/
+		}
 		
 		// Who is the oldest employee in the organization? What is his age and which department he belongs to?
 		Employee oldestEmp = empList.stream()
 							.max(Comparator.comparing(Employee::getEId)).get();
 							
 		System.out.println("Oldest employee "+oldestEmp.getEName());
+		*/
+						empList.stream().filter(e -> e.getEName().length() > 2).limit(5).skip(3).forEach(e->System.out.println(e.getEName()));
+		
 	}
 }
 
