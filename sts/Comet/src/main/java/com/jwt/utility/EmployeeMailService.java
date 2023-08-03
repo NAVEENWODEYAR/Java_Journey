@@ -26,14 +26,16 @@ public class EmployeeMailService
 							
 	}
 	
-	public void sendMails(String toMail[],String subject,String body)
+	public void sendMails(String[] strings,String subject,String body)
 	{
 		SimpleMailMessage sml = new SimpleMailMessage();
 							sml.setFrom("NAVEENKRISHNAWODEYAR@GMAIL.COM");
-							sml.setTo(new toMail[] {});
+							sml.setTo(new String[] {});
 							sml.setSubject(subject);
-							sml.setText(body);
+							sml.setText(body); 
 							
 							javaMailSender.send(sml);
 	}
+
+
 }

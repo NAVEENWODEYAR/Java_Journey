@@ -33,6 +33,7 @@ public class EmployeeService
 	public List<Employee> insertEmployees(List<Employee> emp)
 	{
 		List<Employee> e1 = empRepo.saveAll(emp);
+							employeeMailService.sendMails(new String[]  {emp.get(0).getEmpMail(),emp.get(1).getEmpMail()}, "Registration", "Successfully Registered.,");
 		return e1;
 	}
 	
