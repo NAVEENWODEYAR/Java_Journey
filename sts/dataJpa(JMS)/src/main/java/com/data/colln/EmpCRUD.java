@@ -14,7 +14,7 @@ public class EmpCRUD
 	{
 		// insert dummy data.,
 		List<Employee> eList = Arrays.asList(new Employee(1,25,"Monali","Female","HR",2012,34567.00),
-												new Employee(2,21,"Monark","Male","Testing",2011,64567.00),
+												new Employee(2,21,"Monark","Male","Testing",1998,64567.00),
 												new Employee(6,27,"Riya","Female","Tech",2020,14567.00),
 												new Employee(9,29,"Emma","Female","Testing",2010,84567.00),
 												new Employee(19,39,"Emanuel","Male","HR",2018,64567.00),
@@ -195,12 +195,22 @@ public class EmpCRUD
 								 Map<String, Long> empCount = eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment,Collectors.counting()));
 								 System.out.println(empCount);
 								 							eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment,Collectors.counting())).entrySet().forEach(System.out::println);
-								 	*/
+								 
 	
 	//  What is the average salary of each department?
 											eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment,Collectors.averagingDouble(Employee::getESalary))).entrySet().forEach(System.out::println);
-	
-	
-	}
+		
+	//  Get the details of youngest male employee in the product development department?
+											eList.stream().collect(Collectors.minBy(Comparator.comparing(Employee::getEAge))).ifPresent(e-> System.out.println(e.getEName()+","+e.getEAge()));
+	*/
+	// Who has the most working experience in the organization?
+											Employee e = eList.stream().sorted(Comparator.comparing(Employee::getYearOfJoining)).findFirst().get();
+											System.out.println(e.getEName()+","+e.getYearOfJoining());
 
+											
+											
+											
+	}
 }
+	
+	
