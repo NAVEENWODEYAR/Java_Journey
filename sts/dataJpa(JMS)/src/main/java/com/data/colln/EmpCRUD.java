@@ -6,6 +6,8 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.antlr.v4.runtime.misc.EqualityComparator;
+
 
 public class EmpCRUD 
 {
@@ -210,10 +212,27 @@ public class EmpCRUD
 		 
 	// How many male and female employees are there in the sales and marketing team?	
 												eList.stream().filter(emp -> emp.getEDepartment().equals("HR")).collect(Collectors.groupingBy(Employee::getEGender,Collectors.counting())).entrySet().forEach(System.out::println);
-		*/									
+											
 	// What is the average salary of male and female employees?
 												eList.stream().collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getESalary))).entrySet().forEach(System.out::println);
-												
+		
+		
+	// List down the names of all employees in each department?
+												eList.stream().collect(Collectors.groupingBy(Employee::getEDepartment)).entrySet().forEach(System.out::println);
+	
+	// What is the average salary and total salary of the whole organization?
+												DoubleSummaryStatistics ds = eList.stream().collect(Collectors.summarizingDouble(Employee::getESalary));
+																				System.out.println("Total salary of the organization: "+ds.getSum());
+																				System.out.println("Average salary of the organization: "+ds.getAverage());
+																				System.out.println("Minimum salary of the organization: "+ds.getMin());
+																				System.out.println("Maximum salary of the organization: "+ds.getMax());
+		
+     //  Separate the employees who are younger or equal to 25 years from those employees who are older than 25 years.
+														eList.stream().collect(Collectors.partitioningBy(emp -> emp.getEAge() > 25)).entrySet().forEach(System.out::println);
+	*/
+	//  Who is the oldest employee in the organization? What is his age and which department he belongs to?
+														Employee e = eList.stream().max(Comparator.comparing(Employee::getEAge)).get();
+														System.out.println("Oldest Employee in the organization,"+e.getEName()+","+e.getEAge());
 	}
 }
 	
