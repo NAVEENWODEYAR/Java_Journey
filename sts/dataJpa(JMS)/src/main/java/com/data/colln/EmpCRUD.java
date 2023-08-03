@@ -162,10 +162,30 @@ public class EmpCRUD
 								 System.out.println(employee);
 							 }
 							 
-							 */
+							 
 	// Who is the oldest employee in the organization? What is his age and which department he belongs to?
 							Employee oldestEmp = eList.stream().max(Comparator.comparing(Employee::getEAge)).get();
 							System.out.println("Seniormost employee of the organization:" +oldestEmp.getEName());
+							
+		
+		
+	// How many male and female employees are there in the organization?
+							Map<String, Long> genderCount = eList.stream().collect(Collectors.groupingBy(Employee::getEGender,Collectors.counting()));
+							System.out.println(genderCount);
+							
+							
+	//Print the name of all departments in the organization?
+								eList.stream().map(Employee::getEDepartment).distinct().forEach(System.out::println);
+		
+	//  What is the average age of male and female employees?
+								Map<String, Double> avgAge = eList.stream().collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getEAge)));
+								System.out.println(avgAge);
+								*/
+	// Get the details of highest paid employee in the organization?
+								Employee maxSal = eList.stream().collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getESalary))).get();
+								System.out.println("Highest paid Employee in the organisation: "+maxSal.getEName());
+	
+	
 	}
 
 }
