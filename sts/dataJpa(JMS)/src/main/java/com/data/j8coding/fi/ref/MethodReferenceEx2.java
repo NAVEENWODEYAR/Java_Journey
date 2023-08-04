@@ -2,7 +2,6 @@ package com.data.j8coding.fi.ref;
 
 import java.util.function.Function;
 
-import com.data.j8coding.fi.BiFunctionEx;
 
 public class MethodReferenceEx2 {
 	
