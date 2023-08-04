@@ -2,6 +2,8 @@ package com.data.j8coding.fi.ref;
 
 import java.util.function.Function;
 
+import com.data.j8coding.fi.BiFunctionEx;
+
 public class MethodReferenceEx2 {
 	
 	public static void main(String[] args) 
@@ -13,6 +15,11 @@ public class MethodReferenceEx2 {
 											});
 		
 		System.out.println(fn.apply("Str"));
+		
+		Function<String, String> f1 = (s)->s.toLowerCase();
+		Function<String, String> f2 = String::toUpperCase;
+		System.out.println(f1.apply("String"));
+		System.out.println(f2.apply("String"));
 	}
 
 }
