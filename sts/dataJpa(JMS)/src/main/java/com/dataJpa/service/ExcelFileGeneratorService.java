@@ -32,10 +32,10 @@ public class ExcelFileGeneratorService
 			HSSFSheet sheet = workBook.createSheet("Books List");
 			HSSFRow row = sheet.createRow(0);
 					row.createCell(0).setCellValue("Book ID");
-					row.createCell(0).setCellValue("Author Mail");
-					row.createCell(0).setCellValue("Book Author");
-					row.createCell(0).setCellValue("Book Name");
-					row.createCell(0).setCellValue("Book Price");
+					row.createCell(1).setCellValue("Author Mail");
+					row.createCell(2).setCellValue("Book Author");
+					row.createCell(3).setCellValue("Book Name");
+					row.createCell(4).setCellValue("Book Price");
 					
 					int dataRowIndex = 1;
 						for(Book books: bk )
