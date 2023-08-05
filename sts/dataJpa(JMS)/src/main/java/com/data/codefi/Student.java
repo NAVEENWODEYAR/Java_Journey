@@ -90,7 +90,7 @@ public class Student
 						}
 						
 						
-						System.out.println("***Iterator****");						
+						System.out.println("***ForEach Loop to iterate the Collection****");						
 						for(Student st: stList)
 						{
 							System.out.println(st.getsName());
