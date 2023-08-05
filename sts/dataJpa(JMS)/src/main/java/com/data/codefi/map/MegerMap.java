@@ -29,7 +29,11 @@ public class MegerMap {
 								*/
 								
 								marksList2.forEach((key,value)-> marksList.merge(key, value, (v1,v2)-> (v1+v2)/2));
-								System.out.println(marksList);
+
+								for(Map.Entry<String, Integer> mp:marksList.entrySet())
+								{
+									System.out.println(mp.getKey()+":"+mp.getValue());
+								}
 								
 								
 
