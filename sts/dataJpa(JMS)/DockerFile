@@ -1,0 +1,7 @@
+FROM openjdk:11
+
+COPY target/docker_demo_app /user/app/
+
+WORKDIR /user/app
+
+ENTRYPOINT [ "java","jar","docker_demo_app" ]
