@@ -37,6 +37,13 @@ public class MegerMap2 {
 									System.out.println(m.getKey()+":"+m.getValue());
 								}
 
+				
+								// using the merge().,
+								marksList4.forEach((key,value)->marksList3.merge(key, value, (v1,v2)-> v1+v2));
+								for(Map.Entry<String, Integer>mn:marksList4.entrySet())
+								{
+									System.out.println(mn.getKey()+":"+mn.getValue());
+								}
 	}
 
 }
