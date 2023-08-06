@@ -40,4 +40,7 @@ spring:
 #spring.mail.properties.mail.smtp.starttls.required : true
 #spring.mail.properties.mail.smtp.auth : true
 
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
   

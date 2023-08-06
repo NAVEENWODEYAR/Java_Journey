@@ -24,7 +24,7 @@ public class ExcelController
 		// set the content type.,
 		response.setContentType("application/octet-stream");
 		
-		String headerKey = "ContentDisposition";
+		String headerKey = "Content-Disposition";
 		String headerValue = "attachment;filename=Books.xls";
 		
 		response.setHeader(headerKey, headerValue);
