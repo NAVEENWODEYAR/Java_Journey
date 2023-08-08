@@ -1,5 +1,6 @@
 server:
   port: 1234
+
   
 spring:
   datasource:
@@ -15,4 +16,10 @@ spring:
     generate-ddl: true
     open-in-view: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+   
+# To disable the swagger-ui
+springdoc:
+  swagger-ui:
+    enabled: false
+  use-management-port: true
    
