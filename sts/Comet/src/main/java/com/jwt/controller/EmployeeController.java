@@ -25,7 +25,8 @@ public class EmployeeController
 	private EmployeeService empService;
 	
 			/** REST API generation
-			 1. Post for sending the data., */
+			 1. Post for sending the data., 
+			 http://localhost:5050/emp/insertEmployee */
 			@PostMapping("/insertEmployee")
 			public Employee insertEmployee(@RequestBody Employee emp)
 			{
@@ -41,13 +42,15 @@ public class EmployeeController
 			}
 			
 			// 2. Get for receiving the data.,
-			@GetMapping("/getEmployes")  // http://localhost:5050/getEmployes
+			// http://localhost:5050/getEmployes
+			@GetMapping("/getEmployes")  
 			public List<Employee> getEmployee()
 			{
 				return empService.getEmployees();
 			}
 			
 			// 2.a get the record
+			// http://localhost:5050/emp/getEmployee/
 			@GetMapping("/getEmployee/{empId}")
 			public Employee getEmployee(@PathVariable Integer empId)
 			{
