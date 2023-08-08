@@ -17,7 +17,7 @@ public class EmployeeService
 	private EmployeeRepo empRepo;
 	
 	@Autowired
-	EmployeeMailService employeeMailService;
+	private EmployeeMailService employeeMailService;
 	
 	// CRUD operations.,
 	// 1.insert the record.,

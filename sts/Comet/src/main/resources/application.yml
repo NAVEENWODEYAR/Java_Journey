@@ -38,6 +38,7 @@ spring:
           auth: true
           starttls:
             enable: true
+      
             
     
 #spring.mail.properties.mail.smtp.starttls.enable : true
@@ -48,7 +49,7 @@ spring:
 
   mvc:
     pathmatch:
-      matching-strategy: ant-path-matcher
+      matching-strategy: ANT_PATH_MATCHER
 #  datasource:
 #    url: jdbc:h2:mem:testdb
 #    driver-class-name: org.h2.Driver
