@@ -16,7 +16,7 @@ import com.jwt.modal.Employee;
 import com.jwt.service.EmployeeService;
 
 @RestController
-@RequestMapping("/emp")
+//@RequestMapping("/emp")
 public class EmployeeController 
 {
 

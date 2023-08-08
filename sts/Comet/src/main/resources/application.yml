@@ -7,11 +7,11 @@ spring:
     banner-mode: console
    
 
-#  datasource:
-#    url: jdbc:mariadb://localhost:1996/jasondb?createDatabaseIfNotExist=true
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    username: root
-#    password: boss
+  datasource:
+    url: jdbc:mariadb://localhost:1996/jasondb?createDatabaseIfNotExist=true
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: boss
   jpa:
     hibernate:
       ddl-auto: update
@@ -49,12 +49,14 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: 
-  h2:
-    console:
-      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driver-class-name: org.h2.Driver
+#    username: root
+#    password: boss
+#  h2:
+#    console:
+#      enabled: true
+      
+swagger.enable : true
       
