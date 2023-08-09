@@ -11,9 +11,9 @@ import io.swagger.v3.oas.annotations.info.License;
 @SpringBootApplication
 @OpenAPIDefinition(
 					info = @Info(
-									title = "Swager_Documentation for the REST API",
+									title = "Test your API here.,",
 									version = "2.0.0",
-									description = "Demo code for API documentation,",
+									description = "API Documentation,",
 									termsOfService = "Test the API",
 									contact = @Contact(
 														name = "Boss",
