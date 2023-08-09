@@ -1,3 +1,4 @@
+// Program to separate the numbers and print them,
 package com.data.codefi;
 
 public class NumbersExtractor 
