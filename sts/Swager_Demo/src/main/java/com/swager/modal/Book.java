@@ -38,13 +38,8 @@ public class Book
 	private double bookPrice;
 	
 	@ElementCollection
+	@CollectionTable(name = "Publishers",
+						joinColumns = @JoinColumn(name="bookID"))
 	private List<String> bookPublishers;
 
-	public Book(List<String> bookPublishers) 
-	{
-		super();
-		this.bookPublishers = bookPublishers;
-	}
-	
-	
 }

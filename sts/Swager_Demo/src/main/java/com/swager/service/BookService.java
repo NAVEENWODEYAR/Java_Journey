@@ -28,6 +28,11 @@ public class BookService
 			return bookRepo.save(bk);
 	}
 	
+	public List<Book> getAll()
+	{
+		return bookRepo.findAll();
+	}
+	
 	// CRUD operations.,
 	// 1. insert the data into the table.,
 	public List<Book> insertBooks(List<Book> books)
