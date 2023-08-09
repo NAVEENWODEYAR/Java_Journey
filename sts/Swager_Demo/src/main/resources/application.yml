@@ -18,8 +18,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
    
 # To disable the swagger-ui
-springdoc:
-  swagger-ui:
-    enabled: false
-  use-management-port: true
+#springdoc:
+#  swagger-ui:
+#    enabled: false
    

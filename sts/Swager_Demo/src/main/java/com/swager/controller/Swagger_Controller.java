@@ -38,7 +38,9 @@ public class Swagger_Controller
 	@GetMapping("/getList")
 	public List getList()
 	{
-		List<String> list = Arrays.asList("Ammu","Bhas");
+		List<String> list = Arrays.asList("Ammu","Bhas","Gowri","Gani");
 		return list;
 	}
+	
+	
 }
