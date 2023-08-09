@@ -15,6 +15,19 @@ public class BookService
 	@Autowired
 	private BookRepo bookRepo;
 	
+	@Autowired
+	public BookService(BookRepo bookRepo)
+	{
+		this.bookRepo = bookRepo;
+	}
+	
+	public Book createBook(List<String> authors)
+	{
+		Book bk = new Book();
+			bk.setBookPublishers(authors);
+			return bookRepo.save(bk);
+	}
+	
 	// CRUD operations.,
 	// 1. insert the data into the table.,
 	public List<Book> insertBooks(List<Book> books)
