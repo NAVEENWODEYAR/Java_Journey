@@ -1,5 +1,7 @@
 package com.swager.modal;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +14,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "Books_Table")
@@ -33,4 +35,16 @@ public class Book
 	private double bookPrice;
 	
 	private java.util.List<String> bookPublishers;
+
+	public Book(int bookID, @NotNull String bookName, String bookAuthor, @NotNull double bookPrice,
+			List<String> bookPublishers) {
+		super();
+		this.bookID = bookID;
+		this.bookName = bookName;
+		this.bookAuthor = bookAuthor;
+		this.bookPrice = bookPrice;
+		this.bookPublishers = bookPublishers;
+	}
+	
+	
 }

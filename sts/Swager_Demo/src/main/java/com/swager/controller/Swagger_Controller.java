@@ -57,7 +57,8 @@ public class Swagger_Controller
 		return list;
 	}
 	
-	// 1. insert into the book table,m
+	// 1. insert into the book table,
+	//http://localhost:1234/s/insertBooks
 	@PostMapping("/insertBooks")
 	public List<Book> insertBooks(@RequestBody List<Book> book)
 	{
@@ -66,13 +67,15 @@ public class Swagger_Controller
 	}
 	
 	// 2. get the books from the table.,
-	@GetMapping("/getBooDetails")
+	//http://localhost:1234/s/getBookDetails
+	@GetMapping("/getBookDetails")
 	public List<Book> getBookDetails()
 	{
 		return bookService.getBookDetails();
 	}
 	
-	// 2. get the details of an record.,
+	// 2.a get the details of an record.,
+	//http://localhost:1234/s/getBook/
 	@GetMapping("/getBook/{bookID}")
 	public Book getBook(@RequestBody Book book,@PathVariable Integer bookID)
 	{
@@ -80,6 +83,7 @@ public class Swagger_Controller
 	}
 	
 	// 3. delete the book record from the table.,
+	//http://localhost:1234/s/deleteBook/
 	@DeleteMapping("/deleteBook/{bookID}")
 	public String deleteBook(@PathVariable Integer bookID)
 	{
@@ -88,6 +92,7 @@ public class Swagger_Controller
 	}
 	
 	// 4. update the book details,
+	//http://localhost:1234/s/updateBook/
 	@PutMapping("/updateBook/{bookID}")
 	public Book updateBook(@RequestBody Book book, @PathVariable Integer bookID)
 	{
