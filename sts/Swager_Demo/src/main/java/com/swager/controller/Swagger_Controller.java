@@ -3,13 +3,22 @@ package com.swager.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.swager.modal.Book;
+import com.swager.service.BookService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
@@ -17,6 +26,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @RequestMapping("/s")
 public class Swagger_Controller 
 {
+	
+	// DI.,
+	@Autowired
+	private BookService bookService;
+	
+	
 	// dummy API for testing
 	//http://localhost:1234/swagerHomePage
 	@GetMapping("/swagerHomePage")
@@ -42,5 +57,40 @@ public class Swagger_Controller
 		return list;
 	}
 	
+	// 1. insert into the book table,m
+	@PostMapping("/insertBooks")
+	public List<Book> insertBooks(@RequestBody List<Book> book)
+	{
+		List<Book> list = bookService.insertBooks(book);
+		return list;
+	}
 	
+	// 2. get the books from the table.,
+	@GetMapping("/getBooDetails")
+	public List<Book> getBookDetails()
+	{
+		return bookService.getBookDetails();
+	}
+	
+	// 2. get the details of an record.,
+	@GetMapping("/getBook/{bookID}")
+	public Book getBook(@RequestBody Book book,@PathVariable Integer bookID)
+	{
+		return bookService.getBook(book, bookID);
+	}
+	
+	// 3. delete the book record from the table.,
+	@DeleteMapping("/deleteBook/{bookID}")
+	public String deleteBook(@PathVariable Integer bookID)
+	{
+		bookService.deleteBook(bookID);
+		return "Book with the id, "+bookID+", deleted from the database.,";
+	}
+	
+	// 4. update the book details,
+	@PutMapping("/updateBook/{bookID}")
+	public Book updateBook(@RequestBody Book book, @PathVariable Integer bookID)
+	{
+		return bookService.updateBook(book, bookID);
+	}
 }

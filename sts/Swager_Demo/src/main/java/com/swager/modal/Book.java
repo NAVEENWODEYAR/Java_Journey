@@ -1,6 +1,4 @@
-package com.swager;
-
-import org.hibernate.annotations.UuidGenerator;
+package com.swager.modal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,15 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "Books_Table")
 public class Book
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int bookID;
 	
 	@NotNull
