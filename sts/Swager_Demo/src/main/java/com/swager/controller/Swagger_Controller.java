@@ -65,8 +65,8 @@ public class Swagger_Controller
 	}
 	
 	// 1.a insert the record into the table.,(http://localhost:1234/s/insertBook)
-	@PostMapping("/s/insertBook")
-	public Book insertBook(@PathVariable Book book)
+	@PostMapping("/insertBook")
+	public Book insertBook(@RequestBody Book book)
 	{
 		return bookService.insertBook(book);
 	}
