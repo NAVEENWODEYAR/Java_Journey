@@ -58,9 +58,9 @@ public class BookService
 	public Book updateBook(Book book, Integer bookID) 
 	{
 		Book bk = bookRepo.findById(bookID).get();
-			bk.setBookName(book.getBookName());
-			bk.setBookAuthor(book.getBookAuthor());
-			bk.setBookPrice(book.getBookPrice());
+//			bk.setBookName(book.getBookName());
+//			bk.setBookAuthor(book.getBookAuthor());
+//			bk.setBookPrice(book.getBookPrice());
 			
 			return bookRepo.save(bk);
 	}
