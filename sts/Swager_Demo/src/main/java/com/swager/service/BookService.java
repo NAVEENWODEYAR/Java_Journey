@@ -14,25 +14,7 @@ public class BookService
 	//DI,
 	@Autowired
 	private BookRepo bookRepo;
-	
-	@Autowired
-	public BookService(BookRepo bookRepo)
-	{
-		this.bookRepo = bookRepo;
-	}
-	
-	public Book createBook(List<String> authors)
-	{
-		Book bk = new Book();
-			bk.setBookPublishers(authors);
-			return bookRepo.save(bk);
-	}
-	
-	public List<Book> getAll()
-	{
-		return bookRepo.findAll();
-	}
-	
+		
 	// CRUD operations.,
 	// 1. insert the data into the table.,
 	public List<Book> insertBooks(List<Book> books)
@@ -45,6 +27,12 @@ public class BookService
 	public List<Book> getBookDetails()
 	{
 		return bookRepo.findAll();
+	}
+	
+	// 2.a SELECT * FROM book WHERE bookID= 
+	public Book getBook(Integer bookID)
+	{
+		return bookRepo.findById(bookID).get();
 	}
 	
 	// 3. SELECT * FROM book WHERE bookId= .,
@@ -67,7 +55,6 @@ public class BookService
 			bk.setBookName(book.getBookName());
 			bk.setBookAuthor(book.getBookAuthor());
 			bk.setBookPrice(book.getBookPrice());
-			bk.setBookPublishers(book.getBookPublishers());
 			
 			return bookRepo.save(bk);
 	}

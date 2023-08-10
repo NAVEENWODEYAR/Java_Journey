@@ -37,9 +37,9 @@ public class Book
 	@NotNull
 	private double bookPrice;
 	
-	@ElementCollection
-	@CollectionTable(name = "Publishers",
-						joinColumns = @JoinColumn(name="bookID"))
-	private List<String> bookPublishers;
+//	@ElementCollection
+//	@CollectionTable(name = "Publishers",
+//						joinColumns = @JoinColumn(name="bookID"))
+//	private List<String> bookPublishers;
 
 }
