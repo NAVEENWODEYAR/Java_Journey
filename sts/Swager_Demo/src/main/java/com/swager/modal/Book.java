@@ -1,6 +1,5 @@
 package com.swager.modal;
 
-import java.util.*;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -20,21 +19,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Books_Table")
 public class Book
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int bookID;
-	
-	@NotNull
-	@Column(name = "Boook Name")
 	private String bookName;
-	
-	@Column(name = "Author")
 	private String bookAuthor;
-	
-	@NotNull
 	private double bookPrice;
 	
 //	@ElementCollection

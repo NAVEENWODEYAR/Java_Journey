@@ -4,14 +4,14 @@ server:
   
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/studentdb
+    url: jdbc:postgresql://localhost:5432/bookdb
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: boss
   
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     generate-ddl: true
     open-in-view: false

@@ -23,7 +23,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
-@RequestMapping("/s")
+@RequestMapping("/book")
 public class Swagger_Controller 
 {
 	
@@ -56,6 +56,13 @@ public class Swagger_Controller
 		return list;
 	}
 	
+	@Operation(summary = "Get Names,", description = "Returns the names list from the configured database.," ,tags = "Get")
+	@ApiResponses(value = {
+							@ApiResponse(responseCode = "200K",description = "Found the List",
+										content = {@Content(mediaType = "application/json",
+										schema = @Schema(implementation = List.class))}),
+							@ApiResponse(responseCode = "404",description = "Not Found",content = @Content)
+	})
 	// 1. insert into the book table,(http://localhost:1234/s/insertBooks)
 	@PostMapping("/insertBooks")
 	public List<Book> insertBooks(@RequestBody List<Book> book)
@@ -66,9 +73,9 @@ public class Swagger_Controller
 	
 	// 1.a insert the record into the table.,(http://localhost:1234/s/insertBook)
 	@PostMapping("/insertBook")
-	public Book insertBook(@RequestBody Book book)
+	public Book insertBook(@RequestBody Book bk)
 	{
-		return bookService.insertBook(book);
+		return bookService.insertBook(bk);
 	}
 	
 	// 2. get the books from the table.,(http://localhost:1234/s/getBookDetails)
