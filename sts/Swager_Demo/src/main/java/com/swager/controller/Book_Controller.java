@@ -32,7 +32,7 @@ public class Book_Controller
 	private BookService bookService;
 	
 	
-	// dummy API for testing(http://localhost:1234/swagerHomePage)
+	// dummy API for testing(http://localhost:1234/book/swagerHomePage)
 	@GetMapping("/swagerHomePage")
 	public String getSwagerHome()
 	{
@@ -63,7 +63,7 @@ public class Book_Controller
 										schema = @Schema(implementation = List.class))}),
 							@ApiResponse(responseCode = "404",description = "Not Found",content = @Content)
 	})
-	// 1. insert into the book table,(http://localhost:1234/s/insertBooks)
+	// 1. insert into the book table,(http://localhost:1234/book/insertBooks)
 	@PostMapping("/insertBooks")
 	public List<Book> insertBooks(@RequestBody List<Book> book)
 	{
@@ -71,28 +71,28 @@ public class Book_Controller
 		return list;
 	}
 	
-	// 1.a insert the record into the table.,(http://localhost:1234/s/insertBook)
+	// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
 	@PostMapping("/insertBook")
 	public Book insertBook(@RequestBody Book bk)
 	{
 		return bookService.insertBook(bk);
 	}
 	
-	// 2. get the books from the table.,(http://localhost:1234/s/getBookDetails)
+	// 2. get the books from the table.,(http://localhost:1234/book/getBookDetails)
 	@GetMapping("/getBookDetails")
 	public List<Book> getBookDetails()
 	{
 		return bookService.getBooks();
 	}
 	
-	// 2.a get the details of an record.,(http://localhost:1234/s/getBook/)
+	// 2.a get the details of an record.,(http://localhost:1234/book/getBook/)
 	@GetMapping("/getBook/{bookID}")
 	public Book getBook(@RequestBody Book book,@PathVariable Integer bookID)
 	{
 		return bookService.getBook(bookID);
 	}
 		
-	// 3. delete the book record from the table.,(http://localhost:1234/s/deleteBook/)
+	// 3. delete the book record from the table.,(http://localhost:1234/book/deleteBook/)
 	@DeleteMapping("/deleteBook/{bookID}")
 	public String deleteBook(@PathVariable Integer bookID)
 	{
@@ -100,7 +100,7 @@ public class Book_Controller
 		return "Book with the id, "+bookID+", deleted from the database.,";
 	}
 	
-	// 4. update the book details,(http://localhost:1234/s/updateBook/)
+	// 4. update the book details,(http://localhost:1234/book/updateBook/)
 	@PutMapping("/updateBook/{bookID}")
 	public Book updateBook(@RequestBody Book book, @PathVariable Integer bookID)
 	{
