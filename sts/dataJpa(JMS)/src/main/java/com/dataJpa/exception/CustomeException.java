@@ -1,5 +1,6 @@
 package com.dataJpa.exception;
 
-public class CustomeException {
+public class CustomeException 
+{
 
 }
