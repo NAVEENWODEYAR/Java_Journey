@@ -30,7 +30,7 @@ public class BookService
 		}
 		
 		// get the record,
-		public Book getBook(Integer bookID)
+		public Book getBook(int bookID)
 		{
 			return bookRepo.findById(bookID).get();
 		}
@@ -42,7 +42,7 @@ public class BookService
 		}
 		
 		// update the record,
-		public Book updateBook(Book book, Integer bookID)
+		public Book updateBook(Book book, int bookID)
 		{
 			Book bk = bookRepo.findById(bookID).get();
 				bk.setBookName(book.getBookName());
@@ -53,7 +53,7 @@ public class BookService
 		}
 		
 		// delete the record
-		public String deleteBook(Integer bookID)
+		public String deleteBook(int bookID)
 		{
 			bookRepo.deleteById(bookID);
 			return "";
