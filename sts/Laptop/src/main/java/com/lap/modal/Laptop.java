@@ -1,5 +1,6 @@
 package com.lap.modal;
 
+import java.time.Year;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -21,6 +22,6 @@ public class Laptop
 	private int lapId;
 	private String lapCompany;
 	private String lapName;
-	private Date lapModel;
+	private Year lapModel;
 	
 }
