@@ -17,8 +17,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor@AllArgsConstructor
 @Entity
 @Table(name = "Books_Table")
 public class Book

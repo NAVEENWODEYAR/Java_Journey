@@ -23,6 +23,12 @@ public class BookService
 		return b1;
 	}
 	
+	// 1.a insert the record.,
+	public Book insertBook(Book book)
+	{
+		return bookRepo.save(book);
+	}
+	
 	// 2. select * from the book.,
 	public List<Book> getBookDetails()
 	{

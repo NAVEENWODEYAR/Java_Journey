@@ -64,6 +64,13 @@ public class Swagger_Controller
 		return list;
 	}
 	
+	// 1.a insert the record into the table.,(http://localhost:1234/s/insertBook)
+	@PostMapping("/s/insertBook")
+	public Book insertBook(@PathVariable Book book)
+	{
+		return bookService.insertBook(book);
+	}
+	
 	// 2. get the books from the table.,(http://localhost:1234/s/getBookDetails)
 	@GetMapping("/getBookDetails")
 	public List<Book> getBookDetails()
