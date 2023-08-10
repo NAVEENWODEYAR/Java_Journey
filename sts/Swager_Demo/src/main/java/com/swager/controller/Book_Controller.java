@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
 @RequestMapping("/book")
-public class Swagger_Controller 
+public class Book_Controller 
 {
 	
 	// DI.,
