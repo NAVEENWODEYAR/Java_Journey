@@ -82,14 +82,14 @@ public class Book_Controller
 	@GetMapping("/getBookDetails")
 	public List<Book> getBookDetails()
 	{
-		return bookService.getBookDetails();
+		return bookService.getBooks();
 	}
 	
 	// 2.a get the details of an record.,(http://localhost:1234/s/getBook/)
 	@GetMapping("/getBook/{bookID}")
 	public Book getBook(@RequestBody Book book,@PathVariable Integer bookID)
 	{
-		return bookService.getBook(book, bookID);
+		return bookService.getBook(bookID);
 	}
 		
 	// 3. delete the book record from the table.,(http://localhost:1234/s/deleteBook/)
