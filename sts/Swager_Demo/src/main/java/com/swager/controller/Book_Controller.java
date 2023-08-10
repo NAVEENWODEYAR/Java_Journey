@@ -65,7 +65,7 @@ public class Book_Controller
 	})
 	// 1. insert into the book table,(http://localhost:1234/book/insertBooks)
 	@PostMapping("/insertBooks")
-	public List<Book> insertBooks(@RequestBody List<Book> book)
+	public List<Book> insertBooks( List<Book> book)
 	{
 		List<Book> list = bookService.insertBooks(book);
 		return list;
@@ -73,7 +73,7 @@ public class Book_Controller
 	
 	// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
 	@PostMapping("/insertBook")
-	public Book insertBook(@RequestBody Book bk)
+	public Book insertBook( Book bk)
 	{
 		return bookService.insertBook(bk);
 	}
