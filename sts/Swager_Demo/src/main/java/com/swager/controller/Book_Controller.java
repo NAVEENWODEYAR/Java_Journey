@@ -73,7 +73,7 @@ public class Book_Controller
 	
 	// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
 	@PostMapping("/insertBook")
-	public Book insertBook( Book bk)
+	public Book insertBook(@org.springframework.web.bind.annotation.RequestBody Book bk)
 	{
 		return bookService.insertBook(bk);
 	}
