@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.swager.dto.BookRequestDTO;
 import com.swager.modal.Book;
 import com.swager.service.BookService;
 
@@ -21,6 +24,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/book")
@@ -75,9 +79,9 @@ public class Book_Controller
 		
 		// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
 		@PostMapping("/sendBook")
-		public Book insertBook(@RequestBody Book bk)
+		public ResponseEntity<Book> insertBook(@RequestBody @Valid BookRequestDTO bookDto)
 		{
-			return bookService.insertBook(bk);
+			return new ResponseEntity<>(bookService.insertBook(bookDto), HttpStatus.ACCEPTED);
 		}
 		
 		// 2. get the books from the table.,(http://localhost:1234/book/getBookDetails)
@@ -92,6 +96,13 @@ public class Book_Controller
 		public Book getBook(@PathVariable Integer bookID)
 		{
 			return bookService.getBook(bookID);
+		}
+		
+		// 2.b custom query findBybookName;
+		@GetMapping("/getBookByName/{bookName}")
+		public Book getBookByName(String bookName)
+		{
+			return bookService.getBookByName(bookName);
 		}
 			
 		// 3. delete the book record from the table.,(http://localhost:1234/book/deleteBook/)

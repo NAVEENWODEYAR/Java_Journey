@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.swager.dto.BookRequestDTO;
 import com.swager.modal.Book;
 import com.swager.repo.BookRepo;
 
@@ -17,9 +18,10 @@ public class BookService
 	
 		// CRUD operations.,
 		// insert the records,
-		public Book insertBook(Book book)
-		{
-			return bookRepo.save(book);
+		public Book insertBook(BookRequestDTO bookDto)
+		{	
+			Book bk = Book.name(0,bookDto.getBookName(),bookDto.getBookAuthor(),bookDto.getBookPrice());
+			return bookRepo.save(bk);
 		}
 		
 		// insert the List.,
@@ -33,6 +35,12 @@ public class BookService
 		public Book getBook(int bookID)
 		{
 			return bookRepo.findById(bookID).get();
+		}
+		
+		//get record by name., custom query(findByfieldName)
+		public Book getBookByName(String bookName)
+		{
+			return bookRepo.findBybookName(bookName);
 		}
 		
 		// get all the records,

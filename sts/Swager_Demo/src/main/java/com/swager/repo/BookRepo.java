@@ -8,4 +8,6 @@ import com.swager.modal.Book;
 public interface BookRepo extends JpaRepository<Book, Integer>
 {
 
+	Book findBybookName(String bookName);
+
 }
