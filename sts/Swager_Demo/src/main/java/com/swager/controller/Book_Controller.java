@@ -89,7 +89,7 @@ public class Book_Controller
 		
 		// 2.a get the details of an record.,(http://localhost:1234/book/getBook/)
 		@GetMapping("/getBook/{bookID}")
-		public Book getBook(@RequestBody Book book,@PathVariable Integer bookID)
+		public Book getBook(@PathVariable Integer bookID)
 		{
 			return bookService.getBook(bookID);
 		}
