@@ -30,7 +30,6 @@ public class BookStoreController
 		// 1. generating the API.,
 			@PostMapping("/insertBookStoreData")
 			@ResponseStatus(HttpStatus.CREATED)
-//			public BookStore insertBook(@RequestBody BookStore bs)
 			public ResponseEntity<ResponseDTO> insertBook(@RequestBody BookStore bs)
 			{
 				BookStore bs1 = bsService.insertBook(bs);
@@ -41,7 +40,6 @@ public class BookStoreController
 		// 2. getMapping for receiving the data.,
 			@GetMapping("/getBooks")
 			@ResponseStatus(HttpStatus.FOUND)
-//			public List<BookStore> getBooks()
 			public ResponseEntity<ResponseDTO>getBooks()
 			{
 				List<BookStore> lt = bsService.getBooks();
@@ -52,7 +50,6 @@ public class BookStoreController
 		// 3. get the single record.,
 			@GetMapping("/getBook/{id}")
 			@ResponseStatus(HttpStatus.FOUND)
-//			public BookStore getBook(@PathVariable String id)
 			public ResponseEntity<ResponseDTO>getBook(@PathVariable String id)
 			{
 				BookStore bs = bsService.getBook(id);
@@ -63,7 +60,6 @@ public class BookStoreController
 		// 4. delete the data.,
 			@DeleteMapping("/deleteBook/{id}")
 			@ResponseStatus(HttpStatus.GONE)
-//			public String deleteBook(@PathVariable String id)//
 			public ResponseEntity<ResponseDTO> deleteBook(@PathVariable String id)
 			{
 				String st = bsService.dleteBook(id);
