@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,6 @@ import com.swager.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
@@ -31,7 +31,7 @@ public class Book_Controller
 	@Autowired
 	private BookService bookService;
 	
-	
+		/**
 		// dummy API for testing(http://localhost:1234/book/swagerHomePage)
 		@GetMapping("/swagerHomePage")
 		public String getSwagerHome()
@@ -63,17 +63,19 @@ public class Book_Controller
 											schema = @Schema(implementation = List.class))}),
 								@ApiResponse(responseCode = "404",description = "Not Found",content = @Content)
 		})
+		*/
+	
 		// 1. insert into the book table,(http://localhost:1234/book/insertBooks)
 		@PostMapping("/sendBooks")
-		public List<Book> insertBooks( List<Book> book)
+		public List<Book>insertBooks(@RequestBody List<Book> book)
 		{
-			List<Book> list = bookService.insertBooks(book);
-			return list;
+			List<Book> books = bookService.insertBooks(book);
+			return books;
 		}
 		
 		// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
-		@PostMapping("/sendBooks")
-		public Book insertBook(Book bk)
+		@PostMapping("/sendBook")
+		public Book insertBook(@RequestBody Book bk)
 		{
 			return bookService.insertBook(bk);
 		}
