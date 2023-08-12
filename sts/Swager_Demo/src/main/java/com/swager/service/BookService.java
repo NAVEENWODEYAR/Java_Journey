@@ -50,7 +50,7 @@ public class BookService
 		}
 		
 		// update the record,
-		public Book updateBook(Book book, int bookID)
+		public Book updateBook(BookRequestDTO book, int bookID)
 		{
 			Book bk = bookRepo.findById(bookID).get();
 				bk.setBookName(book.getBookName());

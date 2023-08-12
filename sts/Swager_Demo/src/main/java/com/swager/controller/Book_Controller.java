@@ -79,7 +79,7 @@ public class Book_Controller
 		
 		// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
 		@PostMapping("/sendBook")
-		public ResponseEntity<Book> insertBook(@RequestBody @Valid BookRequestDTO bookDto)
+		public ResponseEntity<Book> insertBook(@Valid @RequestBody  BookRequestDTO bookDto)
 		{
 			return new ResponseEntity<>(bookService.insertBook(bookDto), HttpStatus.ACCEPTED);
 		}
@@ -115,7 +115,7 @@ public class Book_Controller
 		
 		// 4. update the book details,(http://localhost:1234/book/updateBook/)
 		@PutMapping("/updateBook/{bookID}")
-		public Book updateBook(@RequestBody Book book, @PathVariable Integer bookID)
+		public Book updateBook(@RequestBody BookRequestDTO book, @PathVariable Integer bookID)
 		{
 			return bookService.updateBook(book, bookID);
 		}
