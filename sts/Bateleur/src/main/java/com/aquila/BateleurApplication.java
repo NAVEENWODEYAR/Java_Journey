@@ -10,6 +10,7 @@ public class BateleurApplication
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(BateleurApplication.class, args);
+		System.out.println("Sky KING");
 	}
 
 }
