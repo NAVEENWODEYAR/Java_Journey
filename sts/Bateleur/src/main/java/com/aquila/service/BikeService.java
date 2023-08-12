@@ -96,4 +96,10 @@ public class BikeService
 				}
 		}
 		
+		// SELECT * FROM bike WHERE bikePrice >= 100000,
+		public List<Bike> getPriceGreaterThan()
+		{
+			return bikeRepo.findBypriceGreaterThan();
+		}
+		
 }	

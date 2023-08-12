@@ -85,4 +85,13 @@ public class BikeController
 			ResponseDTO responseDTO = new ResponseDTO("Bike with the name found,",bike);
 			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
 		}
+		
+		// 7. select by condition
+		@GetMapping("/getBikesPriceGreaterThan")
+		public ResponseEntity<ResponseDTO> getBikesPriceGreaterThan()
+		{
+			List<Bike> bike = bikeService.getPriceGreaterThan();
+			ResponseDTO responseDTO = new ResponseDTO("Available bikes are listed here,",bike);
+			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
+		}
 }
