@@ -75,5 +75,14 @@ public class BikeController
 			bikeService.deleteBike(bikeId);
 			ResponseDTO responseDTO = new ResponseDTO("Bike details deleted from the database,","Bike id"+bikeId);
 			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.GONE);
-			}
+		}
+		
+		// 6. custom queries, find the bike by name,
+		@GetMapping("/getByName/{bikeName}")
+		public ResponseEntity<ResponseDTO> getBikeByName(@PathVariable String bikeName)
+		{
+			Bike bike = bikeService.getBikeByName(bikeName);
+			ResponseDTO responseDTO = new ResponseDTO("Bike with the name found,",bike);
+			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
+		}
 }

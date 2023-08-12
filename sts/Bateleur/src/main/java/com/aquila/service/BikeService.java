@@ -80,4 +80,20 @@ public class BikeService
 				}
 		}
 		
-}
+		
+		// Custom queries.,
+		// findByName i,e SELECT * FROM bike WHERE bikName = bikeName;
+		public Bike getBikeByName(String name)
+		{
+				Bike bike = bikeRepo.findBybikeName(name);
+				if(bikeRepo.findBybikeName(name) == null)
+				{
+					throw new BikeNotFoundException("No bike with the provide name is present in the database.");
+				}
+				else
+				{
+					return bike;
+				}
+		}
+		
+}	
