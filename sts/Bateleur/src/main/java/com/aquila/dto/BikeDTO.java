@@ -2,6 +2,8 @@ package com.aquila.dto;
 
 import java.time.Year;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -23,5 +25,6 @@ public class BikeDTO
 	private double bikePrice;
 	
 	@Past(message = "Should be past year")
+	@JsonProperty
 	private Year bikeModel;
 }
