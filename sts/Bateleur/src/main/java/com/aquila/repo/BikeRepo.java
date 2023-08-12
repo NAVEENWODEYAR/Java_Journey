@@ -8,7 +8,7 @@ import com.aquila.modal.Bike;
 public interface BikeRepo extends JpaRepository<Bike, Integer> 
 {
 	// @Query to create the custom queries.,
-	@Query(value = "SELECT * FROM bike WHERE bikeName =: name ")
+	@Query(value = "SELECT * FROM bike WHERE bike.bike_name =:name ",nativeQuery = true)
 	Bike findBybikeName(String name);
 	
 	
