@@ -1,5 +1,7 @@
 package com.swager.modal;
 
+import com.swager.dto.BookRequestDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,4 +23,10 @@ public class Book
 	private String bookAuthor;
 	private double bookPrice;
 	
+		public Book(BookRequestDTO bookRequestDTO)
+		{
+			this.bookName = bookRequestDTO.getBookName();
+			this.bookAuthor = bookRequestDTO.getBookAuthor();
+			this.bookPrice = bookRequestDTO.getBookPrice();
+		}
 }

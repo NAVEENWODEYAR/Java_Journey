@@ -1,5 +1,9 @@
 package com.swager.exception;
 
-public class BookNotFoundException {
-
+public class BookNotFoundException extends RuntimeException
+{
+	public BookNotFoundException(String msg)
+	{
+		super(msg);
+	}
 }
