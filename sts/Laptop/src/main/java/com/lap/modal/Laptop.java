@@ -22,6 +22,6 @@ public class Laptop
 	private int lapId;
 	private String lapCompany;
 	private String lapName;
-	private Year lapModel;
+	private int lapModel;
 	
 }

@@ -1,5 +1,6 @@
 package com.lap.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lap.modal.Laptop;
+import com.lap.service.ExcelFileGenerator;
 import com.lap.service.LaptopService;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/lap")
@@ -22,6 +26,10 @@ public class LaptopControler
 	// DI,
 	@Autowired
 	private LaptopService lapService;
+	
+	// DI of excelFileGenerator service
+	@Autowired
+	private ExcelFileGenerator excelFileGenerator;
 	
 		// REST API's.,
 		// 1. PostMapping for sending the data into the table.,(http://localhost:8765/lap/insertLaptop)
@@ -66,5 +74,19 @@ public class LaptopControler
 		{
 			lapService.deleteLap(lapId);
 			return "LapTop with the id,"+lapId+" deleted from the database successfully";
+		}
+		
+		// 5. to generate the excel file
+		@GetMapping("/getExcelFile")
+		public void exceFileGenerator(HttpServletResponse response) throws IOException
+		{
+			// set the content type.,
+			response.setContentType("application/octet-stream");
+			
+			String headerKey = "Content-Disposition";
+			String headerValue = "attachment;filename=Laps.xls";
+			
+			response.setHeader(headerKey, headerValue);
+			excelFileGenerator.excelFileGenerator(response);
 		}
 }
