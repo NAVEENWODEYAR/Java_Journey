@@ -94,12 +94,18 @@ public class BookService
 					if(book.isPresent())
 					{
 						bookRepo.deleteById(bookID);
-						return "";
+						return "Book deleted from the database";
 					}
 					else
 					{
-						throw new BookNotFoundException("No book with the id to update");
+						throw new BookNotFoundException("No book with the id to delete,");
 					}
+		}
+		
+		// custom queries.,
+		public List<Book>getBooksPriceGreaterThan()
+		{
+			return bookRepo.getBooksGreaterThan();
 		}
 		
 }

@@ -131,4 +131,13 @@ public class Book_Controller
 			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.ACCEPTED);
 			
 		}
+		
+		// 5. get the books price > 100,
+		@GetMapping("/priceGreaterThan")
+		public ResponseEntity<ResponseDTO>getBooksPriceGreaterThan()
+		{
+			List<Book> book = bookService.getBooksPriceGreaterThan();
+			ResponseDTO responseDTO = new ResponseDTO("List of book whose price is greater than $100,-", book);
+			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.PARTIAL_CONTENT);
+		}
 }
