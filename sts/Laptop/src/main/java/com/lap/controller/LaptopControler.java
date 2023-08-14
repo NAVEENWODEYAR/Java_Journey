@@ -1,6 +1,7 @@
 package com.lap.controller;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,5 +89,12 @@ public class LaptopControler
 			
 			response.setHeader(headerKey, headerValue);
 			excelFileGenerator.excelFileGenerator(response);
+		}
+		
+		// to get the details of the logged in user
+		@GetMapping("/getLoggedUserName")
+		public String getLoggedUserName(Principal principal)
+		{
+			return principal.getName();
 		}
 }
