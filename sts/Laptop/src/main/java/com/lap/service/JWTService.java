@@ -8,10 +8,16 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JWTService 
 {
+	
+	// key
+	public static final String secret = "safasdfsadhfsahfkjhdkjfhjdsfsfkajfhkjdsa";
 	// method to generate the JWT token
 	public String generateToken(String userName)
 	{
@@ -27,13 +33,14 @@ public class JWTService
 					.setSubject(userName)
 					.setIssuedAt(new Date(System.currentTimeMillis()))
 					.setExpiration(new Date(System.currentTimeMillis()+1000*60*30))
-					.signWith(getSignKey())
+					.signWith(getSignKey(),SignatureAlgorithm.HS256)
+					.compact();
 					
 	}
 
-
-	private Key getSignKey() {
-		// TODO Auto-generated method stub
-		return null;
+	// to generate the Key.,
+	private Key getSignKey() 
+	{	byte[] keyBytes = Decoders.BASE64.decode(secret);
+		return Keys.hmacShaKeyFor(keyBytes);
 	}
 }

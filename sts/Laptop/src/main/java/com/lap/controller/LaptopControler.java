@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lap.dto.AuthRequest;
 import com.lap.modal.Laptop;
 import com.lap.service.ExcelFileGenerator;
+import com.lap.service.JWTService;
 import com.lap.service.LaptopService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -27,6 +29,10 @@ public class LaptopControler
 	// DI,
 	@Autowired
 	private LaptopService lapService;
+	
+	//DI.,
+	@Autowired
+	private JWTService jwtService;
 	
 	// DI of excelFileGenerator service
 	@Autowired
@@ -96,5 +102,11 @@ public class LaptopControler
 		public String getLoggedUserName(Principal principal)
 		{
 			return principal.getName();
+		}
+		
+		@PostMapping("/authenticate")
+		public String authenticateAndGetToken(@RequestBody AuthRequest authRequest)
+		{
+			return jwtService.generateToken(authRequest.getUserName());
 		}
 }
