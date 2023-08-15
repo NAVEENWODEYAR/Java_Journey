@@ -4,6 +4,9 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import org.apache.commons.codec.binary.Base16;
+import org.apache.commons.collections4.comparators.ReverseComparator;
+
 public class EmployeeCRUD2 {
 
 	public static void main(String[] args) 
@@ -34,15 +37,72 @@ public class EmployeeCRUD2 {
 								.collect(Collectors.groupingBy(Employee::getEGender,Collectors.counting()))
 								.entrySet()
 								.forEach(System.out::println);
-		*/				
+						
 	   // Print the name of all departments in the organization?
 							empList.parallelStream()
 									.map(de->de.getEDept())
 									.distinct()
 									.forEach(System.out::println);
+									
+							System.out.println("*****************");
+							
+							empList.parallelStream()
+									.map(Employee::getEDept)
+									.distinct()
+									.forEachOrdered(System.out::println);
+			
+	  // What is the average age of male and female employees?
+								empList.parallelStream()
+										.collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getESal)))
+										.entrySet()
+										.forEach(System.out::println);
+								
+	// Get the details of highest paid employee in the organization?
+				Employee employee = empList.parallelStream()
+											.collect(Collectors.maxBy(Comparator.comparing(Employee::getESal))).get();
+
+										System.out.println(employee.getEName()+":"+employee.getESal());
+	
+    //  Get the details of lowest paid employee in the organization?	
+				Employee e1 = empList.parallelStream()
+											.collect(Collectors.minBy(Comparator.comparing(Employee::getESal))).get();
+										System.out.println(e1.getEName()+":"+e1.getESal());
+	
+	// Get the names of all employees who have joined after 2015?
+							empList.parallelStream()
+									.filter(e -> e.getYearOfJoining() > 2015)
+									.map(Employee::getEName)
+									.forEach(System.out::println);
 						
+	// Count the number of employees in each department?
+							empList.parallelStream()
+									.collect(Collectors.groupingBy(Employee::getEDept,Collectors.counting()))
+									.entrySet()
+									.forEach(System.out::println);
+							
+	// What is the average salary of each department?
+							empList.parallelStream()
+									.collect(Collectors.groupingBy(Employee::getEDept,Collectors.averagingDouble(Employee::getESal)))
+									.entrySet()
+									.forEach(System.out::println);
+	
 						
-		}
+	// Get the details of youngest male employee in the product development department?
+							Optional<Employee> min = empList.parallelStream()
+									.filter(emp -> emp.getEGender().equalsIgnoreCase("Male"))
+									.min(Comparator.comparing(Employee::getEId));
+							System.out.println(min.get().getEName()+":"+min.get().getEId());
+	*/						
+   // Who has the most working experience in the organization	
+							Employee e2 = empList.parallelStream()
+												   .min(Comparator.comparing(Employee::getYearOfJoining)).get();
+							System.out.println(e2.getEName()+":"+e2.getYearOfJoining());
+	
+											empList.stream()
+													.sorted(Comparator.comparing(Employee::getYearOfJoining))
+													.findFirst()
+													.ifPresent(System.out::println);
+	}
 }
 
 
