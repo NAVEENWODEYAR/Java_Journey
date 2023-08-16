@@ -21,7 +21,7 @@ public class NumbersExtractor
 				}
 			}
 			System.out.println("Even Numbers,"+evenNumbers);
-			System.out.println("*******");
+			System.out.println("*******Number Extractor*******");
 			System.out.println("Odd Numbers, "+oddNumbers);
 	}
 
