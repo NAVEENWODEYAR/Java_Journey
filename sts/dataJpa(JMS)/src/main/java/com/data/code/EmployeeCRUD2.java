@@ -92,7 +92,7 @@ public class EmployeeCRUD2 {
 									.filter(emp -> emp.getEGender().equalsIgnoreCase("Male"))
 									.min(Comparator.comparing(Employee::getEId));
 							System.out.println(min.get().getEName()+":"+min.get().getEId());
-	*/						
+							
    // Who has the most working experience in the organization.	
 							Employee e2 = empList.parallelStream()
 												   .min(Comparator.comparing(Employee::getYearOfJoining)).get();
@@ -102,6 +102,24 @@ public class EmployeeCRUD2 {
 													.sorted(Comparator.comparing(Employee::getYearOfJoining))
 													.findFirst()
 													.ifPresent(System.out::println);
+											
+    // How many male and female employees are there in the sales and marketing team?	
+											empList.parallelStream()
+													.filter(emp -> emp.getEDept().equalsIgnoreCase("HR"))
+													.collect(Collectors.groupingBy(Employee::getEGender,Collectors.counting()))
+													.entrySet()
+													.forEach(System.out::println);
+	*/												
+   // What is the average salary of male and female employees?
+												Map<String, Double> collect = empList.parallelStream()
+														.collect(Collectors.groupingBy(Employee::getEGender,Collectors.averagingDouble(Employee::getESal)));
+														
+												for(Map.Entry<String, Double>mp:collect.entrySet() )
+												{
+													System.out.println(mp.getKey()+":"+mp.getValue());
+												}
+														
+									
 	}
 }
 
