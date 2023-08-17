@@ -10,8 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor(staticName = "name")
+@NoArgsConstructor@AllArgsConstructor(staticName = "name")
 @Data
 @Entity
 public class Book
