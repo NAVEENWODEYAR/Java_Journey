@@ -22,7 +22,7 @@ public class Book
 	private String bookName;
 	private String bookAuthor;
 	private double bookPrice;
-	
+
 		public Book(BookRequestDTO bookRequestDTO)
 		{
 			this.bookName = bookRequestDTO.getBookName();

@@ -21,10 +21,10 @@ import io.swagger.v3.oas.annotations.info.License;
 									license = @License(
 														name = "Boss",
 														url = "@BOSS@")))
-public class SwagerDemoApplication 
+public class SwagerDemoApplication
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		SpringApplication.run(SwagerDemoApplication.class, args);
 	}

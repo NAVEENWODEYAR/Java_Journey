@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.swager.dto.ResponseDTO;
 
 @RestControllerAdvice
-public class BookNotFoundExceptionHandler 
+public class BookNotFoundExceptionHandler
 {
 	@ExceptionHandler
 	public ResponseEntity<ResponseDTO> bookNotFoundException(BookNotFoundException exception)
@@ -21,7 +21,7 @@ public class BookNotFoundExceptionHandler
 		ResponseDTO resRresponseDTO = new ResponseDTO("Exception occured, idiot check your intput",exception.getMessage());
 		return new ResponseEntity<>(resRresponseDTO, HttpStatus.NOT_FOUND);
 	}
-	
+
 	@ExceptionHandler
 	public ResponseEntity<ResponseDTO> methodArgumentNotValidException(MethodArgumentNotValidException exception)
 	{
@@ -30,6 +30,6 @@ public class BookNotFoundExceptionHandler
 									.map(err -> err.getDefaultMessage())
 									.collect(Collectors.toList());
 		ResponseDTO reRresponseDTO = new ResponseDTO("Please provide the required details", errMsg.toString());
-		return new ResponseEntity<ResponseDTO>(reRresponseDTO, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(reRresponseDTO, HttpStatus.BAD_REQUEST);
 	}
 }

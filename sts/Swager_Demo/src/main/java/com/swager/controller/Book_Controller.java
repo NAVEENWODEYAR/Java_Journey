@@ -1,6 +1,5 @@
 package com.swager.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +19,17 @@ import com.swager.dto.ResponseDTO;
 import com.swager.modal.Book;
 import com.swager.service.BookService;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/book")
-public class Book_Controller 
+public class Book_Controller
 {
-	
+
 	// DI.,
 	@Autowired
 	private BookService bookService;
-	
+
 		/**
 		// dummy API for testing(http://localhost:1234/book/swagerHomePage)
 		@GetMapping("/swagerHomePage")
@@ -43,8 +37,8 @@ public class Book_Controller
 		{
 			return "Welcome to Swagger API.,";
 		}
-		
-		
+
+
 		// adding the description about the API.,
 		@Operation(summary = "Get Names,", description = "Returns the names list from the configured database.," ,tags = "Get")
 		@ApiResponses(value = {
@@ -53,14 +47,14 @@ public class Book_Controller
 											schema = @Schema(implementation = List.class))}),
 								@ApiResponse(responseCode = "404",description = "Not Found",content = @Content)
 		})
-		
+
 		@GetMapping("/getList")
 		public List getList()
 		{
 			List<String> list = Arrays.asList("Ammu","Bhas","Gowri","Gani");
 			return list;
 		}
-		
+
 		@Operation(summary = "Get Names,", description = "Returns the names list from the configured database.," ,tags = "Get")
 		@ApiResponses(value = {
 								@ApiResponse(responseCode = "200K",description = "Found the List",
@@ -69,23 +63,23 @@ public class Book_Controller
 								@ApiResponse(responseCode = "404",description = "Not Found",content = @Content)
 		})
 		*/
-	
+
 		// 1. insert into the book table,(http://localhost:1234/book/insertBooks)
 		@PostMapping("/sendBooks")
 		public ResponseEntity<ResponseDTO> insertBooks(@RequestBody List<Book> book)
 		{
 			List<Book> books = bookService.insertBooks(book);
 			ResponseDTO responseDTO = new ResponseDTO("Successfully saved the details", books);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.ACCEPTED);
+			return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
 		}
-		
+
 		// 1.a insert the record into the table.,(http://localhost:1234/book/insertBook)
 		@PostMapping("/sendBook")
 		public ResponseEntity<Book> insertBook(@Valid @RequestBody  BookRequestDTO bookDto)
 		{
 			return new ResponseEntity<>(bookService.insertBook(bookDto), HttpStatus.ACCEPTED);
 		}
-		
+
 		// 2. get the books from the table.,(http://localhost:1234/book/getBookDetails)
 		@GetMapping("/getBookDetails")
 		public ResponseEntity<ResponseDTO> getBookDetails()
@@ -94,16 +88,16 @@ public class Book_Controller
 			ResponseDTO responseDTO = new ResponseDTO("Found the list", books);
 			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
-		
+
 		// 2.a get the details of an record.,(http://localhost:1234/book/getBook/)
 		@GetMapping("/getBook/{bookID}")
 		public ResponseEntity<ResponseDTO> getBook(@PathVariable Integer bookID)
 		{
 			Book book = bookService.getBook(bookID).get();
 			ResponseDTO responseDTO = new ResponseDTO("Found the book", book);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
+			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
-		
+
 		// 2.b custom query findBybookName;
 		@GetMapping("/getBookByName/{bookName}")
 		public ResponseEntity<ResponseDTO> getBookByName(String bookName)
@@ -112,7 +106,7 @@ public class Book_Controller
 			ResponseDTO responseDTO = new ResponseDTO("Found the book,", book);
 			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
-			
+
 		// 3. delete the book record from the table.,(http://localhost:1234/book/deleteBook/)
 		@DeleteMapping("/deleteBook/{bookID}")
 		public ResponseEntity<ResponseDTO> deleteBook(@PathVariable Integer bookID)
@@ -121,23 +115,23 @@ public class Book_Controller
 			ResponseDTO responseDTO = new ResponseDTO("", "");
 			return new ResponseEntity<>(responseDTO, HttpStatus.GONE);
 		}
-		
+
 		// 4. update the book details,(http://localhost:1234/book/updateBook/)
 		@PutMapping("/updateBook/{bookID}")
 		public ResponseEntity<ResponseDTO> updateBook(@RequestBody BookRequestDTO bookDto,@PathVariable Integer bookID)
 		{
 			Book book = bookService.updateBook(bookDto, bookID);
 			ResponseDTO responseDTO = new ResponseDTO("Updated the details", book);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.ACCEPTED);
-			
+			return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+
 		}
-		
+
 		// 5. get the books price > 100,
 		@GetMapping("/priceGreaterThan")
 		public ResponseEntity<ResponseDTO>getBooksPriceGreaterThan()
 		{
 			List<Book> book = bookService.getBooksPriceGreaterThan();
 			ResponseDTO responseDTO = new ResponseDTO("List of book whose price is greater than $100,-", book);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.PARTIAL_CONTENT);
+			return new ResponseEntity<>(responseDTO, HttpStatus.PARTIAL_CONTENT);
 		}
 }
