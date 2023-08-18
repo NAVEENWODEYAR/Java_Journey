@@ -29,7 +29,7 @@ public class FrequencyOfString4 {
 	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) 
 	{
-		characterFrequency("Java");
+		characterFrequency("Programming");
 		
 	}
 
