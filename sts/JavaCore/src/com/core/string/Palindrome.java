@@ -1,5 +1,5 @@
 // Java program to check weather the given string is palindrome or not
-package com.core;
+package com.core.string;
 
 public class Palindrome
 {
@@ -11,7 +11,7 @@ public class Palindrome
 						reverse.reverse();
 						
 					if(st.contentEquals(reverse))
-					if(reverse.toString().equalsIgnoreCase(str))
+//					if(reverse.toString().equalsIgnoreCase(str))
 						return true;
 					else
 						return false;
@@ -19,7 +19,11 @@ public class Palindrome
 	public static void main(String[] args) 
 	{
 		String st = args[0];
-		System.out.println(palindromeString("MAM"));
+		System.out.println(palindromeString(st));
+		
+		// different ways to create string object
+		String st2 = new String("String");
+		String st1 = "NewString";
 	}
 
 }
