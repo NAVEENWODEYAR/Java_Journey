@@ -13,7 +13,7 @@ public class HashSetEx
 			set.add("Two");
 			set.add("Four");
 			set.add("null");
-			set.add(null);
+//			set.add(null);
 			Iterator itr = set.iterator();
 			while(itr.hasNext())
 			{
