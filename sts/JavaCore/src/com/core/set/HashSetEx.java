@@ -15,10 +15,10 @@ public class HashSetEx
 			set.add("null");
 //			set.add(null);
 			Iterator itr = set.iterator();
-			while(itr.hasNext())
-			{
-				System.out.println(itr.next());
-			}
+//			while(itr.hasNext())
+//			{
+//				System.out.println(itr.next());
+//			}
 			
 			set.parallelStream().sorted().forEach(System.out::println);
 					
