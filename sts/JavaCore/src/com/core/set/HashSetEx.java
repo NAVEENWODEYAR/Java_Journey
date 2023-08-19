@@ -21,8 +21,8 @@ public class HashSetEx
 //			}
 			
 			set.parallelStream().sorted().forEach(System.out::println);
-			long count = set.stream().count();
-			System.out.println(count);
+			
+			System.out.println(set.stream().count());
 					
 	}
 }
