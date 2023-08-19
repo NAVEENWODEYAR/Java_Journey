@@ -27,7 +27,7 @@ public class SecondLarget
 
 				
 	}
-	 static public void  main(String[] args) 
+	  static public void  main(String[] args) 
 	{
 		int ar[] = {1,4,643,8,5,4,4,6,87};
 		String arr[] = {"Ammu","Boss","Ammie","Denly","Gowri","Gani"};
