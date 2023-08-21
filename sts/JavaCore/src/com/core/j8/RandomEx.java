@@ -9,6 +9,7 @@ public class RandomEx
 	public static void randomNumbers(int n)
 	{
 		new Random().ints().limit(n).forEach(System.out::println);
+		new Random().doubles().limit(10).forEachOrdered(System.out::println);
 	}
 	
 	public static void main(String[] args) 
