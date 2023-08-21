@@ -2,12 +2,12 @@ package com.aquila.repo;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.aquila.modal.Teacher;
 
-public interface TeacherRepo extends MongoRepository<Teacher, Integer> 
+public interface TeacherRepo extends JpaRepository<Teacher, Integer> 
 {
 	@Query(value = "SELECT * FROM TEACHERS WHERE tName=name", nativeQuery = true )
 	List<Teacher> getTeachers();
