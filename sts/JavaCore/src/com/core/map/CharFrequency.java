@@ -21,7 +21,7 @@ public class CharFrequency
 					mp.put(c, 1);
 				}
 			}
-			System.out.println(mp.toString());
+			System.out.println(mp);
 	}
 	
 	public static void main(String[] args)
