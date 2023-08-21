@@ -4,5 +4,7 @@
 /**
  * 
  */
-module JavaCore {
+module JavaCore 
+{
+
 }
