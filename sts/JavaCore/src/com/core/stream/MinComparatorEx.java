@@ -11,7 +11,10 @@ public class MinComparatorEx
 	public static void minNumber(int arr[])
 	{		
 		int min = Arrays.stream(arr).min().getAsInt();
-			System.out.println(min);
+			System.out.println("Lowest int " +min);
+			
+		int max = Arrays.stream(arr).max().getAsInt();
+		System.out.println("Highest int " +max);
 	}
 	public static void main(String[] args) 
 	{
@@ -22,7 +25,7 @@ public class MinComparatorEx
 							.min(Comparator.comparing(Integer::valueOf))
 							.get();
 		
-			System.out.println(min);
+			System.out.println("Using Comparator " +min);
 	}
 
 }
