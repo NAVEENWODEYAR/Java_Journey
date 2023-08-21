@@ -2,16 +2,25 @@
 
 package com.core.stream;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class MinComparatorEx
 {
-
+	public static void minNumber(int arr[])
+	{		
+		int min = Arrays.stream(arr).min().getAsInt();
+			System.out.println(min);
+	}
 	public static void main(String[] args) 
 	{
-		Integer min = Stream.of(5,6,7,8,90,32,34,6,87,89)
-							.min(Comparator.comparing(Integer::valueOf)).get();
+		minNumber(new int[] {5,4,3,2,67,7,8,9,98});
+		
+		System.out.println("******************");
+		Integer min = Stream.of(4,5,6,7,8,98)
+							.min(Comparator.comparing(Integer::valueOf))
+							.get();
 		
 			System.out.println(min);
 	}
