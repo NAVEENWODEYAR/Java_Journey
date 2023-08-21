@@ -24,8 +24,12 @@ public class MinComparatorEx
 		Integer min = Stream.of(4,5,6,7,8,98)
 							.min(Comparator.comparing(Integer::valueOf))
 							.get();
-		
+		Integer max = Stream.of(78,890,432,12345)
+							.max(Comparator.comparing(Integer::valueOf))
+							.get();
 			System.out.println("Using Comparator " +min);
+			System.out.println("Using Comparator " +max);
+
 	}
 
 }
