@@ -11,8 +11,8 @@ import io.swagger.v3.oas.annotations.info.License;
 @SpringBootApplication
 @OpenAPIDefinition(
 		info = @Info(
-						title = "LapTop",
-						version = "2.0.0",
+						title = "Tawny",
+						version = "1.0.0",
 						description = "API Documentation,",
 						termsOfService = "Test the API",
 						contact = @Contact(
@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.info.License;
 											email = "boss@boss.org"),
 						license = @License(
 											name = "Boss",
-											url = "@BOSS@")))
+											url = "https://en.wikipedia.org/wiki/Tawny_eagle")))
 public class TawnyApplication 
 {
 
