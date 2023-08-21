@@ -10,7 +10,7 @@ public class TreeSetEx
 		TreeSet<Integer> set = new TreeSet<>();
 					set.add(1);
 					set.add(5);
-//					set.add(null);
+					set.add(null);
 			System.out.println("Treeset doedn't allows null values");	
 			Iterator itr = set.iterator();
 			while(itr.hasNext())

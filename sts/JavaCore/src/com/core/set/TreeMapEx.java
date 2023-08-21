@@ -24,6 +24,7 @@ public class TreeMapEx {
 			hmp.put(10, "Ten");
 			hmp.put(5, "Five");
 			hmp.put(null, "Seven");
+			hmp.put(null,null);
 			
 			hmp.entrySet().stream().forEach(System.out::println);
 	}
