@@ -64,4 +64,10 @@ public class TeacherService {
 
 			throw new TeacherNotFoundException("Sorry no such record found!");
 	}
+	
+	// getByName
+	public Teacher getByName(String tName)
+	{
+		return teacherRepo.findBytName(tName);	
+	}
 }
