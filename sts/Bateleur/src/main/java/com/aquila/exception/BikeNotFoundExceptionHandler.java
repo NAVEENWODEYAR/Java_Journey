@@ -21,7 +21,7 @@ public class BikeNotFoundExceptionHandler
 		public ResponseEntity<ResponseDTO> bikeNotFoundException(BikeNotFoundException exception)
 		{
 			ResponseDTO responseDTO = new ResponseDTO("No bike is present in the database with the given id.",exception.getMessage());
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(responseDTO, HttpStatus.NOT_FOUND);
 		}
 		
 		// for handling the Illegal Argument Exception,
