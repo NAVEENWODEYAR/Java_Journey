@@ -17,5 +17,8 @@ public interface TeacherRepo extends JpaRepository<Teacher, Integer>
 
 	// @Query
 	@Query(value = "SELECT * FROM book 	where teacher.t_salaryrice >=250000 ORDER BY teacher.t_salary",nativeQuery = true)
-	List<Teacher> getBooksGreaterThan();
+	List<Teacher> getTeachersSalaryGreaterThan();
+	
+	@Query(value = "SELECT * FROM book ORDER BY teacher.t_salary",nativeQuery = true)
+	List<Teacher> getTeacherBasedOnSalary();
 }

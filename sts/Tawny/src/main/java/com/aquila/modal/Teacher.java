@@ -25,6 +25,7 @@ public class Teacher
 	String tmail;
 	String tSubject;
 	
+		// to initialize the values using the DTO class object.,
 		public Teacher(TeacherDTO teacherDTO)
 		{
 			this.tName = teacherDTO.getTmail();
