@@ -9,7 +9,7 @@ import com.aquila.modal.Teacher;
 
 public interface TeacherRepo extends JpaRepository<Teacher, Integer> 
 {
-	@Query(value = "SELECT * FROM TEACHERS WHERE tName=name", nativeQuery = true )
+	@Query(value = "SELECT * FROM TEACHERS WHERE teacher.t_name=name", nativeQuery = true )
 	List<Teacher> getTeachers();
 	
 	// findByName queries,
