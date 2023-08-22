@@ -39,5 +39,33 @@ public class TeacherService {
 	public Teacher updateTeacher(TeacherDTO teacherDTO, Integer tId)
 	{
 		Teacher t = teacherRepo.findById(tId).get();
+				if(teacherRepo.findById(tId).isPresent())
+				{
+					t.setTName(teacherDTO.getTName());
+					t.setTAddress(teacherDTO.getTAddress());
+					t.setTmail(teacherDTO.getTmail());
+					t.setTSubject(teacherDTO.getTSubject());
+					t.setTSalary(teacherDTO.getTSalary());
+					
+					teacherRepo.save(t);;
+					
+				}
+				else
+					throw new TeacherNotFoundException("Sorry no such record found!");
+					
+	}
+	
+	// delete the record
+	public String deleteTeacher(Integer tId)
+	{
+		Teacher t = teacherRepo.findById(tId).get();
+				if(teacherRepo.findById(tId).isPresent())
+				{
+					teacherRepo.deleteById(tId);
+					return "";
+				}
+				else 
+					
+					throw new TeacherNotFoundException("Sorry no such record found!");
 	}
 }
