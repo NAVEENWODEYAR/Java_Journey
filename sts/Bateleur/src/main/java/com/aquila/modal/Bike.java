@@ -27,7 +27,7 @@ public class Bike
 	private double bikePrice;
 	private Year bikeModel;
 	
-		// DTO class object for initializing the object value.,
+		// DTO class object for initializing the object value to the modal class,
 		public Bike(BikeDTO bikeDTO)
 		{
 			this.bikeName = bikeDTO.getBikeMake();

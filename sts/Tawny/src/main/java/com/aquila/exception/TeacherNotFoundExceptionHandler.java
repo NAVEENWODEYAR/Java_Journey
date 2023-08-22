@@ -28,7 +28,7 @@ public class TeacherNotFoundExceptionHandler
 	{
 		List<ObjectError> errList = exception.getBindingResult().getAllErrors();
 		List<String> errMsg = errList.stream()
-									.map(e -> e.getDefaultMessage())
+									.map(error -> error.getDefaultMessage())
 									.collect(Collectors.toList());
 		ResponseDTO responseDTO = new ResponseDTO("Teacher not Found in the database..,",errMsg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
