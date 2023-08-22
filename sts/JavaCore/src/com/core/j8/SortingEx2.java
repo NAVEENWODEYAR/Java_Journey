@@ -9,7 +9,7 @@ public class SortingEx2
 	static void sortList(List<Integer> list)
 	{
 		list.stream()
-			.collect(Collectors.toSet())
+			.collect(Collectors.toUnmodifiableSet())
 			.forEach(System.out::println);
 	}
 	public static void main(String[] args)
@@ -18,7 +18,7 @@ public class SortingEx2
 		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15,1,0,1,2,3,4);
 
         myList.stream()
-              .sorted()
+              .sorted(Collections.reverseOrder())
               .forEach(System.out::println);
         
         System.out.println("Set obtained,");
