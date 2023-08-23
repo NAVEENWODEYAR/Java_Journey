@@ -9,7 +9,7 @@ public class ExceptionEx
 	{
 		try 
 		{
-   			throw new IOException("Hello");
+   			throw new IOException("Hello World!");
    		} 
 		catch(Exception e)
 		{
