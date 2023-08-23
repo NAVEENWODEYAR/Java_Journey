@@ -7,16 +7,19 @@ public class SumOfDigits
 	public static void sumOfDigits(int n)
 	{	
 		int sum = 0;
-		for(sum=0; n!=0; n=n/10)
-		{
-			sum = sum+n%10;
-		}
+		String intNumbers = Integer.toString(n);
+		
+			for(int i=0; i< intNumbers.length(); i++)
+			{
+				int j = Character.getNumericValue(intNumbers.charAt(i));
+				sum += j;
+			}
 		System.out.println(sum);
 	}
 	
 	public static void main(String[] args) 
 	{
-		sumOfDigits(54321);
+		sumOfDigits(5432);
 	}
 
 }
