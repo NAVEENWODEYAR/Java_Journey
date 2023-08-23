@@ -7,7 +7,7 @@ public class RegEx
 {
 	public static void main(String[] args)
 	{
-		String st = "Java Programming";
-		String sub = "";
+		Pattern p = Pattern.compile("an");
+		System.out.println(Pattern.matches("[A-Z a-z]", "Java"));
 	}
 }
