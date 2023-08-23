@@ -1,5 +1,5 @@
 // Program to print the sum of digits 
-
+// find out the modulus for reminder 
 package com.core.array;
 
 public class SumOfDigits2
