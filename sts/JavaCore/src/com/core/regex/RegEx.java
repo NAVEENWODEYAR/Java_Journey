@@ -1,6 +1,6 @@
 package com.core.regex;
 
-import java.util.regex.*;
+import java.util.regex.Pattern;
 
 public class RegEx 
 {
