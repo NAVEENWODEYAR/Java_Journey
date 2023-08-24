@@ -1,0 +1,20 @@
+package com.data.j8coding.copy;
+
+import java.util.Optional;
+
+public class OptionalEx {
+
+	public static void main(String[] args) 
+	{
+		Optional<String> st = Optional.of("Value");
+					if(st.isPresent())
+					{
+						System.out.println(st.get());
+					}
+					else
+					{
+						System.out.println("No value.,");
+					}
+	}
+
+}
