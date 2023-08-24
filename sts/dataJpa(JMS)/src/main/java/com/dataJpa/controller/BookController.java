@@ -17,7 +17,6 @@ import com.dataJpa.repo.BookRepo;
 import com.dataJpa.service.BookService;
 
 @RestController
-//@CrossOrigin()
 @CrossOrigin(origins="*", allowedHeaders = "*")
 public class BookController
 {
