@@ -33,7 +33,7 @@ public class TeacherController
 		return "Sky is not the limit!";
 	}
 	
-	// Post for sending the data,
+	// Post request for sending the data,
 	@PostMapping("/insertTeacher")
 	public ResponseEntity<ResponseDTO> insertTeacher(@Valid @RequestBody TeacherDTO teacherDTO)
 	{
