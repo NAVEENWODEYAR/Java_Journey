@@ -21,7 +21,7 @@ import com.bookstore.modal.BookStore;
 import com.bookstore.service.BookStoreService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 public class BookStoreController 
 {
 	@Autowired
