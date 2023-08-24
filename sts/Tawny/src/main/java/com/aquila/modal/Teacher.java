@@ -1,5 +1,9 @@
 package com.aquila.modal;
 
+import java.util.UUID;
+
+import org.hibernate.annotations.Type;
+
 import com.aquila.dto.TeacherDTO;
 
 import jakarta.persistence.Entity;
@@ -18,12 +22,15 @@ public class Teacher
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	int tId;
-	String tName;
-	String tAddress;
-	double tSalary;
-	String tmail;
-	String tSubject;
+	private int tId;
+	
+	private UUID id = UUID.randomUUID();
+	
+	private String tName;
+	private String tAddress;
+	private double tSalary;
+	private String tmail;
+	private String tSubject;
 	
 		// to initialize the values using the DTO class object.,
 		public Teacher(TeacherDTO teacherDTO)
