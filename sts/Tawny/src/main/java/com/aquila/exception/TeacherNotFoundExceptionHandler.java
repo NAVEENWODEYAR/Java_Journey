@@ -30,7 +30,7 @@ public class TeacherNotFoundExceptionHandler
 		List<String> errMsg = errList.stream()
 									.map(error -> error.getDefaultMessage())
 									.collect(Collectors.toList());
-		ResponseDTO responseDTO = new ResponseDTO("Teacher not Found in the database..,",errMsg);
+		ResponseDTO responseDTO = new ResponseDTO("Illegal argumentss.,",errMsg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
 }
