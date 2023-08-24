@@ -31,7 +31,6 @@ public class BookController
 	@PostMapping("/insertBookData")
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
 	{
-//		System.out.println(bk);
 		List<Book> lt = bookService.insertBooKData(bk);
 					return lt;
 	}
