@@ -40,7 +40,7 @@ public class BikeController
 		{
 			Bike bike = bikeService.insertBike(bikeDTO);
 			ResponseDTO responseDTO = new ResponseDTO("Bike details inserted successfully.",bike);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.ACCEPTED);
+			return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
 		}
 		
 		// 2. get for receiving the data.,
@@ -49,7 +49,7 @@ public class BikeController
 		{
 			Optional<Bike> bike = bikeService.getBikeById(bikeId);
 			ResponseDTO responseDTO = new ResponseDTO("Bike with the given is found",bike);
-			return new ResponseEntity(responseDTO, HttpStatus.FOUND);
+			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
 		
 		// 3. get all the records from the table.,
@@ -58,7 +58,7 @@ public class BikeController
 		{
 			List<Bike> bike = bikeService.getBikes();
 			ResponseDTO responseDTO = new ResponseDTO("Details found",bike);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
+			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
 		
 		// 4. post for updating the data.,
@@ -67,7 +67,7 @@ public class BikeController
 		{
 			Bike bike = bikeService.updateBike(bikeDTO, bikeId);
 			ResponseDTO responseDTO = new ResponseDTO("Bike details updated successfully",bike);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.ACCEPTED);
+			return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
 		}
 		
 		// 5. delete for deleting the data from the table by id
@@ -76,7 +76,7 @@ public class BikeController
 		{
 			bikeService.deleteBike(bikeId);
 			ResponseDTO responseDTO = new ResponseDTO("Bike details deleted from the database,","Bike id"+bikeId);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.GONE);
+			return new ResponseEntity<>(responseDTO, HttpStatus.GONE);
 		}
 		
 		// 6. custom queries, find the bike by name,
@@ -85,7 +85,7 @@ public class BikeController
 		{
 			Bike bike = bikeService.getBikeByName(bikeName);
 			ResponseDTO responseDTO = new ResponseDTO("Bike with the name found,",bike);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
+			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
 		
 		// 7. select by condition
@@ -94,6 +94,6 @@ public class BikeController
 		{
 			List<Bike> bike = bikeService.getPriceGreaterThan();
 			ResponseDTO responseDTO = new ResponseDTO("Available bikes are listed here,",bike);
-			return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.FOUND);
+			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
 }
