@@ -33,7 +33,7 @@ public class BikeController
 	@Autowired
 	private BikeService bikeService;
 	
-		// REST API generation
+		// REST API creation,
 		// 1. post for sending the data.,
 		@PostMapping("/insertBike")
 		public ResponseEntity<ResponseDTO> insertBike(@Valid @RequestBody BikeDTO bikeDTO)

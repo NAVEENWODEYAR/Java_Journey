@@ -22,7 +22,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/teacher")
 public class TeacherController 
 {
-	// DI,
+	// Dependancy Injection,
 	@Autowired
 	private TeacherService teacherService;
 	
