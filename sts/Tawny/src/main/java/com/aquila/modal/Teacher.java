@@ -24,7 +24,7 @@ public class Teacher
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int tId;
 	
-	private UUID id = UUID.randomUUID();
+//	private UUID id = UUID.randomUUID();
 	
 	private String tName;
 	private String tAddress;
