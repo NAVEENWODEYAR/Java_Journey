@@ -29,13 +29,12 @@ public class EmployeeCRUD {
 						empList.add(new Employee(14, "Randy", "randy@gmail.com", 15.00, "HR", "Male", 2014));
 	
 	
-	/**    How many male & female employees are there in the empList?
-		int maleEmployees = (int) empList.stream().filter(emp -> emp.getEGender()=="Male").count();
-		System.out.println(maleEmployees); 
-	
+	//    How many male & female employees are there in the empList?
 			Map<String,Long> genderCount = empList.stream().collect(Collectors.groupingBy(Employee::getEGender, Collectors.counting()));
 			System.out.println(genderCount);
-			
+											empList.stream().filter(emp -> emp.getEName().startsWith("S") && emp.getYearOfJoining() > 2000)
+															.forEach(emp -> System.out.println(emp.getEDept()+":"+emp.getEName()));
+	/**												
 		  Print the name of all departments in the organization?
 			List<String> dept = empList.stream().map(Employee::getEDept).distinct().collect(Collectors.toList());
 			System.out.println(dept);
