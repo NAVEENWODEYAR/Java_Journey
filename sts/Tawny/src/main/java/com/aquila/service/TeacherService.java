@@ -17,20 +17,23 @@ public class TeacherService {
 	@Autowired
 	private TeacherRepo teacherRepo;
 
-	// CRUD operations., insert to the table
-	public Teacher insertTeacher(TeacherDTO teacherDTO) {
+	// CRUD operations., insert values into the table
+	public Teacher insertTeacher(TeacherDTO teacherDTO) 
+	{
 		Teacher t = new Teacher(teacherDTO);
 		return teacherRepo.save(t);
 	}
 
 	// get the data
-	public List<Teacher> getTeachersList() {
+	public List<Teacher> getTeachersList()
+	{
 		List<Teacher> list = teacherRepo.findAll();
 		return list;
 	}
 
 	// get the record
-	public Optional<Teacher> getTeacher(Integer tId) {
+	public Optional<Teacher> getTeacher(Integer tId)
+	{
 		Optional<Teacher> t = teacherRepo.findById(tId);
 		if (t.isPresent()) {
 			return t;
@@ -39,7 +42,8 @@ public class TeacherService {
 	}
 
 	// update the record
-	public Teacher updateTeacher(TeacherDTO teacherDTO, Integer tId) {
+	public Teacher updateTeacher(TeacherDTO teacherDTO, Integer tId)
+	{
 		Teacher t = teacherRepo.findById(tId).get();
 		if (teacherRepo.findById(tId).isPresent()) {
 			t.setTName(teacherDTO.getTName());
@@ -55,7 +59,8 @@ public class TeacherService {
 	}
 
 	// delete the record
-	public String deleteTeacher(Integer tId) {
+	public String deleteTeacher(Integer tId) 
+	{
 		Teacher t = teacherRepo.findById(tId).get();
 		if (teacherRepo.findById(tId).isPresent()) {
 			teacherRepo.deleteById(tId);
@@ -66,7 +71,14 @@ public class TeacherService {
 	}
 
 	// getByName
-	public Teacher getByName(String tName) {
-		return teacherRepo.findBytName(tName);
+	public Teacher getByName(String tName)
+	{
+		Teacher t = teacherRepo.findBytName(tName);
+		if(teacherRepo.findBytName(tName) != null)
+		{
+			return t;
+		}
+		else
+			throw new TeacherNotFoundException("No teacher with the given name,");
 	}
 }
