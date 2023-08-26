@@ -1,4 +1,4 @@
-// convert an set into treeset
+// Convert a set into TreeSet
 package com.core.set;
 
 import java.util.*;
