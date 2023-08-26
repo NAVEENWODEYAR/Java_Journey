@@ -1,3 +1,5 @@
+// Program to find the sum of digits of an number,
+
 package com.core.array;
 
 public class SumOfDigits3
