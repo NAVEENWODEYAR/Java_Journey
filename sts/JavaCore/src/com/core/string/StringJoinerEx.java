@@ -1,4 +1,4 @@
-// Java 8 Program to add prefixe and suffix to the String?
+// Java 8 Program to add prefix and suffix to the String?
 
 package com.core.string;
 
