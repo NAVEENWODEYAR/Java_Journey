@@ -2,8 +2,7 @@
 
 package com.core.j8;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class MaxValue 
 {

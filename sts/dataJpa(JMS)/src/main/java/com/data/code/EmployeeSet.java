@@ -10,7 +10,7 @@ public class EmployeeSet
 	{
 		Set<Employee> set = new HashSet<>();
 		set.add(new Employee(1, "Ammie", "a@gmail.com", 1345.00, "HR", "Female", 2000));
-		set.add(new Employee(189, "Zoya", "zoya@gmail.com", 845345.00, "Tech", "Female", 2008));
+		set.add(new Employee(25, "Zoya", "zoya@gmail.com", 845345.00, "Tech", "Female", 2008));
 		set.add(new Employee(25, "Clara", "clara@gmail.com", 2345.00, "Production", "Female", 2010));
 		set.add(new Employee(85, "Bella", "bella@gmail.com", 78445.00, "Tech", "Female", 2020));
 		set.add(new Employee(89, "Nora", "nora@gmail.com", 5845.00, "Receiption", "Female", 2007));
