@@ -21,7 +21,7 @@ public class EmployeeSet
 		set.add(new Employee(89, "Nora", "nor@gmail.com", 5845.00, "Receiption", "Female", 2008));
 		set.add(new Employee(58, "Riya", "riya@gmail.com", 8654.00, "Software", "Female", 2019));
 		set.add(new Employee(89, "Nora", "noa@gmail.com", 9845.00, "Receiption", "Female", 2008));
-		set.add(new Employee(58, "Riya", "riy@gmail.com", 90654.00, "Software", "Female", 2016));
+		set.add(new Employee(57, "Riya", "riya@gmail.com", 8654.00, "Software", "Female", 2019));
 		
 		for(Employee e: set)
 		{
