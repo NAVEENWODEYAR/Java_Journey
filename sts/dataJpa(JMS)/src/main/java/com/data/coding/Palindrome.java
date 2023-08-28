@@ -4,9 +4,11 @@ public class Palindrome {
 
 	public static void palindrome(String st)
 	{
-		StringBuilder reverse = new StringBuilder();
-					reverse.append(st);
+		
+		StringBuilder reverse = new StringBuilder(st.toLowerCase());
+//					reverse.append(st);
 					reverse.reverse();
+					System.out.println(reverse);
 					
 			if(st.contentEquals(reverse))
 			{
@@ -21,7 +23,8 @@ public class Palindrome {
 	public static void main(String[] args)
 	{
 		String str = args[0];
-		palindrome(str);
+		System.out.println("String "+str);
+		palindrome("malayalam");
 	}
 
 }
