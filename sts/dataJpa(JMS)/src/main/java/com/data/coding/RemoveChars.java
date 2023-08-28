@@ -14,7 +14,6 @@ public class RemoveChars
 			
 			for(char c: chars)
 			{
-				if(!String.valueOf(c).isBlank())
 				if(mp.containsKey(c))
 				{
 					mp.put(c, mp.get(c)+1);
