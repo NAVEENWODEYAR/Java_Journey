@@ -6,25 +6,24 @@ public class Palindrome {
 	{
 		
 		StringBuilder reverse = new StringBuilder(st.toLowerCase());
-//					reverse.append(st);
 					reverse.reverse();
-					System.out.println(reverse);
 					
 			if(st.contentEquals(reverse))
 			{
-				System.out.println("Palindrome");
+				System.out.println(st+ "-is an Palindrome");
 			}
 			else
 			{
-				System.out.println("Not an palindrome");
+				System.out.println(st+ " -Not an palindrome");
 			}
 		
 	}
 	public static void main(String[] args)
 	{
 		String str = args[0];
-		System.out.println("String "+str);
 		palindrome("malayalam");
+		palindrome(str);
+		  
 	}
 
 }
