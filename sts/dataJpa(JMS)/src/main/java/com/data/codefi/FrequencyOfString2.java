@@ -1,7 +1,6 @@
 package com.data.codefi;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FrequencyOfString2 {
 	
