@@ -1,10 +1,7 @@
 package com.data.codefi;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import javax.naming.ldap.SortKey;
 
 public class MapExample {
 
