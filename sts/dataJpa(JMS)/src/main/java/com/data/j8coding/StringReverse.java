@@ -6,7 +6,7 @@ public class StringReverse
     {
         // program for reversing an string.,
         String st = "Spring";
-        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        StringBuilder sb = new StringBuilder();
                                 sb.append(st);
                                 sb.reverse();
                                 System.out.println(sb);
