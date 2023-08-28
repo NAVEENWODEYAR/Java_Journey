@@ -1,6 +1,6 @@
 package com.data.coding;
 
-import java.util.Arrays;import org.apache.commons.collections4.comparators.ReverseComparator;
+import java.util.Arrays;
 
 public class RemoveWhiteSpaceFromString {
 

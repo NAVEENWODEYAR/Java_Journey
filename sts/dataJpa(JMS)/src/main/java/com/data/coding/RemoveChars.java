@@ -14,6 +14,7 @@ public class RemoveChars
 			
 			for(char c: chars)
 			{
+				if(!String.valueOf(c).isBlank())
 				if(mp.containsKey(c))
 				{
 					mp.put(c, mp.get(c)+1);
@@ -28,7 +29,7 @@ public class RemoveChars
 	public static void main(String[] args) 
 	{
 		// How do you get distinct characters and their count in a string in Java
-		freqOfChars("Boss");
+		freqOfChars("Bo ss");
 	}
 
 }
