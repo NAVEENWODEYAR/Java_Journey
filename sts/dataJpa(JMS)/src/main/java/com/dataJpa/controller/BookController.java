@@ -20,13 +20,13 @@ import com.dataJpa.service.BookService;
 @CrossOrigin(origins="*", allowedHeaders = "*")
 public class BookController
 {
+	// Dependency injection(constructor dependency injection)
 	@Autowired
 	BookService bookService;
 	
 	@Autowired
 	BookRepo bRepo;
 
-	// generating the API.,
 	// 1. post for inserting the data.,(http://localhost:9090/insertBookData)
 	@PostMapping("/insertBookData")
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
