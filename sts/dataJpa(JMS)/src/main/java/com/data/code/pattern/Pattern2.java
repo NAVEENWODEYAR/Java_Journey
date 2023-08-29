@@ -15,7 +15,7 @@
 
 package com.data.code.pattern;
 
-public class Pattern1 
+public class Pattern2 
 {
 	private static void pattern()
 	{
@@ -23,7 +23,7 @@ public class Pattern1
 		{
 			for(int j=0; j<10; j++)
 			{
-				System.out.print("*"+" ");
+				System.out.print(j+" ");
 			}
 			System.out.println();
 		}
