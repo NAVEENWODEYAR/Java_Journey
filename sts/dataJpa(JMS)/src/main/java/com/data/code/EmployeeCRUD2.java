@@ -30,6 +30,9 @@ public class EmployeeCRUD2 {
 						empList.add(new Employee(57, "Nag", "nag@gmail.com",54155.00, "HR", "Male", 2013));
 						empList.add(new Employee(98, "Candy", "candy@gmail.com", 51.00, "Production", "Male", 2014));
 						empList.add(new Employee(14, "Randy", "randy@gmail.com", 15.00, "HR", "Male", 2014));
+						empList.add(new Employee(57, "Nag", "nag@gmail.com",54155.00, "HR", "Male", 2013));
+						empList.add(new Employee(98, "Candy", "candy@gmail.com", 51.00, "Production", "Male", 2014));
+						empList.add(new Employee(14, "Randy", "randy@gmail.com", 15.00, "HR", "Male", 2014));
 		
 		/**
 		// How many male & female employees are there in the empList?
