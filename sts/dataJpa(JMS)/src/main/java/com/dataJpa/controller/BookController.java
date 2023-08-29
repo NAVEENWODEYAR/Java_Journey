@@ -16,8 +16,11 @@ import com.dataJpa.madal.Book;
 import com.dataJpa.repo.BookRepo;
 import com.dataJpa.service.BookService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @CrossOrigin(origins="*", allowedHeaders = "*")
+@Slf4j
 public class BookController
 {
 	// Dependency injection(constructor dependency injection)
@@ -32,6 +35,7 @@ public class BookController
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
 	{
 		List<Book> lt = bookService.insertBooKData(bk);
+		log.info("Data saved successfully,");
 					return lt;
 	}
 	
