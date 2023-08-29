@@ -24,7 +24,7 @@ public class BinarySearch
 	}
 	public static void main(String[] args)
 	{
-
+		System.out.println(binarySearch(new int [] {19,344,4,3,45,7,423,34}, 3, 423, 4));
 	}
 
 }
