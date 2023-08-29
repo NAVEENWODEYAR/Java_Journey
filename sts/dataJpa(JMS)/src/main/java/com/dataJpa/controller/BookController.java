@@ -53,15 +53,6 @@ public class BookController
 		return bookService.getBookData();
 	}
 	
-	// 2.a selecting the record
-//	@GetMapping("/getBook/{bId}")
-//	public Book getBook(@PathVariable int bId)
-//	{
-//		return bookService.getBook(bId)
-//				.orElseThrow(()-> new UserNotFoundException(bId));
-//				
-//	}
-	
 	// 2.a selecting the record.,
 		@GetMapping("/getBook/{bId}")
 		public Book getBook(@PathVariable int bId)
@@ -70,14 +61,6 @@ public class BookController
 					.orElseThrow(()-> new com.data.exception.UserNotFoundException(bId));
 		}
 
-	
-	// 3. put for updating the data.,
-//	@PutMapping("/updateBookData/{bId}")
-//	public Book updateCarData(@PathVariable int bId, @RequestBody Book bk)
-//	{
-//		return bookService.updateBookData(bId, bk);
-//	}
-	
 	// 3. update the book
 	@PutMapping("/updateBook/{bId}")
 	public Book updateBook(@PathVariable int bId, @RequestBody Book bk)
