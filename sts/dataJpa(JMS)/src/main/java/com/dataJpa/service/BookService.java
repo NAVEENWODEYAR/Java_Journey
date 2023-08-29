@@ -10,7 +10,10 @@ import com.dataJpa.repo.BookRepo;
 import com.dataJpa.util.EmailSenderService;
 import com.dataJpa.util.TokenUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class BookService
 {
 	@Autowired
@@ -38,7 +41,7 @@ public class BookService
 		Book b1 = bRepo.save(bk);
 				String token = tokenUtil.createToken(bk.getbId());
 				eService.sendEmail(bk.getaMail(), ""+token+"", "Dear "+bk.getbName()+" book aded to the list sucessfully.,");
-				
+				log.info("Mail sent to the user,");
 				return b1;
 	}
 	
