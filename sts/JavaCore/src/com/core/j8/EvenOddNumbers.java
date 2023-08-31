@@ -10,6 +10,7 @@ public class EvenOddNumbers
 	{
 		list.parallelStream()
 			.filter(n-> n%2==0)
+			.sorted()
 			.forEach(System.out::println);
 	}
 
