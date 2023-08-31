@@ -9,14 +9,14 @@ public class StartsWithEx
 	public static void startsWith1(List<Integer> list)
 	{
 		list.parallelStream()
-			.map(n -> n+"")
+//			.map(n -> n+"")
 			.filter(n -> n.toString().startsWith("1"))
 			.forEach(System.out::println);
 	}
 
 	public static void main(String[] args) 
 	{
-		List<Integer> list = Arrays.asList(1,2,45,12,24,15,16,27,19,18);
+		List<Integer> list = Arrays.asList(1,2,45,12,24,15,16,27,19,18,11,12);
 		startsWith1(list);
 	}
 
