@@ -1,4 +1,4 @@
-// Program to print the sum of digits 
+// Program to print the sum of digits(for loop) 
 // find out the modulus for reminder 
 package com.core.array;
 
