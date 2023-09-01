@@ -31,9 +31,7 @@ public class IntersectionOfArrays
     }
     public static void main(String[] args)
     {
-        int a[] = {1,2,3,4,5};
-        int b[] = {1,3,5,7,9};
-        // invoke the method.,
-        intersectArray(a,b);
+       System.out.println("Intersection of two arrays,");
+        intersectArray(new int[] {1,2,3,4,5},new int[] {1,3,5,7,9});
     }
 }
