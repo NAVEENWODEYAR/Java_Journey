@@ -8,8 +8,7 @@ public class StartsWithEx
 {
 	public static void startsWith1(List<Integer> list)
 	{
-		list.parallelStream()
-//			.map(n -> n+"")
+			.map(n -> n+"")
 			.filter(n -> n.toString().startsWith("1"))
 			.forEach(System.out::println);
 	}
