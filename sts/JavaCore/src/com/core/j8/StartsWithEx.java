@@ -10,7 +10,7 @@ public class StartsWithEx
 	{
 		list.parallelStream()
 			.map(n -> n+"")
-			.filter(n -> n.toString().startsWith("1"))
+			.filter(n -> n.toString().startsWith("2"))
 			.forEach(System.out::println);
 	}
 
