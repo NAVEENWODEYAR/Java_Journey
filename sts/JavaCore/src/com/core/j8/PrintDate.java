@@ -11,6 +11,7 @@ public class PrintDate
 	{
 		System.out.println("Today- "+LocalDate.now());
 		System.out.println("Time- "+LocalTime.now());
+		System.out.println("Time- "+LocalDateTime.now());
 	}
 
 }
