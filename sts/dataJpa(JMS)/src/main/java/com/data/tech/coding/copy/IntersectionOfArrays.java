@@ -13,7 +13,6 @@ public class IntersectionOfArrays
             {
                 h.add(a[i]);
             }
-//        System.out.println(h);
 
             for (int i=0; i<=b.length-1; i++)
             {
