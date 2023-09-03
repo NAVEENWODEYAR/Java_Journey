@@ -18,7 +18,7 @@ public class IntersectionOfArrays
             {
                 if(h.contains(b[i]))
                 {
-                    System.out.println("Duplicate element  "+b[i]);
+                    System.out.println("Duplicate element,  "+b[i]);
                 }
                 else
                 {
