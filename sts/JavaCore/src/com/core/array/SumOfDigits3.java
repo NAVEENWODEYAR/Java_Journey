@@ -14,9 +14,9 @@ public class SumOfDigits3
 			}
 			System.out.println(sum);
 	}
-	public static void main(String[] args) 
+	public static void main(String[] numbers) 
 	{
-		int n = Integer.parseInt(args[0]);
+		int n = Integer.parseInt(numbers[0]);
 		System.out.println("*******");
 		sumOfDigits(n);
 	}
