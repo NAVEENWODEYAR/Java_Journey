@@ -23,7 +23,7 @@ public class SecondLargetString
 					}		
 				}
 				System.out.println("Original Array "+Arrays.asList(arr));
-				System.out.println("Largest string in the array "+largest);
+				System.out.println("Largest string(length) in the array "+largest);
 				System.out.println("Second largest string in the Array "+ secLargest);
 
 	}
