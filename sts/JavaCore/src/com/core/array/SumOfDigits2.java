@@ -11,7 +11,7 @@ public class SumOfDigits2
 		{
 			sum = sum+n%10;
 		}
-		System.out.println(sum);
+		System.out.println("Sum of the number"+n+"->"+sum);
 	}
 	
 	public static void main(String[] args) 
