@@ -1,4 +1,4 @@
-// Given a list of integers, find the maximum value element present in it using Stream functions?
+// Given a list of integers, find the maximum value element present in it using Stream built in functions?
 
 package com.core.j8;
 
