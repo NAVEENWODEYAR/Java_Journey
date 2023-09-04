@@ -21,7 +21,7 @@ public class Palindrome
 		String st = args[0];
 		System.out.println(palindromeString(st));
 		
-		// different ways to create string object
+		// different ways to create string objects
 		String st2 = new String("String");
 		String st1 = "NewString";
 	}
