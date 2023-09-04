@@ -9,7 +9,7 @@ public class SetToTreesetEx
 
 	public static void main(String[] args)
 	{
-		List<Integer> list = List.of(1,3,4,5,787,9,1,2,3,4,5,6,4,3,2,1);
+		List<Integer> list = List.of(96,1,3,4,5,87,9,1,2,3,4,5,6,4,3,2,1);
 					System.out.println("Original list provided "+list);
 					System.out.println(list.subList(2, 8));
 					System.out.println("*************");
