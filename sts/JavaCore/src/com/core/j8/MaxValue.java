@@ -12,7 +12,7 @@ public class MaxValue
 			.max(Comparator.comparing(Integer::intValue))
 			.get();
 		
-		System.out.println("Maximum int value in the list " +max);
+		System.out.println("Maximum integer value in the list " +max);
 	}
 	public static void main(String[] args)
 	{
