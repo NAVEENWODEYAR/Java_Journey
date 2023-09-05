@@ -10,8 +10,8 @@ public class Palindrome
 						reverse.append(st);
 						reverse.reverse();
 						
-					if(st.contentEquals(reverse))
-//					if(reverse.toString().equalsIgnoreCase(str))
+//					if(st.contentEquals(reverse))
+					if(reverse.toString().equalsIgnoreCase(str))
 						return true;
 					else
 						return false;
