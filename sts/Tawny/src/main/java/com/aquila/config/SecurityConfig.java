@@ -18,5 +18,6 @@ public class SecurityConfig
 		http.formLogin();
 		http.httpBasic();
 		return http.build();
+		
 	}
 }
