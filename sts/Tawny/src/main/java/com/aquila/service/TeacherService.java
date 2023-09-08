@@ -10,17 +10,22 @@ import com.aquila.dto.TeacherDTO;
 import com.aquila.exception.TeacherNotFoundException;
 import com.aquila.modal.Teacher;
 import com.aquila.repo.TeacherRepo;
+import com.aquila.util.TeacherMails;
 
 @Service
 public class TeacherService {
 	// DI
 	@Autowired
 	private TeacherRepo teacherRepo;
+	
+	@Autowired
+	private TeacherMails teacherMails;
 
 	// CRUD operations., insert values into the table
 	public Teacher insertTeacher(TeacherDTO teacherDTO) 
 	{
 		Teacher t = new Teacher(teacherDTO);
+		teacherMails.sendMail(t.getTmail(), "Thanks for choosing our service, we welcome you to the club", "Dear,"+t.getTName()+" user welcome to the club,");;
 		return teacherRepo.save(t);
 	}
 
