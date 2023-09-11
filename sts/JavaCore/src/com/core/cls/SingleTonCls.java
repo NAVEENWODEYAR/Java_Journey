@@ -20,4 +20,11 @@ public class SingleTonCls
 		return instance;
 	}
 	
+	public static void main(String[] args) 
+	{
+		SingleTonCls a = new SingleTonCls();
+					a.getInstance();
+					System.out.println(a.getClass().hashCode());
+	}
+	
 }
