@@ -50,4 +50,11 @@ public class TeacherController
 		ResponseDTO responseDTO = new ResponseDTO("Details found,",teacher);
 		return new ResponseEntity<>(responseDTO,HttpStatus.FOUND);
 	}
+	
+	// getByName
+	@GetMapping("/getByName")
+	public Teacher getByName(String tName)
+	{
+		return teacherService.getByName(tName);
+	}
 }
