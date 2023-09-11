@@ -8,6 +8,7 @@ public class SingleTonEx
 		SingleTonCls obj = SingleTonCls.getInstance();
 		SingleTonCls obj1 = SingleTonCls.getInstance();
 					System.out.println(obj==obj1);
+					System.out.println(obj.equals(obj1));
 		
 	}
 	// instance block
