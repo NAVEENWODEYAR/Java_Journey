@@ -30,6 +30,7 @@ public class SingleTonCls
 					System.out.println(b.getClass().hashCode());
 					
 					System.out.println(a.equals(b));
+					System.out.println(a==b);
 	}
 	
 }
