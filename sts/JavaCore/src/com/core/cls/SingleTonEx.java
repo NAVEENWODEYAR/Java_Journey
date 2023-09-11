@@ -5,6 +5,9 @@ public class SingleTonEx
 	
 	public static void main(String[] args)
 	{
+		SingleTonCls obj = SingleTonCls.getInstance();
+		SingleTonCls obj1 = SingleTonCls.getInstance();
+					System.out.println(obj==obj1);
 		
 	}
 	// instance block
