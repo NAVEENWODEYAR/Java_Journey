@@ -2,7 +2,7 @@ package com.core.cls;
 
 public class SingleTonCls
 {
-	private static SingleTonCls instance;
+	private static SingleTonCls instance=null;
 	
 	// private constructor
 	private SingleTonCls()
