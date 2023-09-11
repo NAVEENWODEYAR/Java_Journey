@@ -34,6 +34,8 @@ public class SingleTonCls
 					
 		SingleTonCls c = SingleTonCls.getInstance();
 					System.out.println(c.getClass().hashCode());
+					System.out.println(c==b);
+					System.out.println(c.equals(b));
 	}
 	
 }
