@@ -7,6 +7,7 @@ public class Abc
 	{
 		Abc a = new Abc();
 		Abc b = new Abc();
+		System.out.println(a==b);
 		
 	}
 
