@@ -10,4 +10,13 @@ public class SingleTonCls
 		
 	}
 	
+	public SingleTonCls getInstance()
+	{
+		if(instance == null)
+		{
+			instance = new SingleTonCls();
+		}
+		return instance;
+	}
+	
 }
