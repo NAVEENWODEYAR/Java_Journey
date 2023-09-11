@@ -11,7 +11,7 @@ public class SingleTonCls
 		s="Private constructor";
 	}
 	
-	public SingleTonCls getInstance()
+	public static SingleTonCls getInstance()
 	{
 		if(instance == null)
 		{
@@ -25,6 +25,9 @@ public class SingleTonCls
 		SingleTonCls a = new SingleTonCls();
 					a.getInstance();
 					System.out.println(a.getClass().hashCode());
+	
+		SingleTonCls b = SingleTonCls.getInstance();
+					System.out.println(b.getClass().hashCode());
 	}
 	
 }
