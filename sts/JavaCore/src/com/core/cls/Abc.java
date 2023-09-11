@@ -8,6 +8,7 @@ public class Abc
 		Abc a = new Abc();
 		Abc b = new Abc();
 		System.out.println(a==b);
+		System.out.println(a.equals(b));
 		
 	}
 
