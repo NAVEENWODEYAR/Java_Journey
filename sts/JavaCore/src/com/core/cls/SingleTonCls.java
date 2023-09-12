@@ -23,7 +23,7 @@ public class SingleTonCls
 		return instance;
 	}
 	
-	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException 
+	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, CloneNotSupportedException 
 	{
 		SingleTonCls a = new SingleTonCls();
 					a.getInstance();
@@ -51,11 +51,12 @@ public class SingleTonCls
 		
 		// cloning
 		System.out.println("Using cloning");
-		try {
+		try 
+		{
 			SingleTonEx clonedInstance = (SingleTonEx) a.clone();
 			System.out.println(clonedInstance.hashCode());
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
+		} catch (CloneNotSupportedException e) 
+		{
 			e.printStackTrace();
 		}
 	}
