@@ -1,5 +1,8 @@
 package com.core.cls;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 public class SingleTonCls
 {
 	private static SingleTonCls instance=null;
@@ -20,7 +23,7 @@ public class SingleTonCls
 		return instance;
 	}
 	
-	public static void main(String[] args) 
+	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 		SingleTonCls a = new SingleTonCls();
 					a.getInstance();
@@ -36,6 +39,14 @@ public class SingleTonCls
 					System.out.println(c.getClass().hashCode());
 					System.out.println(c==b);
 					System.out.println(c.equals(b));
+					
+					
+		// reflection to break singleton and make prototype
+		Class<?> singleTon = Class.forName("com.core.cls.SingleTonEx");
+		Constructor<SingleTonEx> constructor = (Constructor<SingleTonEx>) singleTon.getDeclaredConstructor(null);
+		constructor.setAccessible(true);
+		SingleTonEx instance = constructor.newInstance();
+		System.out.println(instance.hashCode());
 	}
 	
 }
