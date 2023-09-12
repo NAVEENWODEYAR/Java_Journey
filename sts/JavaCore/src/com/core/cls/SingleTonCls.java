@@ -3,7 +3,7 @@ package com.core.cls;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public class SingleTonCls
+public class SingleTonCls implements Cloneable
 {
 	private static SingleTonCls instance=null;
 	private String s;
@@ -21,6 +21,11 @@ public class SingleTonCls
 			instance = new SingleTonCls();
 		}
 		return instance;
+	}
+	@Override
+	protected Object clone() throws CloneNotSupportedException
+	{
+		return super.clone();
 	}
 	
 	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, CloneNotSupportedException 

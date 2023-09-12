@@ -1,6 +1,6 @@
 package com.core.cls;
 
-public class SingleTonEx implements Cloneable
+public class SingleTonEx 
 {
 	
 	public static void main(String[] args)
