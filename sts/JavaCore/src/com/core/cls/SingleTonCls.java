@@ -24,10 +24,10 @@ public class SingleTonCls
 	{
 		SingleTonCls a = new SingleTonCls();
 					a.getInstance();
-					System.out.println(a.getClass().hashCode());
+					System.out.println(a.hashCode());
 	
 		SingleTonCls b = SingleTonCls.getInstance();
-					System.out.println(b.getClass().hashCode());
+					System.out.println(b.hashCode());
 					
 					System.out.println(a.equals(b));
 					System.out.println(a==b);
