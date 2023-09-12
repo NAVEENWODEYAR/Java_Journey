@@ -50,7 +50,13 @@ public class SingleTonCls
 		
 		// cloning
 		System.out.println("Using cloning");
-		
+		try {
+			SingleTonEx clonedInstance = (SingleTonEx) a.clone();
+			System.out.println(clonedInstance.hashCode());
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
