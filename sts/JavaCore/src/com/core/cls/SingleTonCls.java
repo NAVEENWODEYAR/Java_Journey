@@ -25,40 +25,24 @@ public class SingleTonCls
 	
 	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, CloneNotSupportedException 
 	{
-		SingleTonCls a = new SingleTonCls();
-					a.getInstance();
-					System.out.println(a.hashCode());
-	
+		
 		SingleTonCls b = SingleTonCls.getInstance();
-					System.out.println(b.hashCode());
-					
-					System.out.println(a.equals(b));
-					System.out.println(a==b);
+					System.out.println("Hashcode of the object b "+b.hashCode());
 					
 		SingleTonCls c = SingleTonCls.getInstance();
-					System.out.println(c.getClass().hashCode());
+					System.out.println("Hashcode of the object c "+c.hashCode());
 					System.out.println(c==b);
 					System.out.println(c.equals(b));
 					
 					
 		// reflection to break singleton and make prototype
 		Class<?> singleTon = Class.forName("com.core.cls.SingleTonEx");
-		@SuppressWarnings("unchecked")
 		Constructor<SingleTonEx> constructor = (Constructor<SingleTonEx>) singleTon.getDeclaredConstructor(null);
 		constructor.setAccessible(true);
 		SingleTonEx instance = constructor.newInstance();
-		System.out.println(instance.hashCode());
+		System.out.println("Hashcode of the reflection object "+instance.hashCode());
 		
-		// cloning
-		System.out.println("Using cloning");
-		try 
-		{
-			SingleTonEx clonedInstance = (SingleTonEx) a.clone();
-			System.out.println(clonedInstance.hashCode());
-		} catch (CloneNotSupportedException e) 
-		{
-			e.printStackTrace();
-		}
+	
 	}
 	
 }
