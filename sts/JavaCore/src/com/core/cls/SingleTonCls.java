@@ -47,6 +47,10 @@ public class SingleTonCls
 		constructor.setAccessible(true);
 		SingleTonEx instance = constructor.newInstance();
 		System.out.println(instance.hashCode());
+		
+		// cloning
+		System.out.println("Using cloning");
+		
 	}
 	
 }
