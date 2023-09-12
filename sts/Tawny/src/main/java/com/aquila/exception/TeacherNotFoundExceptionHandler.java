@@ -19,7 +19,7 @@ public class TeacherNotFoundExceptionHandler
 	@ExceptionHandler
 	public ResponseEntity<ResponseDTO> teacherNotfoundExceptionHandler(TeacherNotFoundException exception)
 	{
-		ResponseDTO responseDTO = new ResponseDTO("Sorry exception occured while seraching for the reacord which is not present!",exception);
+		ResponseDTO responseDTO = new ResponseDTO("Sorry exception occured while seraching for the reacord which is not present!, in the database",exception);
 		return new ResponseEntity<>(responseDTO, HttpStatus.NOT_FOUND);
 	}
 	
