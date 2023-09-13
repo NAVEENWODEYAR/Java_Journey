@@ -14,6 +14,8 @@ public interface TeacherRepo extends JpaRepository<Teacher, Integer>
 	
 	// findByName queries,
 	Teacher findBytName(String tName);
+	
+	Teacher findBytMail(String tMail);
 
 	// @Query
 	@Query(value = "SELECT * FROM book 	where teacher.t_salaryrice >=250000 ORDER BY teacher.t_salary",nativeQuery = true)
