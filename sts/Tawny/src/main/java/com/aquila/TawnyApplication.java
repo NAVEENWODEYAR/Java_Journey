@@ -11,7 +11,7 @@ import io.swagger.v3.oas.annotations.info.License;
 @SpringBootApplication
 @OpenAPIDefinition(
 		info = @Info(
-						title = "Tawny",
+						title = "Tawny_SpringBoot Application",
 						version = "1.0.0",
 						description = "API Documentation,",
 						termsOfService = "Test the API",
