@@ -17,6 +17,14 @@ public class SumOfDigits2
 	public static void main(String[] args) 
 	{
 		sumOfDigits(54321);
+		sumOfDigits(6789);
+		int n = 9876;
+		int sum = 0;
+		for(sum=0; n!=0; n=n/10)
+		{
+			sum = sum+n%10;
+		}
+		System.out.println(sum);
 	}
 
 }
