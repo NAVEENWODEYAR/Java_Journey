@@ -6,12 +6,10 @@ import java.lang.reflect.InvocationTargetException;
 public class SingleTonCls implements Cloneable
 {
 	private static SingleTonCls instance=null;
-	private String s;
 	
 	// private constructor
 	private SingleTonCls()
 	{
-		s="Private constructor";
 	}
 	
 	public static SingleTonCls getInstance()
