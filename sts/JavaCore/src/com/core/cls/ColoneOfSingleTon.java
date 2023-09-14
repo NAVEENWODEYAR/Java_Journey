@@ -1,7 +1,5 @@
 package com.core.cls;
 
-import java.util.*;
-
 public class ColoneOfSingleTon 
 {
 
