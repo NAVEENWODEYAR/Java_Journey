@@ -1,4 +1,4 @@
-// Write a Java Program to find the second-highest number in an array[swapping].
+// Write a Java Program to find the second-highest number in an array[using swapping].
 package com.core.array;
 
 import java.util.Arrays;
