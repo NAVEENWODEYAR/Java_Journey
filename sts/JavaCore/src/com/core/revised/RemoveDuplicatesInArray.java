@@ -10,14 +10,15 @@ public class RemoveDuplicatesInArray
 {
 	static void removeDuplicates(int[]a)
 	{
-		List<Integer> arrList = new ArrayList<>();
-		Set<Integer> hashSet = new HashSet<>();
-		for(int n:a)
+		Set<Integer> set = new HashSet<>(5);
+		ArrayList<Integer> arrList = new ArrayList<>(5);
+		
+		for(int n: a)
 		{
-			if(!hashSet.add(n))
-			arrList.add(n);
+			if(!set.add(n))
+				arrList.add(n);
 		}
-		System.out.println(hashSet);
+		System.out.println(set);
 		System.out.println(arrList);
 	}
 	public static void main(String[] args) 
