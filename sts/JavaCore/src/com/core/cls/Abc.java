@@ -12,7 +12,6 @@ public class Abc implements Cloneable
 		System.out.println(a.clone());
 		Abc c = (Abc) a.clone();
 		System.out.println(a.equals(c));
-		
 	}
 
 }
