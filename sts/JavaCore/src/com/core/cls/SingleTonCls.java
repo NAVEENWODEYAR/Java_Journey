@@ -39,6 +39,7 @@ public class SingleTonCls implements Cloneable
 								
 		// reflection to break singleton and make prototype
 		Class<?> singleTon = Class.forName("com.core.cls.SingleTonEx");
+		@SuppressWarnings("unchecked")
 		Constructor<SingleTonEx> constructor = (Constructor<SingleTonEx>) singleTon.getDeclaredConstructor(null);
 		constructor.setAccessible(true);
 		SingleTonEx instance = constructor.newInstance();
