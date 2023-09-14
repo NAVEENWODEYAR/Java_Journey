@@ -16,11 +16,6 @@ public class ColoneOfSingleTon
 		System.out.println(obj==clonedInstance);
 		
 		
-		Map<String, Integer> mp = new HashMap();
-							mp.put("One", 1);
-							
-							mp.entrySet().forEach(System.out::println);
-		
 	}
 
 }
