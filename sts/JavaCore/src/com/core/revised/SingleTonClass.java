@@ -26,7 +26,7 @@ public class SingleTonClass
 		SingleTonClass s2 = SingleTonClass.getObject();
 		SingleTonClass s3 = new SingleTonClass();
 		
-		// check weather it is interface or not
+		// check class belongs to  interface or not
 		System.out.println(s3.getClass().getInterfaces());
 		if(Serializable.class.isInterface())
 			System.out.println(true);
