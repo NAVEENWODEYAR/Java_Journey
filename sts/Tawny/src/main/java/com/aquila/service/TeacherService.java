@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.aquila.dto.TeacherDTO;
@@ -13,6 +14,7 @@ import com.aquila.repo.TeacherRepo;
 import com.aquila.util.TeacherMails;
 
 @Service
+@Component
 public class TeacherService {
 	// DI
 	@Autowired
