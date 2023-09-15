@@ -3,9 +3,12 @@ package com.core.codingTest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SmallestSubarrayWithDegree {
-    public static int findShortestSubarray(int[] nums) {
-        if (nums == null || nums.length == 0) {
+public class SmallestSubarrayWithDegree
+{
+    public static int findShortestSubarray(int[] nums) 
+    {
+        if (nums == null || nums.length == 0) 
+        {
             return 0;
         }
 
