@@ -9,12 +9,16 @@ public class JreJvmJdk
 	}
 	static
 	{
-		System.out.println("JRE,It consists of the Java Virtual Machine\r\n"
+		System.out.println("\n JRE,It consists of the Java Virtual Machine\r\n"
 				+ "    core classes, and supporting files");
 	}
 	static
 	{
-		System.out.println("JVM, is an abstract virtual machine that provides a runtime environment for running Java bytecode.");
+		System.out.println("\r JVM, is an abstract virtual machine that provides a runtime environment for running Java bytecode.");
 	}
-
+	
+	public static void main(String[] args)
+	{
+		
+	}
 }
