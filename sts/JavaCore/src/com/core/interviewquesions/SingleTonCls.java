@@ -1,7 +1,12 @@
 package com.core.interviewquesions;
 
-public class SingleTonCls 
+public class SingleTonCls  implements Cloneable
 {
+	@Override
+	protected Object clone() throws CloneNotSupportedException
+	{
+		return super.clone();
+	}
 	private static SingleTonCls obj=null;
 	
 	private SingleTonCls()

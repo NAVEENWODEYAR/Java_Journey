@@ -10,6 +10,7 @@ public class SingleTonCls implements Cloneable
 	// private constructor
 	private SingleTonCls()
 	{
+		
 	}
 	
 	public static SingleTonCls getInstance()

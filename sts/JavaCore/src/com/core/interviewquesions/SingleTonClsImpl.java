@@ -1,27 +1,23 @@
 package com.core.interviewquesions;
 
-public class SingleTonClsImpl 
+public class SingleTonClsImpl implements Cloneable
 {
-	private static SingleTonClsImpl obj=null;
-	
-	private SingleTonClsImpl()
-	{
-		
-	}
-	
-	public static SingleTonClsImpl getInstance()
-	{
-		if(obj == null)
-		{
-			obj = new SingleTonClsImpl();
-		}
-		return obj;
-	}	
 	public static void main(String[] args) 
 	{
-		SingleTonClsImpl obj = SingleTonClsImpl.getInstance();
-		SingleTonClsImpl obj1 = SingleTonClsImpl.getInstance();
+		SingleTonCls obj = SingleTonCls.getInstance();
+		SingleTonCls obj1 = SingleTonCls.getInstance();
 							
 		System.out.println(obj.hashCode() == obj1.hashCode());
+		
+		// Cloning to break the singleton class pattern,
+		try 
+		{
+			SingleTonCls obj2 = (SingleTonCls) obj.clone();
+			System.out.println(obj.hashCode()+"<-->"+obj2.hashCode());
+		} 
+		catch (CloneNotSupportedException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 }
