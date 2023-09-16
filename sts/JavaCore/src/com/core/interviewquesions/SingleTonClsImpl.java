@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 
 public class SingleTonClsImpl 
 {
-	public static void main(String[] args) throws  NoSuchMethodException, SecurityException 
+	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException 
 	{
 		SingleTonCls obj = SingleTonCls.getInstance();
 		SingleTonCls obj1 = SingleTonCls.getInstance();
