@@ -49,7 +49,7 @@ public class SmallestSubarrayWithDegree
     public static void main(String[] args) {
         int[] nums = {1, 2, 2, 3, 1};
         int minLength = findShortestSubarray(nums);
-        System.out.println("Smallest subarray length with the same degree: " + minLength); // Output: 2
+        System.out.println("Smallest subarray length with the same degree= " + minLength); // Output: 2
     }
 }
 
