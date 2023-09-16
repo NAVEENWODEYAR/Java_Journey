@@ -1,22 +1,25 @@
 package com.core.interviewquesions;
 
+import java.util.Arrays;
 
 public class SortArray 
 {
 	private static void sortArray(int []a)
 	{
-		int length = a.length;
-		for(int i=0; i< length/2; i++)
+		Arrays.sort(a);
+		int lh = a.length;
+		for(int i=0; i< lh/2; i++)
 		{
 			// Storing the first half elements temporarily
 			int temp = a[i];
 			
 			 // Assigning the first half to the last half
-			a[i] = a[length-i-1];
+			a[i] = a[lh-i-1];
 			
 			//Assigning the last half to the first half
-			a[length-i-1] = temp;
+			a[lh-i-1] = temp;
 		}
+		System.out.println(Arrays.toString(a));
 	}
 	public static void main(String[] args) 
 	{
