@@ -5,7 +5,8 @@ public class PalindromeInt
 	public static boolean isPalindrome(int num) 
 	{
         // Handle negative numbers (they cannot be palindromes)
-        if (num < 0) {
+        if (num < 0) 
+        {
             return false;
         }
 
@@ -23,7 +24,7 @@ public class PalindromeInt
 	}
 	public static void main(String[] args) 
 	{
-		isPalindrome(26324);
+		System.out.println(isPalindrome(3265432));
 	}
 	
 }
