@@ -8,7 +8,7 @@ public class StringInheritanceEx // extends String
 	}
 	public static void main(String[] args) 
 	{
-		String
+		String st = "String";
 	}
 
 }
