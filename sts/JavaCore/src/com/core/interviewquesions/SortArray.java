@@ -1,33 +1,30 @@
 package com.core.interviewquesions;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class SortArray 
 {
-	static void sortArray(int[] arr)
+	private static void sortArray(int []a)
 	{
-		int[] array = Arrays.stream(arr).distinct().sorted().toArray();
-		String arryList = Arrays.toString(arr);
-		System.out.println(arryList);
-
-		for(int n: array)
+		int length = a.length;
+		for(int i=0; i< length/2; i++)
 		{
-			System.out.println(n);
+			// Storing the first half elements temporarily
+			int temp = a[i];
+			
+			 // Assigning the first half to the last half
+			a[i] = a[length-i-1];
+			
+			//Assigning the last half to the first half
+			a[length-i-1] = temp;
 		}
 	}
 	public static void main(String[] args) 
 	{
-		sortArray(new int[]{1,9,4,1,3,2,6,7,5,4});
-		
-		 Integer  a[] = {1,9,4,1,3,2,6,7,5,4};
-		Arrays.sort(a,Collections.reverseOrder());
-		System.out.println(Arrays.toString(a));
+		sortArray( new int[]{1,9,4,1,3,2,6,7,5,4});
 	}
 	static
 	{
-		System.out.println("Sorting an array using the collections");
+		System.out.println("Sorting an array");
 	}
 
 }
