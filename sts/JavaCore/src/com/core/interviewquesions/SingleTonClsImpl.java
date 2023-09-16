@@ -1,8 +1,10 @@
 package com.core.interviewquesions;
 
-public class SingleTonClsImpl implements Cloneable
+import java.lang.reflect.Constructor;
+
+public class SingleTonClsImpl 
 {
-	public static void main(String[] args) 
+	public static void main(String[] args) throws  NoSuchMethodException, SecurityException 
 	{
 		SingleTonCls obj = SingleTonCls.getInstance();
 		SingleTonCls obj1 = SingleTonCls.getInstance();
@@ -19,5 +21,14 @@ public class SingleTonClsImpl implements Cloneable
 		{
 			e.printStackTrace();
 		}
+		
+		// reflection to break the singleton class,
+		Class<?> reflection = Class.forName("com.core.interviewquesions");
+		Constructor<SingleTonCls> constructor = (Constructor<SingleTonCls>) reflection.getDeclaredConstructor(null);
+									constructor.setAccessible(true);
+									SingleTonCls obj4 = obj.getInstance();
+									System.out.println("*****Reflection******");
+									System.out.println("Hashcode of the reflected object,"+obj4.hashCode());
+	
 	}
 }

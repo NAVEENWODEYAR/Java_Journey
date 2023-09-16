@@ -7,6 +7,8 @@ public class SingleTonCls  implements Cloneable
 	{
 		return super.clone();
 	}
+	
+	// static instance of the class,
 	private static SingleTonCls obj=null;
 	
 	private SingleTonCls()
