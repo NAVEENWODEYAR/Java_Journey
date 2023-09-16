@@ -7,6 +7,7 @@ public class ConstructorChaining
 	
 	public ConstructorChaining()
 	{
+		// calling the parameterized constructor,
 		this("Boss",1);
 	}
 	
@@ -18,8 +19,13 @@ public class ConstructorChaining
 	public static void main(String[] args) 
 	{
 		ConstructorChaining obj = new ConstructorChaining();
+		ConstructorChaining obj1 = new ConstructorChaining("Bhas",2);
+		
 		System.out.println("Student name-> "+obj.name);
 		System.out.println("Student id-> "+obj.stId);
+		
+		System.out.println("Student name-> "+obj1.name);
+		System.out.println("Student id-> "+obj1.stId);
 
 	}
 }
