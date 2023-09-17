@@ -4,6 +4,7 @@ package com.core.map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class IterateHashMap 
 {
@@ -15,17 +16,46 @@ public class IterateHashMap
 								hm.put("", true);
 								hm.put("Null", false);
 								hm.put("Zero", false);
+								hm.put("Two", true);
 								
-		// iterating using for-loop
-								for(int i=0; i<hm.size()-1; i++)
+		// Iterating using for-loop, Map.entrySet()
+								for(Map.Entry<String, Boolean> entry: hm.entrySet())
 								{
-									System.out.println(hm.entrySet());
+									System.out.println(entry.getKey()+":"+entry.getValue());
 								}
-								System.out.println(hm);
-								System.out.println(hm.entrySet());
+//								System.out.println(hm);
+//								System.out.println(hm.entrySet());
+								
+		// using keySet() for iteration over keys	
+								System.out.println("****KeySet()*****");
+								for(String st: hm.keySet())
+								{
+									System.out.println("Key:"+st);
+								}
+								
+		// using keySet() for iteration over keys	
+								System.out.println("****Values()*****");
+								for(Boolean bl: hm.values())
+								{
+									System.out.println("Value:"+bl);
+								}
+								
+		// Iterating using Iterator,
+								Iterator<Entry<String, Boolean>> it = hm.entrySet().iterator();
+								While(it.hasNext())
+								{
+									
+								}
+							
+		// using forEach, Using forEach(action) method 
+								hm.entrySet().forEach((k,v)-> System.out.println("Key "+k+"-_-"+"Value"+v));
+									
 	}
+	
+	
 	public static void main(String[] args) 
 	{
+		System.out.println("*******************");
 		System.out.println("HashMap iteration ways,");
 	}
 }
