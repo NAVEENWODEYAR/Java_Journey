@@ -4,10 +4,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BateleurApplicationTests {
+class BateleurApplicationTests 
+{
 
 	@Test
-	void contextLoads() {
+	void contextLoads() 
+	{
+		
 	}
 
 }
