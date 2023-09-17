@@ -17,12 +17,14 @@ public class IterateHashMap
 			System.out.println(mp.entrySet());
 			
 			// iterate using the forEach loop
+			System.out.println("***For Loop********");
 			for(Map.Entry<Integer, String> m : mp.entrySet())
 			{
 				System.out.println(m.getKey()+" ----"+m.getKey());
 			}
 			
-			// using while
+			// using iterator,
+			System.out.println("*****Iterator*******");
 			Iterator it = mp.entrySet().iterator();
 			while(it.hasNext())
 			{
