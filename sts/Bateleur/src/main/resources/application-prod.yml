@@ -1,0 +1,17 @@
+server:
+  port: 8475
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bateleur
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: boss
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
