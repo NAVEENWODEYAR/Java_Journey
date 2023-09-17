@@ -11,7 +11,7 @@ public class WordFreq2
 		String [] st = str.split(" ");
 		Map<String, Integer> hashMap = new HashMap<>();
 		
-			for(int i=0; i<str.length(); i++)
+			for(int i=0; i<st.length-1; i++)
 			{
 				if(hashMap.containsKey(st[i]))
 				{
@@ -20,11 +20,20 @@ public class WordFreq2
 				else
 					hashMap.put(st[i], 1);
 			}
+			
+			for(int i=0; i<=st.length-1; i++)
+			{
+				if(mp.containsKey(st[i]))
+				{
+					mp.put(st[i], mp.get(st[i])+1);					
+				}
+				else
+					mp.put(st[i], 1);
 			System.out.println(hashMap);
 	}
 	public static void main(String[] args) 
 	{
-		wordFrequency("Java Program Hello World, Hello Java Family, Java loves you");
+		wordFrequency("Java Program Hello World, Hello Java Family,Java loves you");
 	}
 
 }

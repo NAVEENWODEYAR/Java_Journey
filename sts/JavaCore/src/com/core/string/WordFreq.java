@@ -21,7 +21,7 @@ public class WordFreq
 				else
 					mp.put(st[i], 1);
 			}
-			System.out.println(mp.toString());
+			System.out.println(mp);
 	}
 	public static void main(String[] args) 
 	{
