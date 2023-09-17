@@ -14,15 +14,10 @@ public class WordFreq2
 			for(int i=0; i<= st.length-1; i++)
 			{
 				if(hashMap.containsKey(st[i]))
-				{
-					hashMap.put(st[i], hashMap.get(st[i]+1));
-				}
+					hashMap.put(st[i], hashMap.get(st[i])+1);
 				else
-				{
 					hashMap.put(st[i], 1);
-				}
-			}
-			
+			}	
 			System.out.println(hashMap);
 	}
 	public static void main(String[] args) 
@@ -30,9 +25,10 @@ public class WordFreq2
 		wordFrequency("Java Program Hello World Hello Java Family Java loves you");
 	}
 	
+	// static block,
 	static
 	{
-		String str = "Java Programming, Java loves you";
+		String str = "Java Programming Java loves you";
 		String[] st = str.split(" ");
 		Map<String, Integer> mp = new HashMap<>();
 		
@@ -46,7 +42,7 @@ public class WordFreq2
 		System.out.println(mp);
 		System.out.println("***********");
 		
-		for(Map.Entry<String, Integer>obj: mp)
+		for(Map.Entry<String, Integer>obj: mp.entrySet())
 		{
 			System.out.println(obj.getKey()+":"+obj.getValue());
 		}
