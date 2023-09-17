@@ -39,16 +39,6 @@ public class IterateHashMap
 								{
 									System.out.println("Value:"+bl);
 								}
-								
-		// Iterating using Iterator,
-								Iterator<Entry<String, Boolean>> it = hm.entrySet().iterator();
-								While(it.hasNext())
-								{
-									
-								}
-							
-		// using forEach, Using forEach(action) method 
-								hm.entrySet().forEach((k,v)-> System.out.println("Key "+k+"-_-"+"Value"+v));
 									
 	}
 	
