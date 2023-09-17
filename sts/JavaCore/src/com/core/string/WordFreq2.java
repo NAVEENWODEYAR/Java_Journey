@@ -29,5 +29,26 @@ public class WordFreq2
 	{
 		wordFrequency("Java Program Hello World Hello Java Family Java loves you");
 	}
-
+	
+	static
+	{
+		String str = "Java Programming, Java loves you";
+		String[] st = str.split(" ");
+		Map<String, Integer> mp = new HashMap<>();
+		
+		for(int i=0; i<=st.length-1; i++)
+		{
+			if(mp.containsKey(st[i]))
+				mp.put(st[i], mp.get(st[i])+1);					
+			else
+				mp.put(st[i], 1);
+		}
+		System.out.println(mp);
+		System.out.println("***********");
+		
+		for(Map.Entry<String, Integer>obj: mp)
+		{
+			System.out.println(obj.getKey()+":"+obj.getValue());
+		}
+	}
 }
