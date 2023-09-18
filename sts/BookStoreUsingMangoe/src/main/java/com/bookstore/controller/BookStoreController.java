@@ -2,6 +2,8 @@ package com.bookstore.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -26,6 +28,11 @@ public class BookStoreController
 {
 	@Autowired
 	private BookStoreService bsService;
+	
+	// adding the logger
+	
+	 Logger log = LoggerFactory.getLogger(BookStoreController.class);
+
 
 		// 1. generating the API.,
 			@PostMapping("/insertBookStoreData")
