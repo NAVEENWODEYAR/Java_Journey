@@ -48,6 +48,7 @@ public class TeacherController
 	
 	// Get for receiving the data.,
 	@GetMapping("/getTeachers")
+	@ResponseStatus(code = HttpStatus.UPGRADE_REQUIRED)
 	public ResponseEntity<ResponseDTO> getTeacchers()
 	{
 		List<Teacher> teacher = teacherService.getTeachersList();
