@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aquila.dto.ResponseDTO;
@@ -28,6 +29,7 @@ public class TeacherController
 	
 	// Create the API
 	@GetMapping("/getMsg")
+	@RequestMapping(method = RequestMethod.GET,path = "/getMsg")
 	public String getMsg()
 	{
 		return "Sky is not the limit!";
