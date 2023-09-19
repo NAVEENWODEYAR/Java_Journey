@@ -29,7 +29,7 @@ public class TeacherController
 	
 	// Create the API
 //	@GetMapping("/getMsg")
-	@RequestMapping(method = RequestMethod.GET,path = "/getMsg")
+	@RequestMapping(method = RequestMethod.GET,path = "/testMsg")
 	public String getMsg()
 	{
 		return "Sky is not the limit!";
