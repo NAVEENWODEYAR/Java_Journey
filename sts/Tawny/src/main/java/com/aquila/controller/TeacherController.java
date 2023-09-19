@@ -28,7 +28,7 @@ public class TeacherController
 	private TeacherService teacherService;
 	
 	// Create the API
-	@GetMapping("/getMsg")
+//	@GetMapping("/getMsg")
 	@RequestMapping(method = RequestMethod.GET,path = "/getMsg")
 	public String getMsg()
 	{
