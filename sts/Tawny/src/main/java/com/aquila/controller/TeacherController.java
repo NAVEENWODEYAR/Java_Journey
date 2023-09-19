@@ -19,7 +19,9 @@ import com.aquila.service.TeacherService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/teacher")
 public class TeacherController 
@@ -61,5 +63,6 @@ public class TeacherController
 	public Teacher getByName(String tName)
 	{
 		return teacherService.getByName(tName);
+		log.info("{}, welcome to the club");
 	}
 }
