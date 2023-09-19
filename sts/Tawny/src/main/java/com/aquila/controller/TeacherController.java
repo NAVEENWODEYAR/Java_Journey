@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aquila.dto.ResponseDTO;
@@ -37,6 +38,7 @@ public class TeacherController
 	
 	// Post request for sending the data,
 	@PostMapping("/insertTeacher")
+	@ResponseStatus(code = HttpStatus.IM_USED)
 	public ResponseEntity<ResponseDTO> insertTeacher(@Valid @RequestBody TeacherDTO teacherDTO)
 	{
 		Teacher teacher = teacherService.insertTeacher(teacherDTO);
