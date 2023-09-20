@@ -62,7 +62,7 @@ public class TeacherController
 	@GetMapping("/getByName")
 	public Teacher getByName(String tName)
 	{
-		return teacherService.getByName(tName);
 		log.info("{}, welcome to the club");
+		return teacherService.getByName(tName);
 	}
 }
