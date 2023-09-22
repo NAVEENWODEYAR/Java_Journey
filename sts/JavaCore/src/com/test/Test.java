@@ -6,7 +6,7 @@ public class Test
 {
 	public static void charFrequency(String st)
 	{
-		String str[] = st.split("");
+		String str[] = st.toLowerCase().split("");
 		Map<String, Integer> mp = new HashMap<>();
 		
 		for(int i=0; i<str.length-1; i++)
@@ -23,9 +23,5 @@ public class Test
 		String st = "Naveen Kumar K";
 		charFrequency(st);
 		
-		Set s1 = new TreeSet<>();
-		System.out.println(s1.getClass());
-//		SortedSet s2 = new SortedSet();
 	}
-
 }
