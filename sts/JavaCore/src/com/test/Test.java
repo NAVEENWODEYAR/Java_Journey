@@ -22,6 +22,8 @@ public class Test
 	{
 		String st = "Naveen Kumar K";
 		charFrequency(st);
+		
+		Set s1 = new TreeSet<>();
 	}
 
 }
