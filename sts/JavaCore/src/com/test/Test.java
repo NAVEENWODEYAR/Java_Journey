@@ -24,6 +24,7 @@ public class Test
 		charFrequency(st);
 		
 		Set s1 = new TreeSet<>();
+		SortedSet s2 = new SortedSet();
 	}
 
 }
