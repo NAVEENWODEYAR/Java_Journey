@@ -21,7 +21,7 @@ public class Test
 	}
 	public static void main(String[] args) 
 	{
-		String st = "Naveen Kumar K";
+		String st = "Java Programming";
 		charFrequency(st);
 		
 	}
