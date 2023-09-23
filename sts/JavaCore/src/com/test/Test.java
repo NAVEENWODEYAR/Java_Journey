@@ -9,12 +9,13 @@ public class Test
 		String str[] = st.toLowerCase().split("");
 		Map<String, Integer> mp = new HashMap<>();
 		
-		for(int i=0; i<str.length-1; i++)
+//		for(int i=0; i<str.length-1; i++)
+			for(char c: st.toCharArray())
 		{
-			if(mp.containsKey(str[i]))
-				mp.put(str[i], mp.get(str[i])+1);
+			if(mp.containsKey(str[c]))
+				mp.put(str[c], mp.get(str[c])+1);
 			else
-				mp.put(str[i], 1);
+				mp.put(str[c], 1);
 		}
 		System.out.println(mp);
 	}
