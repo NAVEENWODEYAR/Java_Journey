@@ -23,6 +23,7 @@ public class Test
 	{
 		String st = "Java Programming";
 		charFrequency(st);
+		charFrequency("");
 		
 	}
 }
