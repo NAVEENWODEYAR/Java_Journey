@@ -23,7 +23,7 @@ public class SecondLarget
 				}
 			}
 			System.out.println("\nSecond Largset element in the integer array,"+secLargest);
-			System.out.println("\nLargest elemen in the integer array,"+largest);
+			System.out.println("\nLargest element in the integer array,"+largest);
 
 				
 	}
