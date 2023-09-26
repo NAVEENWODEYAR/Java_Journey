@@ -22,19 +22,19 @@ public class SmallestSubarrayWithDegree
 		{
 			int num = nums[i];
 
-			// Update the last occurrence index for the current element
+			// Update the last occurrence index for the current element,
 			lastOccurrence.put(num, i);
 
-			// If it's the first occurrence, record it
+			// If it's the first occurrence, record it,
 			if (!firstOccurrence.containsKey(num))
 			{
 				firstOccurrence.put(num, i);
 			}
 
-			// Update the frequency count for the current element
+			// Update the frequency count for the current element,
 			frequency.put(num, frequency.getOrDefault(num, 0) + 1);
 
-			// Calculate the degree of the array
+			// Calculate the degree of the array,
 			maxDegree = Math.max(maxDegree, frequency.get(num));
 		}
 
