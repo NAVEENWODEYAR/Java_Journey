@@ -16,6 +16,7 @@ public class StringJoinerEx
 					str.add("Four");
 					str.add(null);
 					str.add("null");
+					str.add("");
 					
 					System.out.println(str);
 	}
