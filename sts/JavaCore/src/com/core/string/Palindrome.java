@@ -1,4 +1,4 @@
-// Java program to check weather the given string is palindrome or not
+// Java program to check weather the given string is Palindrome or not
 package com.core.string;
 
 public class Palindrome
@@ -21,6 +21,7 @@ public class Palindrome
 	{
 		String st = args[0];
 		System.out.println(palindromeString(st));
+		System.out.println(palindromeString("RacecaR"));
 		
 		// different ways to create string objects
 		String st2 = new String("String");
