@@ -21,6 +21,7 @@ public class HashSetVsHashMap
 					hashSet.add(2);
 					hashSet.add(7);
 					hashSet.add(0);
+					hashSet.add(10);
 					
 					System.out.println("Check weather the particular element exists: "+hashSet.contains(null));
 					for(Integer n: hashSet)

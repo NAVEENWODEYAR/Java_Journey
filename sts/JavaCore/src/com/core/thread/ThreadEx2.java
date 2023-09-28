@@ -23,6 +23,7 @@ public class ThreadEx2 implements Runnable
 		ThreadEx2 t1 = new ThreadEx2();
 		ThreadEx2 t2 = new ThreadEx2();
 				t1.run();
+				t2.run();
 			
 	}
 
