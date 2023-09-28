@@ -16,6 +16,7 @@ public class Palindrome
 					else
 						return false;
 	}
+	
 	public static void main(String[] args) 
 	{
 		String st = args[0];
