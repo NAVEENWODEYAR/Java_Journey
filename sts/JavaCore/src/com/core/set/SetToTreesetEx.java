@@ -18,7 +18,7 @@ public class SetToTreesetEx
 					System.out.println("Set obtained from the list "+set);
 					System.out.println("***************");
 		Set<Integer> treeSet = new TreeSet<>(set);
-					System.out.println("TreeSet obtained from the set "+treeSet);
+					System.out.println("TreeSet obtained from the hashSet "+treeSet);
 	
 	}
 
