@@ -7,7 +7,7 @@ public class SingleTonCls implements Cloneable
 {
 	private static SingleTonCls instance=null;
 	
-	// private constructor
+	// private constructor of the class,
 	private SingleTonCls()
 	{
 		
