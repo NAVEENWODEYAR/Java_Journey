@@ -35,6 +35,7 @@ public class TeacherController
 	@RequestMapping(method = RequestMethod.GET,path = "/testMsg")
 	public String getMsg()
 	{
+		log.info("Good Morning");
 		return "Sky is not the limit!";
 	}
 	
