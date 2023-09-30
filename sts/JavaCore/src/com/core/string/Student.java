@@ -1,28 +1,13 @@
 package com.core.string;
 
-public class StringComp 
+public class Student 
 {
-
-	public static void main(String[] args) 
+	private int stId;
+	private String stName;
+	
+	public Student(String name)
 	{
-		String s1 = new String("String");
-		String s2 = new String("String");
-		strCompare(s1, s2);
-		
-		// compare Student objects,
-		Student st1 = new Student("Amma");
-		Student st2 = new Student("Amma");
-		objComparision(st1, st2);
-		
-	}
-	static void strCompare(String s1,String s2)
-	{
-		System.out.println("\nString comparision,\n");
-		
-		if(s1 == s2)
-			System.out.println("True");
-		else
-			System.out.println("False");
+		this.stName = name;
 	}
 	
 	static void objComparision(Student s1, Student s2)
@@ -35,6 +20,15 @@ public class StringComp
 			System.out.println("Both the objects are not equal");
 		
 	}
+	
+	public static void main(String[] args) 
+	{
+		// compare Student objects,
+		Student st1 = new Student("Amma");
+		Student st2 = new Student("Amma");
+		objComparision(st1, st2);
+	}
+	
 	@Override
 	public boolean equals(Object obj) 
 	{
