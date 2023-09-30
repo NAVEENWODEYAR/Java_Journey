@@ -10,34 +10,27 @@ public class Student
 		this.stName = name;
 	}
 	
-	static void objComparision(Student s1, Student s2)
-	{
-		System.out.println("\n Object Comparision,\n");
-		
-		if(s1.equals(s2))
-			System.out.println("Both the objects are equal");
-		else
-			System.out.println("Both the objects are not equal");
-		
-	}
-	
 	public static void main(String[] args) 
 	{
 		// compare Student objects,
 		Student st1 = new Student("Amma");
 		Student st2 = new Student("Amma");
-		objComparision(st1, st2);
+		
+			if(st1.equals(st2))
+				System.out.println("Equal");
+			else
+				System.out.println("Not equal");		
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) 
 	{
-		if(obj == this)
-			return true;
-		if(!(obj instanceof Student))
-			return false;
-		Student s = (Student)obj;
-		return stName.equals(s.n)  == 0;
+		var st = (Student)obj;
+		
+			if(this.stId != st.stId )
+				return false;
+			if(!(this.stName.equals(st.stName)))
+				return false;
+		return true;
 	}
-
 }

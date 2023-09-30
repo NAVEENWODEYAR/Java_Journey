@@ -9,11 +9,6 @@ public class StringComp
 		String s2 = new String("String");
 		strCompare(s1, s2);
 		
-		// compare Student objects,
-		Student st1 = new Student("Amma");
-		Student st2 = new Student("Amma");
-		objComparision(st1, st2);
-		
 	}
 	static void strCompare(String s1,String s2)
 	{
