@@ -12,7 +12,12 @@ public class MaxValue
 			.max(Comparator.comparing(Integer::intValue))
 			.get();
 		
-		System.out.println("Maximum integer value in the list " +max);
+		int min = list.stream()
+						.min(Comparator.comparing(Integer::intValue))
+						.get();
+		
+		System.out.println("\nMaximum integer value in the list " +max);
+		System.out.println("\nMinimum integer value in the list " +min);
 	}
 	public static void main(String[] args)
 	{
