@@ -27,9 +27,6 @@ public class StringComp
 		if(s1.equals(s2))
 			System.out.println("Both the objects are equal");
 		else
-			System.out.println("Both the objects are not equal");
-		
+			System.out.println("Both the objects are not equal");	
 	}
-	
-
 }
