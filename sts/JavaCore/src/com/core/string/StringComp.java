@@ -30,15 +30,6 @@ public class StringComp
 			System.out.println("Both the objects are not equal");
 		
 	}
-	@Override
-	public boolean equals(Object obj) 
-	{
-		if(obj == this)
-			return true;
-		if(!(obj instanceof Student))
-			return false;
-		Student s = (Student)obj;
-		return stName.equals(s.n)  == 0;
-	}
+	
 
 }
