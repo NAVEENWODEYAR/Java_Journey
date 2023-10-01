@@ -12,9 +12,9 @@ import io.swagger.v3.oas.annotations.info.License;
 @OpenAPIDefinition(
 		info = @Info(
 						title = "Tawny_SpringBoot Application",
-						version = "1.0.0",
+						version = "3.0.0",
 						description = "API Documentation,",
-						termsOfService = "Test the API",
+						termsOfService = "Testing the Restful API",
 						contact = @Contact(
 											name = "Boss",
 											email = "boss@boss.org"),
