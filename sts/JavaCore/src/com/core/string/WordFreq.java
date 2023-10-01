@@ -1,7 +1,7 @@
 //Write a Java Program to count the number of words in a string using HashMap.
 package com.core.string;
 
-import java.util.HashMap;
+import java.util.*;
 import java.util.Map;
 
 public class WordFreq 
@@ -10,7 +10,7 @@ public class WordFreq
 	{
 		String st[] = str.split(" ");
 		
-		Map<String, Integer> mp = new HashMap<>();
+		Map<String, Integer> mp = new TreeMap<>();
 		
 			for(int i=0; i<=st.length-1; i++)
 			{
