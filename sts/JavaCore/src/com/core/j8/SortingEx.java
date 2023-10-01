@@ -9,12 +9,12 @@ public class SortingEx
 	static void sortList(List<Integer> list)
 	{
 		Collections.sort(list);
-		System.out.println("Natural sorting order "+list);
+		System.out.println("\nNatural sorting order "+list);
 		
 		System.out.println("************************");
 
 		Collections.sort(list, Collections.reverseOrder());
-		System.out.println("Reverse sorting order "+list);
+		System.out.println("\nReverse sorting order "+list);
 
 	}
 	public static void main(String[] args)
