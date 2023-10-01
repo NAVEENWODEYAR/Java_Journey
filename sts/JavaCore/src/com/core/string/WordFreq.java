@@ -25,7 +25,7 @@ public class WordFreq
 	}
 	public static void main(String[] args) 
 	{
-		wordFrequency("Java Program Hello World, Hello Java Family");
+		wordFrequency("Hello World, Hello Java Family,Amigo's");
 	}
 
 }
