@@ -14,7 +14,7 @@ import io.swagger.v3.oas.annotations.info.License;
 						title = "Tawny_SpringBoot Application",
 						version = "3.0.0",
 						description = "API Documentation,",
-						termsOfService = "Testing the Restful API",
+						termsOfService = "Testing the REST API",
 						contact = @Contact(
 											name = "Boss",
 											email = "boss@boss.org"),
