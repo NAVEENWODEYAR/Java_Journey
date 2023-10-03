@@ -29,12 +29,11 @@ public class SecondLarget
 	}
 	  static public void  main(String[] args) 
 	{
-		int ar[] = {1,4,643,8,5,4,4,6,87};
+		int ar[] = {1,4,43,8,5,4,4,6,87};
 		String arr[] = {"Ammu","Boss","Ammie","Denly","Gowri","Gani","Rony","Nandhi"};
 		System.out.println(Arrays.toString(ar));
 		System.out.println(Arrays.asList(arr));
 
 		secLargest(ar);
 	}
-
 }
