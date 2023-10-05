@@ -1,6 +1,8 @@
 server:
   port: 8475
 
+management:
+  port: 8474
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/bateleur
