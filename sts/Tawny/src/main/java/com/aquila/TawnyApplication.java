@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.info.License;
 						termsOfService = "Testing the REST API",
 						contact = @Contact(
 											name = "Boss",
-											email = "boss@boss.org"),
+											email = "BOSS@boss.org"),
 						license = @License(
 											name = "Boss",
 											url = "https://en.wikipedia.org/wiki/Tawny_eagle")))
