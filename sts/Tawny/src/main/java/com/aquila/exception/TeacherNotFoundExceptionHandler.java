@@ -30,7 +30,7 @@ public class TeacherNotFoundExceptionHandler
 		List<String> errMsg = errList.stream()
 									.map(error -> error.getDefaultMessage())
 									.collect(Collectors.toList());
-		ResponseDTO responseDTO = new ResponseDTO("Illegal arguments,Please check your input,",errMsg);
+		ResponseDTO responseDTO = new ResponseDTO("Illegal arguments,Please check your input values,",errMsg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
 }
