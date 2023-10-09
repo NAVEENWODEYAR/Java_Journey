@@ -31,8 +31,8 @@ public class TeacherController
 	private TeacherService teacherService;
 	
 	// Create the API
-//	@GetMapping("/getMsg")
-	@RequestMapping(method = RequestMethod.GET,path = "/testMsg")
+	@GetMapping("/getMsg")
+//	@RequestMapping(method = RequestMethod.GET,path = "/testMsg")
 	public String getMsg()
 	{
 		log.info("Welcome");
