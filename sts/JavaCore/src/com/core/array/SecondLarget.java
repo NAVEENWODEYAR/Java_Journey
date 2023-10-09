@@ -27,9 +27,16 @@ public class SecondLarget
 	}
 	
 	// find the second largest element in the string array,
-	static void seconLargestInString()
+	static void seconLargestInString(String[] names)
 	{
+		int largest = 0;
+		int secLargest = 0;
 		
+		for(int i=0; i<= names.length; i++)
+		{
+			
+				
+		}
 	}
 	
 	  static public void  main(String[] args) 
