@@ -15,14 +15,15 @@ public class FibonacciSeries
 				a = b;
 				b = c;
 				c = a+b;
-			}
-			
+			}	
 	}
 	
-	// Fibonacci series using Java 8.,
-	static void fiboUisngJava8()
+	// Fibonacci Series using Recursion.,
+	static int fiboUisngJava8(int n)
 	{
-		
+		if(n<1)
+			return n;
+		return fiboUisngJava8(n-1)+fiboUisngJava8(n-2);
 	}
 	public static void main(String[] args) 
 	{
@@ -31,6 +32,8 @@ public class FibonacciSeries
 		int i = sc.nextInt();
 		
 		fibonacciSeries(i);
+		System.out.println("\n**********\n");
+		fibonacciSeries(5);
 	}
 
 }
