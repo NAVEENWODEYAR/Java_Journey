@@ -2,6 +2,7 @@
 package com.core.series;
 
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class FibonacciSeries
 {
@@ -28,12 +29,21 @@ public class FibonacciSeries
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number to generate the series :");
+		System.out.println("\nEnter the number to generate the series :");
 		int i = sc.nextInt();
 		
 		fibonacciSeries(i);
 		System.out.println("\n**********\n");
 		fibonacciSeries(5);
 	}
-
+	
+	// static block.,
+	static
+	{
+		System.out.println("\nFibonacci Series using Java 8\n");
+		Stream.iterate(new int[]{0,1}, f-> new int[] {f[1],f[0]+f[1]})
+				.limit(10)
+				.map(n->n[0])
+				.forEach(num->System.out.print(num));	
+	}
 }
