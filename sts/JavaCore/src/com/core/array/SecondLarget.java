@@ -29,12 +29,20 @@ public class SecondLarget
 	// find the second largest element in the string array,
 	static void seconLargestInString(String[] names)
 	{
-		int largest = 0;
-		int secLargest = 0;
+		String largest = "";
+		String secLargest = "";
 		
 		for(int i=0; i<= names.length; i++)
 		{
-			
+			if(names[i].length() > largest.length())
+			{
+				secLargest = largest;
+				largest = names[i];
+			}
+			if(names[i].length() > secLargest.length())
+			{
+				secLargest = names[i];
+			}
 				
 		}
 	}
