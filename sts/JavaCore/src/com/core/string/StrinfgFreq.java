@@ -9,12 +9,12 @@ public class StrinfgFreq
 	{
 		String[] str = st.toLowerCase().split("");
 		
-				Stream.of(str).collect(Collectors.groupingBy(st->st,Collectors.counting())).entrySet().forEach(System.out::println);
+				Stream.of(str).collect(Collectors.groupingBy(s->s,Collectors.counting())).entrySet().forEach(System.out::print);
 	}
 	public static void main(String[] args)
 	{
 		System.out.println("\nProgram to fing the character frequency in string using Java 8\n");
-		
+		charFreq("Ashok G H");
 	}
 
 }
