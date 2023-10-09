@@ -18,6 +18,12 @@ public class FibonacciSeries
 			}
 			
 	}
+	
+	// Fibonacci series using Java 8.,
+	static void fiboUisngJava8()
+	{
+		
+	}
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
