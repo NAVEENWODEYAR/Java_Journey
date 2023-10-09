@@ -32,7 +32,7 @@ public class SecondLarget
 		String largest = "";
 		String secLargest = "";
 		
-		for(int i=0; i<= names.length; i++)
+		for(int i=0; i<= names.length-1; i++)
 		{
 			if(names[i].length() > largest.length())
 			{
@@ -42,9 +42,10 @@ public class SecondLarget
 			if(names[i].length() > secLargest.length())
 			{
 				secLargest = names[i];
-			}
-				
+			}	
 		}
+		System.out.println("\n Largest string in the array,\n"+largest+"\n");
+		System.out.println("\n SecondLargest string in the array,\n"+secLargest+"\n");
 	}
 	
 	  static public void  main(String[] args) 
@@ -55,5 +56,6 @@ public class SecondLarget
 		System.out.println(Arrays.asList(arr));
 
 		secLargest(ar);
+		seconLargestInString(arr);
 	}
 }
