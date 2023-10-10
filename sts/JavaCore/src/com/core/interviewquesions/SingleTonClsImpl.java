@@ -22,7 +22,7 @@ public class SingleTonClsImpl
 			e.printStackTrace();
 		}
 		
-		// reflection to break the singleton class,
+		// reflection to break the singleton class design pattern,
 		Class<?> reflection = Class.forName("com.core.interviewquesions");
 		Constructor<SingleTonCls> constructor = (Constructor<SingleTonCls>) reflection.getDeclaredConstructor(null);
 									constructor.setAccessible(true);
