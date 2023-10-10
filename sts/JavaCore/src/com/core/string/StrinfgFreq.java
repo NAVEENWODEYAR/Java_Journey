@@ -1,7 +1,6 @@
 package com.core.string;
 
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.*;
 
 public class StrinfgFreq 
 {
@@ -13,7 +12,7 @@ public class StrinfgFreq
 	}
 	public static void main(String[] args)
 	{
-		System.out.println("\nProgram to fing the character frequency in string using Java 8\n");
+		System.out.println("\nProgram to find the character frequency in string using Java 8\n");
 		charFreq("Ashok G H");
 	}
 
