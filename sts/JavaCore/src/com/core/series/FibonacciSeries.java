@@ -1,4 +1,4 @@
-// Write a Java Program for the Fibonacci series.
+// Write a Java Program to generate the Fibonacci series.
 package com.core.series;
 
 import java.util.Scanner;
