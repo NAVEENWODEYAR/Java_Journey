@@ -22,8 +22,8 @@ public class SecondLarget
 					secLargest = arr[i];
 				}
 			}
-			System.out.println("\nSecond Largset element in the integer array,\n"+secLargest);
-			System.out.println("\nLargest element in the integer array,\n"+largest);			
+			System.out.println("\n1. Second Largset element in the integer array,\n"+secLargest);
+			System.out.println("\n2. Largest element in the integer array,\n"+largest);			
 	}
 	
 	// find the second largest element in the string array,
