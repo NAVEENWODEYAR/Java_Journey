@@ -29,7 +29,7 @@ public class FibonacciSeries
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\nEnter the number to generate the series :");
+		System.out.println("\nEnter an number to generate the series :");
 		int i = sc.nextInt();
 		
 		fibonacciSeries(i);
