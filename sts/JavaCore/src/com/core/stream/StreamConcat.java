@@ -1,5 +1,4 @@
-//Java 8 program to perform concatenation on two Streams?
-
+//Java 8 program to perform concatenation on two Streams.,
 package com.core.stream;
 
 import java.util.*;
