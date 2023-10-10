@@ -1,4 +1,4 @@
-// Write a Java Program to find the second-largest string in an array[Swapping].
+// Write a Java Program to find the second-largest string in an array[swapping the elements].
 package com.core.array;
 
 import java.util.Arrays;
