@@ -40,7 +40,7 @@ public class FibonacciSeries
 	// static block.,
 	static
 	{
-		System.out.println("\nFibonacci Series using Java 8\n");
+		System.out.println("\nFibonacci Series using Java 8 & Stream\n");
 		Stream.iterate(new int[]{0,1}, f-> new int[] {f[1],f[0]+f[1]})
 				.limit(10)
 				.map(n->n[0])
