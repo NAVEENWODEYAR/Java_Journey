@@ -11,7 +11,7 @@ public class TreeSetEx
 					set.add(1);
 					set.add(5);
 //					set.add(null);
-			System.out.println("Treeset doedn't allows null values");	
+			System.out.println("TreeSet doesn't allows null values");	
 			Iterator itr = set.iterator();
 			while(itr.hasNext())
 			{
