@@ -13,7 +13,7 @@ public class GhostRunner
 	@GetMapping("/index")
 	public ModelAndView test()
 	{
-		System.out.println("inside the controller..,");
+		System.out.println("Inside the controller..,");
 		return new ModelAndView("index");
 	}
 	
@@ -21,7 +21,7 @@ public class GhostRunner
 	public String getHome(Model md)
 	{
 		md.addAttribute("date", new Date());
-		System.out.println("inside the home page..,");
+		System.out.println("Inside the home page..,");
 		return "home";
 	}
 	
