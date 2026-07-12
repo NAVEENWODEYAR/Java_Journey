@@ -35,7 +35,7 @@ public class BookController
 	public List<Book> insertBokData(@RequestBody List<Book> bk)
 	{
 		List<Book> lt = bookService.insertBooKData(bk);
-		log.info("Data saved successfully,");
+		log.info("Data persisted successfully,");
 					return lt;
 	}
 	
@@ -82,7 +82,7 @@ public class BookController
 	public String deleteBookData(@PathVariable int bId)
 	{
 		bookService.deleteBookData(bId);
-		return "Successfully deleted the book records,,";
+		return "Successfully deleted the book records with given Id,,";
 	}
 	
 	// 4.a delete the record..,
