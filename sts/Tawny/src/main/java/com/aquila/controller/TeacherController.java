@@ -45,7 +45,7 @@ public class TeacherController
 	public ResponseEntity<ResponseDTO> insertTeacher(@Valid @RequestBody TeacherDTO teacherDTO)
 	{
 		Teacher teacher = teacherService.insertTeacher(teacherDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Data saved to successfully,",teacher);
+		ResponseDTO responseDTO = new ResponseDTO("Data saved/persisted to successfully,",teacher);
 		return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.ACCEPTED);
 	}
 	
@@ -55,7 +55,7 @@ public class TeacherController
 	public ResponseEntity<ResponseDTO> getTeacchers()
 	{
 		List<Teacher> teacher = teacherService.getTeachersList();
-		ResponseDTO responseDTO = new ResponseDTO("Details found,",teacher);
+		ResponseDTO responseDTO = new ResponseDTO("Teacher details found,",teacher);
 		return new ResponseEntity<>(responseDTO,HttpStatus.FOUND);
 	}
 	
