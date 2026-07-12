@@ -27,7 +27,6 @@ public class TawnyApplication
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(TawnyApplication.class, args);
-		System.out.println("Flying towards target");
 	}
 
 }
