@@ -7,6 +7,7 @@ public class WrapperEx {
 			int a = 5;
 			Integer b = 5;					// /autoboxing, now compiler will write Integer.valueOf(a) internally  
 	
+System.out.println("Wrapper class example");
 			System.out.println(a);
 			System.out.println(b);
 			System.out.println(a==b);
