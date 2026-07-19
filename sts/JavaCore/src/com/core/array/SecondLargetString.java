@@ -29,6 +29,8 @@ public class SecondLargetString
 	}
 	  static public void  main(String[] args) 
 	{
+
+System.out.println("Second largest string");
 		String ar[] = {"1","4","643","8","5","4","4","6","87"};
 		String arr[] = {"Ammu","Boss","Ammie","Denly","Gowri","Gani"};
 		System.out.println(Arrays.toString(ar));
