@@ -14,7 +14,7 @@ public class Test
 	public String test(Model md)
 	{
 		md.addAttribute("date", new Date().toLocaleString());
-		System.out.println("Pure Desi..,");
+		System.out.println("Pure Desi breed..,");
 		return "index";
 	}
 	
