@@ -12,7 +12,7 @@ public class DaburApplication
 	public static void main(String[] args)
 	{
 		SpringApplication.run(DaburApplication.class, args);
-		System.out.println("Spring started,,");
+		System.out.println("Spring Application/Container started,,");
 	}
 
 }
