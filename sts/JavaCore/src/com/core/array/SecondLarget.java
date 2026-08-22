@@ -52,6 +52,7 @@ public class SecondLarget
 	{
 		int ar[] = {1,4,43,8,5,4,4,6,87};
 		String arr[] = {"Ammu","Boss","Ammie","Denly","Gowri","Gani","Rony","Nandhi", "Ramu"};
+System.out.println("Program to find the nth largest element in Array");
 		System.out.println(Arrays.toString(ar));
 		System.out.println(Arrays.asList(arr));
 
