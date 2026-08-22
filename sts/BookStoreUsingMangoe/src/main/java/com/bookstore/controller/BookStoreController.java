@@ -40,7 +40,7 @@ public class BookStoreController
 			public ResponseEntity<ResponseDTO> insertBook(@RequestBody BookStore bs)
 			{
 				BookStore bs1 = bsService.insertBook(bs);
-				ResponseDTO bDTO = new ResponseDTO("Record inserted successfully.,",bs1);
+				ResponseDTO bDTO = new ResponseDTO("Book record inserted successfully.,",bs1);
 				return new ResponseEntity<ResponseDTO>(bDTO,HttpStatus.CREATED);
 			}
 			
