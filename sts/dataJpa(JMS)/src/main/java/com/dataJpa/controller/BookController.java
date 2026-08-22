@@ -82,7 +82,7 @@ public class BookController
 	public String deleteBookData(@PathVariable int bId)
 	{
 		bookService.deleteBookData(bId);
-		return "Successfully deleted the book records with given Id,,";
+		return "Successfully deleted the book record with given Id,,";
 	}
 	
 	// 4.a delete the record..,
@@ -94,6 +94,6 @@ public class BookController
 			throw new com.data.exception.UserNotFoundException(bId);
 		}
 		bRepo.deleteById(bId);
-		return "Book with the id "+bId+ " deleted from the database.,";
+		return "Book with the id "+bId+ " removed from the database.,";
 	}
 }
