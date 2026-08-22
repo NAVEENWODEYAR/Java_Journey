@@ -11,6 +11,7 @@ public class RemoveChars
 	}
 	public static void main(String[] args)
 	{
+System.out.println("remove character from string);
 		System.out.println(removeChars("String", 'r'));
 	}
 
