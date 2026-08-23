@@ -14,7 +14,7 @@ public class SingleTonEx
 	// instance block
 	{
 		System.out.println("SingleTon Class,");
-		System.out.println("Singleton class will have only one instance ibject through out your application");
+		System.out.println("Singleton class will have only one instance object through out your application");
 	}
 	
 	@Override
