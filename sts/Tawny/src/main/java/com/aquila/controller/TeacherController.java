@@ -45,7 +45,7 @@ public class TeacherController
 	public ResponseEntity<ResponseDTO> insertTeacher(@Valid @RequestBody TeacherDTO teacherDTO)
 	{
 		Teacher teacher = teacherService.insertTeacher(teacherDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Data saved/persisted to successfully,",teacher);
+		ResponseDTO responseDTO = new ResponseDTO("Teacher record/Data saved/persisted to successfully,",teacher);
 		return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.ACCEPTED);
 	}
 	
