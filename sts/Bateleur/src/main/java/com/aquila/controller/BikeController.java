@@ -41,7 +41,7 @@ public class BikeController
 		public ResponseEntity<ResponseDTO> insertBike(@Valid @RequestBody BikeDTO bikeDTO)
 		{
 			Bike bike = bikeService.insertBike(bikeDTO);
-			ResponseDTO responseDTO = new ResponseDTO("Bike details inserted/xreated successfully.",bike);
+			ResponseDTO responseDTO = new ResponseDTO("Bike details inserted/created successfully.",bike);
 			return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
 		}
 		
@@ -50,7 +50,7 @@ public class BikeController
 		public ResponseEntity<ResponseDTO> getBikeById(@PathVariable Integer bikeId)
 		{
 			Optional<Bike> bike = bikeService.getBikeById(bikeId);
-			ResponseDTO responseDTO = new ResponseDTO("Bike with the given found",bike);
+			ResponseDTO responseDTO = new ResponseDTO("Bike with the given Id found",bike);
 			return new ResponseEntity<>(responseDTO, HttpStatus.FOUND);
 		}
 		
