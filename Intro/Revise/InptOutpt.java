@@ -6,7 +6,7 @@
         public static void main (String [] args){
 
             Scanner sc = new Scanner(System.in);    // Creating an Scanner Object;
-            
+            System.out.println("Scanner class demo program");
             System.out.println("Enter your Employee Id: ");
             int eId = sc.nextInt();                 // nextInt() - reads integer.
             //System.out.println("Employee Id: "+eId);
