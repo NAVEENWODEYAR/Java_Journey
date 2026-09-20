@@ -26,6 +26,7 @@ public class CharFrequency
 	
 	public static void main(String[] args)
 	{
+System.out.println("Character frequency using hashMap");
 		charFrequency("String");
 	}
 
