@@ -19,6 +19,7 @@ public class SumOfDigits
 	
 	public static void main(String[] args) 
 	{
+System.out.println("Sum of numbers using string methods"):
 		sumOfDigits(5432);
 	}
 
