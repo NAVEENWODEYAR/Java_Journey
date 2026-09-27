@@ -7,6 +7,7 @@ public class ConcurrentHashMapExample
 {
     public static void main(String[] args) 
     {
+System.out.println("Concurrent hashMap demo program");
         // Create a ConcurrentHashMap with an initial capacity and load factor
         Map<Byte, Short> conHashMap = new ConcurrentHashMap<>(4, 0.4f);
 
