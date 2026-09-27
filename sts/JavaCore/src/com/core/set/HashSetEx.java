@@ -7,6 +7,7 @@ public class HashSetEx
 
 	public static void main(String[] args)
 	{
+System.out.println("HashSet demo program");
 		Set set = new HashSet<>();
 			set.add("One");
 			set.add("Three");
