@@ -86,6 +86,6 @@ public class TeacherService {
 			return t;
 		}
 		else
-			throw new TeacherNotFoundException("No teacher with the given name,");
+			throw new TeacherNotFoundException("No teacher record with the given name,");
 	}
 }
