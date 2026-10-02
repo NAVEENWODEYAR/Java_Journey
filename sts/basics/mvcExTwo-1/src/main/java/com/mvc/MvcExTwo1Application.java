@@ -10,7 +10,7 @@ public class MvcExTwo1Application
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(MvcExTwo1Application.class, args);
-		System.out.println("Spring,, started..,");
+		System.out.println("MVC Spring,, started..,");
 	}
 
 }
