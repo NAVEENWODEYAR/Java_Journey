@@ -34,6 +34,7 @@ package Boss.Home.Expense;
 		
 	
 		public static void main(String[] args) {
+System.out.println("Expenses tracker");
 				
 			Expenses ob = new Expenses();
 					ob.setRent(6000.00);
