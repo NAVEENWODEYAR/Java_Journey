@@ -5,6 +5,7 @@ public class Que {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+System.out.println("Priority Quee Demo");
 		PriorityQueue<Integer> pq = new PriorityQueue();
 			for(int i=10; i>0; i--)
 			{
