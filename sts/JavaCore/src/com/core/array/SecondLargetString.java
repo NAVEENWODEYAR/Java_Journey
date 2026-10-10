@@ -32,7 +32,7 @@ public class SecondLargetString
 
 System.out.println("Second largest string");
 		String ar[] = {"1","4","643","8","5","4","4","6","87"};
-		String arr[] = {"Ammu","Boss","Ammie","Denly","Gowri","Gani"};
+		String arr[] = {"Ammu","Boss","Ammie","Denly","Gowri","Gani","SeethaMahaLakshmi"};
 		System.out.println(Arrays.toString(ar));
 		System.out.println(Arrays.asList(arr));
 
