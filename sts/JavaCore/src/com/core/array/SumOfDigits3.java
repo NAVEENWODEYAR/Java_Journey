@@ -18,6 +18,7 @@ public class SumOfDigits3
 	{
 		int n = Integer.parseInt(numbers[0]);
 		System.out.println("*******");
+System.out.println("Sum of n digits."):
 		sumOfDigits(n);
 	}
 
