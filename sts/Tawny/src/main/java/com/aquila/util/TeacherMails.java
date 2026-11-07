@@ -23,8 +23,8 @@ public class TeacherMails
 							simpleMailMessage.setSubject(subject);
 							
 							javaMailSender.send(simpleMailMessage);
-							System.out.println("Mail sent to the user successfully to registered mail,");
-							log.info("Mail generated,");
+							System.out.println("Successfully sent the Mail to the user for the registered mail,");
+							log.info("Mail generated successfully,");
 	}
 
 }
