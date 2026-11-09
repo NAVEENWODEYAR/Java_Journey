@@ -17,7 +17,7 @@ public class Throw
                 }
                 else
                 {
-                    System.out.println("Welcome to vote.");
+                    System.out.println("Welcome, you can caste your vote.");
                 }
     
     }
