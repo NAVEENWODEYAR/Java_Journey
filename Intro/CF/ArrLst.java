@@ -15,8 +15,9 @@ public class ArrLst
                 lt.add(4);
                 lt.add(9);
                 lt.add(8);
+                lt.add(0);
                 Collections.sort(lt);
-                System.out.println("Original list: "+ lt);
+                System.out.println("Original/Initial list: "+ lt);
 
                 // Iterating in the original list in the normal order
                 System.out.println("Normal Order");
@@ -30,7 +31,7 @@ public class ArrLst
 
                 // Iterating in the reverse order
                 System.out.println("**************");
-                System.out.println("Reverse Order");
+                System.out.println("Sorted/Reverse Order");
 
  ListIterator<Integer> itrr =lt.listIterator();    
 
