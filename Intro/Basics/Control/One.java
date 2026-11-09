@@ -10,7 +10,7 @@ class One {
              System.out.println("If Statement Demo!");
 
              Scanner sc = new Scanner(System.in);             // Creating Scanner object.,
-             System.out.println("Enter your age");
+             System.out.println("Enter your age: ");
              int age = sc.nextInt();
              if (age >= 24){
 
