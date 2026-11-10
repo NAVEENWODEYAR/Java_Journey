@@ -45,7 +45,7 @@ public class TeacherController
 	public ResponseEntity<ResponseDTO> insertTeacher(@Valid @RequestBody TeacherDTO teacherDTO)
 	{
 		Teacher teacher = teacherService.insertTeacher(teacherDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Teacher record/Data saved/persisted to successfully,",teacher);
+		ResponseDTO responseDTO = new ResponseDTO("Teacher record saved/persisted to successfully,",teacher);
 		return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.ACCEPTED);
 	}
 	
@@ -63,7 +63,7 @@ public class TeacherController
 	@GetMapping("/getByName")
 	public Teacher getByName(String tName)
 	{
-		log.info("{}, welcome to the club");
+		log.info("{}, welcome to the teachers club");
 		return teacherService.getByName(tName);
 	}
 }
